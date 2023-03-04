@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html class="light:latte dark:mocha bg-mauve">
+{{- partial "head.html" . -}}
+
+<body class="bg-base p-5 m-10 rounded-xl font-body">
+  {{- partial "header.html" . -}}
+  <div id="content" class="text-text block border-mantle rounded">
+    {{- block "main" . }}{{- end }}
+  </div>
+  {{- partial "footer.html" . -}}
+</body>
+
+</html>

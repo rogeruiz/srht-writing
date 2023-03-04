@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="intro">
+  <h1 class="font-sans uppercase text-2xl">{{ .Title }}<span class="dot text-maroon">.</span></h1>
+  {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
+  {{ if .Params.image }}
+  <img src="{{ .Params.image | relURL }}" />
+  {{ end }}
+</div>
+{{ .Content }}
+{{ range .Pages }}
+{{ .Render "summary" }}
+{{ end }}
+{{ end }}

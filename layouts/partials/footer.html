@@ -1,0 +1,10 @@
+<footer class="text-surface2">
+  {{- partial "social-bar.html" . -}}
+  <section>
+    <p>
+      {{ $author := print .Site.Params.AuthorName }}
+      {{ $author }} - Built with <a class="hover:text-mauve underline" href="https://gohugo.co">Hugo</a> & hosted on <a
+        class="hover:text-mauve underline" href="https://srht.org">sourcehut</a>.
+    </p>
+  </section>
+</footer>

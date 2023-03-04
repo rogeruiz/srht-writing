@@ -1,0 +1,29 @@
+{
+  "links": [
+    {
+      "name": "mastadon",
+      "url": "https://infosec.exchange/@rogeruiz",
+      "image": "images/social/mastadon.svg"
+    },
+    {
+      "name": "twitter",
+      "url": "https://twitter.com/rogeruiz",
+      "image": "images/social/twitter.svg"
+    },
+    {
+      "name": "sourcehut",
+      "url": "https://git.sr.ht/~rogeruiz",
+      "image": "images/social/sourcehut.svg"
+    },
+    {
+      "name": "github",
+      "url": "https://github.com/rogeruiz",
+      "image": "images/social/github.svg"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/rogeruiz",
+      "image": "images/social/linkedin.svg"
+    }
+  ]
+}

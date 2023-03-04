@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/fonts/merriweather-latin-400.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/fonts/merriweather-latin-700.woff2') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/fonts/merriweather-latin-900.woff2') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-latin-300.woff2') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-latin-700.woff2') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-latin-900.woff2') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mplus-2m-nerd-font-patched';
+  src: url('/fonts/mplus_2m.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mplus-2m-nerd-font-patched';
+  src:  url('/fonts/mplus_2m.woff') format('woff'), url('/fonts/mplus_2m.ttf')  format('truetype'), url('/fonts/mplus_2m.svg#mplus_2m') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

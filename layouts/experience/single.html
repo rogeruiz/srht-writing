@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="intro">
+  <h1 class="font-serif text-2xl">{{ .Title }}<span class="dot">.</span></h1>
+  <h2>{{ .Params.Company }}</h2>
+  {{ if .Params.image }}
+  <img src="{{ .Params.image | relURL }}" />
+  {{ end }}
+</div>
+
+<div class="content">
+  {{ .Content }}
+</div>
+{{ end }}
