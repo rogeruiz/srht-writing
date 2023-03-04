@@ -16,7 +16,7 @@
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit",
     "build:site": "hugo",
     "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit --watch",
-    "serve": "hugo serve",
+    "serve": "hugo serve --bind $(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]') --baseURL http://$(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]')/",
     "start": "run-p watch:css serve"
   },
   "keywords": [],
