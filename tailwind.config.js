@@ -3,7 +3,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["themes/2023-rogeruiz/**/*.html", "./content/**/*.{html,js}", "./layouts/**/*.{html,js}"],
+  content: ["./content/**/*.{html,js}", "./layouts/**/*.{html,js}"],
   theme: {
     extend: {
       fontFamily: {
