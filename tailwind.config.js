@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
         sans: ['Lato', ...defaultTheme.fontFamily.sans],
+        body: ['Merriweather', ...defaultTheme.fontFamily.serif],
         mono: ['mplus-2m-nerd-font-patched', ...defaultTheme.fontFamily.mono],
       }
     },
