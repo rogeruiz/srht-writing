@@ -1,2 +1,11 @@
-public/
+# Ignorando los directorios util pa' varias vainas como secretos
 tmp/
+
+# Ignorando los directorios que se generan
+public/
+
+# Ignorando los archivos que se generan
+assets/css/index.css
+assets/css/catppuccin-latte.css
+assets/css/catppuccin-mocha.css
+.hugo_build.lock
