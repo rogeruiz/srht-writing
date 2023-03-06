@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="light:latte dark:mocha bg-mauve">
+<html lang="en-us" class="light:latte dark:mocha bg-mauve">
 {{- partial "head.html" . -}}
 
-<body class="bg-base p-5 m-10 rounded-xl font-body">
+<body class="font-body bg-base text-text">
   {{- partial "header.html" . -}}
-  <div id="content" class="text-text block border-mantle rounded">
+  <div id="content" class="bg-mantle">
     {{- block "main" . }}{{- end }}
   </div>
   {{- partial "footer.html" . -}}

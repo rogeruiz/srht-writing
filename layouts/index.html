@@ -1,5 +1,11 @@
 {{ define "main" }}
-<section>
+<section class="block bg-crust text-subtext0 p-10 mb-10">
+  <h1 class="text-5xl md:text-7xl lg:text-9xl font-sans font-bold text-mauve">{{.Title}}</h1>
+  <p class="pt-5 md:w-10/12 lg:w-6/12 text-lg md:text-xl lg:text-4xl font-sans font-light">{{.Description | safeHTML }}
+  </p>
+</section>
+<section
+  class="px-10 pb-10 text-text content-center prose md:prose-lg lg:prose-xl prose-headings:text-text prose-blockquote:text-overlay2 prose-strong:text-overlay1 prose-code:bg-base prose-pre:bg-base">
   {{ .Content }}
 </section>
 {{ end }}

@@ -1,0 +1,19 @@
+<header class="text-subtext0 py-5 flex flex-row justify-between">
+  <section class="w-auto px-10">
+    <a class="text-rosewater hover:text-inherit underline" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title
+      }}</a>
+  </section>
+  {{ if .Site.IsMultiLingual }}
+  <nav class="w-auto px-10">
+    {{ range $idx, $lang := .Site.Languages }}
+    {{ if ne $.Language $lang }}
+    <p>
+      {{ i18n "nav" }}
+      <a class="hover:no-underline underline text-rosewater hover:text-inherit"
+        href="{{ print $.Site.BaseURL $lang }}">{{ $lang.LanguageName }}</a>
+    </p>
+    {{ end }}
+    {{ end }}
+  </nav>
+  {{ end }}
+</header>
