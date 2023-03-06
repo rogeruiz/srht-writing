@@ -12,12 +12,14 @@
     "tailwindcss": "^3.2.4"
   },
   "scripts": {
-    "build": "run-s build:*",
+    "build": "run-s build:css:chroma build:css build:site",
+    "build:css:chroma": "hugo gen chromastyles --style=catppuccin-mocha > assets/css/catppuccin-mocha.css && hugo gen chromastyles --style=catppuccin-latte > assets/css/catppuccin-latte.css",
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit",
     "build:site": "hugo",
     "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit --watch",
-    "serve": "hugo serve --bind $(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]') --baseURL http://$(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]')/",
-    "start": "run-p watch:css serve"
+    "watch:site": "hugo serve --bind $(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]') --baseURL http://$(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]')/",
+    "prestart": "run-s build:css:chroma",
+    "start": "run-p watch:css watch:site"
   },
   "keywords": [],
   "author": "Roger Steve Ruiz <hi@rog.gr>",

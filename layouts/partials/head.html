@@ -15,6 +15,12 @@
   <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
 
+  {{ $catppuccin_latte := resources.Get "css/catppuccin-latte.css" }}
+  <link rel="stylesheet" media="(prefers-color-scheme: light)" href="{{ $catppuccin_latte.Permalink }}">
+
+  {{ $catppuccin_mocha := resources.Get "css/catppuccin-mocha.css" }}
+  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{ $catppuccin_mocha.Permalink }}">
+
   {{ $fonts := resources.Get "css/fonts.css" }}
   <link rel="stylesheet" href="{{ $fonts.Permalink }}">
 
