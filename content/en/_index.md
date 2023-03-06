@@ -1,7 +1,12 @@
----
-title: "Hi. I have a website"
-description: "This is a description which I haven't written yet."
----
++++
+title = "Hi."
+description = """
+I'm Roger Steve Ruiz. I am an L4 engineer at <a href="https://truss.works"
+class="underline hover:no-underline text-rosewater hover:text-inherit"
+rel="noopener" target="_blank">TrussWorks</a> building user-centered digital
+services.
+"""
++++
 
 I‘m Roger Steve Ruiz, an L4 software engineer at TrussWorks building
 user-centered digital services. I am a self-taught software engineer that found
@@ -22,3 +27,13 @@ release engineering and building the necessary infrastructure and processes to
 help teams ship and iterate on software. I feel comfortable on-boarding on teams
 to better understand how to contribute. I find myself consistently working on a
 lot of different projects and being the glue interconnecting them.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}
+```

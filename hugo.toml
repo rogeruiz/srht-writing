@@ -1,6 +1,17 @@
 baseURL = ""
-languageCode = "en-us"
+languageCode = "en-US"
+defaultContentLanguage = 'en-us'
+[languages]
+[languages.es-419]
+contentDir = "content/es"
+title = 'Roger Steve Ruiz es un ingeniero de software'
+languageName = "Español - Latinx America"
+weight = 2
+[languages.en-us]
+contentDir = "content/en"
 title = "Roger Steve Ruiz is a software engineer"
+languageName = "English - America"
+weight = 1
 
 [params]
 AuthorName = "Roger Steve Ruiz"
