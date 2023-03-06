@@ -15,12 +15,31 @@ weight = 1
 
 [params]
 AuthorName = "Roger Steve Ruiz"
-[params.username]
-Twitter = "@rogeruiz"
-GitHub = "@rogeruiz"
-Sourcehut = "~rogeruiz"
-LinkedIn = "in/rogers.ruiz"
-Mastadon = "@rogeruiz"
+
+[[params.social]]
+Name = "Mastadon"
+BaseURL = "https:/infosec.exchange/"
+Handle = "@rogeruiz"
+
+[[params.social]]
+Name = "Twitter"
+BaseURL = "https://twitter.com/"
+Handle = "@rogeruiz"
+
+[[params.social]]
+Name = "sourcehut"
+BaseURL = "https://git.sr.ht/"
+Handle = "~rogeruiz"
+
+[[params.social]]
+Name = "GitHub"
+BaseURL = "https://github.com/"
+Handle = "@rogeruiz"
+
+[[params.social]]
+Name = "LinkedIn"
+BaseURL = "https://linkedin.com/"
+Handle = "in/rogeruiz"
 
 [module]
 [module.hugoVersion]

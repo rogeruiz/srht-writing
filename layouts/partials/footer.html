@@ -1,10 +1,15 @@
-<footer class="text-surface2">
-  {{- partial "social-bar.html" . -}}
-  <section>
+<footer class="text-subtext0">
+  <section class="flex flex-row justify-center py-5 px-0">
+    {{ range .Site.Params.Social }}
+    {{ partial "social-link" (dict "Name" .Name "Handle" .Handle "BaseURL" .BaseURL) }}
+    {{ end }}
+  </section>
+  <section class="w-auto flex-row flex justify-center pt-0 pb-5">
     <p>
       {{ $author := print .Site.Params.AuthorName }}
-      {{ $author }} - Built with <a class="hover:text-mauve underline" href="https://gohugo.co">Hugo</a> & hosted on <a
-        class="hover:text-mauve underline" href="https://srht.org">sourcehut</a>.
+      {{ $author }} - Built with <a class="text-rosewater hover:text-inherit underline"
+        href="https://gohugo.co">Hugo</a> &
+      hosted on <a class="text-rosewater hover:text-inherit underline" href="https://srht.org">sourcehut</a>.
     </p>
   </section>
 </footer>

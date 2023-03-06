@@ -1,32 +1,27 @@
-{{ $href := .href }}
-{{ $title := "" }}
+{{ $href := print .BaseURL .Handle }}
+{{ $title := print .Handle " on " .Name }}
+{{ $network := lower .Name }}
 {{ $class := print "fill-current h-5 w-auto" }}
+
+{{/*
+<!--
+  NOTE: Esta logica es pa' quitar la arroba de GitHub y Twitter para crear
+  el URL para mis usarios
+-->
+*/}}
+{{ if or (eq .Name "GitHub") (eq .Name "Twitter") }}
+{{ $href = print .BaseURL (replace .Handle "@" "") }}
+{{ end }}
+
+{{/*
+<!--
+  NOTE: Esto es la regexp para añadir classes y el contenido de del archivo de
+  SVG.
+-->
+*/}}
+{{ $replaceWith := printf `<svg class="%s" ${1}>${2}</svg>` $class }}
 {{ $match := "<svg (.*)?>(.*)</svg>" }}
 
-{{ $replaceWith := printf `<svg class="%s" ${1}>${2}</svg>` $class }}
-
-{{ if eq .network "github" }}
-{{ $href = print .href (replace .context.Site.Params.Username.GitHub "@" "") }}
-{{ $title = print .context.Site.Params.Username.GitHub " on GitHub" }}
-{{ end }}
-{{ if eq .network "twitter" }}
-{{ $href = print .href (replace .context.Site.Params.Username.Twitter "@" "") }}
-{{ $title = print .context.Site.Params.Username.Twitter " on Twitter" }}
-{{ end }}
-{{ if eq .network "mastadon" }}
-{{ $href = print .href .context.Site.Params.Username.Mastadon }}
-{{ $title = print .context.Site.Params.Username.Mastadon " on Mastadon @ infosec.exchange" }}
-{{ end }}
-{{ if eq .network "linkedin" }}
-{{ $href = print .href .context.Site.Params.Username.LinkedIn }}
-{{ $title = print .context.Site.Params.Username.LinkedIn " on LinkedIn" }}
-{{ end }}
-{{ if eq .network "sourcehut" }}
-{{ $href = print .href .context.Site.Params.Username.Sourcehut }}
-{{ $title = print .context.Site.Params.Username.Sourcehut " on sourcehut" }}
-{{ end }}
-
-
-<a class="px-2.5 hover:text-mauve" href="{{ $href }}" title="{{ $title }}">
-  {{ (replaceRE $match $replaceWith (printf "/assets/svg/%s.svg" .network | readFile) | safeHTML) }}
+<a class="px-2.5 text-rosewater hover:text-inherit" href="{{ $href }}" title="{{ $title }}">
+  {{ (replaceRE $match $replaceWith (printf "/assets/svg/%s.svg" $network | readFile) | safeHTML) }}
 </a>
