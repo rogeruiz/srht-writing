@@ -51,7 +51,7 @@ when I work outside during daylight hours it's almost impossible to work
 outside. The display on my laptop is glossy and turns into a reflective surface
 when I use my Dark themes.
 
-![My dark theme](/posts/appleinterfacestyle--tui/images/my-dark-theme.png)
+![My dark theme](./images/my-dark-theme.png)
 
 I use a lot of tools that subscribe to the Unix philosophy to varying degrees.
 For a Terminal I've used [iTerm2][iterm2] for almost a decade but I switched to
@@ -71,7 +71,7 @@ customize it further on their own. It's all accessible with an intuitive
 UI-based settings page. Configurations get exported and imported to XML
 files to make sharing them easy.
 
-![iTerm2 Colors Pane](/posts/appleinterfacestyle--tui/images/iterm-color-preferences.png)
+![iTerm2 Colors Pane](./images/iterm-color-preferences.png)
 
 ## Text-based configurations are better than proprietary ones
 
@@ -100,8 +100,8 @@ yet. While it's not as feature-rich as iTerm2 if you're looking for lots of
 features, it does have a text-based configuration written in Yaml that updates
 the terminal on save.
 
-<img src="/posts/appleinterfacestyle--tui/images/alacritty-logo.png" alt="Alacritty
-logo" style="max-width: 150px; float: right; margin-left: 1.5rem;" />
+<img class="w-24 md:w-36 float-right ml-6" src="./images/alacritty-logo.png" alt="Alacritty
+logo" />
 
 [➡️  Checkout my Alacritty configuration](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/alacritty/alacritty.yml)
 
@@ -189,7 +189,7 @@ it from within my startup script. Below is a working example where I change
 between Light mode and Dark mode using nothing more than the macOS Display
 preference in the Menu Bar.
 
-![My terminal changing color themes](/posts/appleinterfacestyle--tui/images/light-vs-dark-mode.gif)
+![My terminal changing color themes](./images/light-vs-dark-mode.gif)
 
 ## The secret is using AppleInterfaceStyle
 

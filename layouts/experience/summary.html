@@ -1,35 +1,28 @@
-<div class="p-6 bg-crust mx-auto rounded-xl shadow-lg flex space-x-4">
-  <div class="shrink-0">
-    <img class="h-12 w-12" src="{{ .Params.Logo | relURL }}" alt="Job logo">
-    <h3 class="job-name">{{ .Params.company }}</h3>
+<div class="bg-crust flex flex-row mb-6 sm:mb-0 col-span-2 max-h-36">
+  <div class="w-36">
+    <img class="object-cover" src="{{ .Params.Logo | relURL }}" alt="Job logo">
   </div>
-  <div>
-    <h2 class="text-xl font-sans font-bold text-subtext0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <span class="job-date">{{ dateFormat "January 2006" .Date }}</span>
-    {{ if .Params.EndDate }}
-    <span class="job-date">—</span>
-    <span class="job-date">{{ dateFormat "January 2006" .Params.EndDate }}</span>
-    {{ else }}
-    <span class="job-date">—</span>
-    <span class="job-date">Present</span>
-    {{- end -}}
-  </div>
-</div>
-<p class="job-description">{{ .Params.description }}</p>
-
-<div
-  class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-  <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" src="{{ .Params.Logo | relURL }}" alt="Job logo">
-  <div class="text-center space-y-2 sm:text-left">
-    <div class="space-y-0.5">
-      <p class="text-lg text-black font-semibold">
-        Erin Lindford
-      </p>
-      <p class="text-slate-500 font-medium">
-        Product Engineer
-      </p>
+  <div class="pl-5 sm:flex sm:flex-col pt-2.5">
+    <h3 class="text-sm sm:text-lg font-serif">{{ .Params.company }}</h3>
+    <h2 class="text-md sm:text-lg font-sans font-bold">
+      {{ .Title }}
+    </h2>
+    <div class="text-sm sm:text-md font-serif">
+      <span class="">{{ dateFormat "Jan 2006" .Date }}</span>
+      {{ if .Params.EndDate }}
+      <span class="">—</span>
+      <span class="">{{ dateFormat "Jan 2006" .Params.EndDate }}</span>
+      {{ else }}
+      <span class="">—</span>
+      <span class="">Present</span>
+      {{- end -}}
     </div>
-    <button
-      class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
+    <div class="pt-2.5">
+      <a class="px-4 py-1 text-sm text-mauve font-semibold rounded-full border border-mauve hover:text-white hover:bg-mauve hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+        href="{{ .RelPermalink }}">Read more</a>
+    </div>
+    <!-- <div> -->
+    <!--   <p class="text-sm">{{ .Params.description }}</p> -->
+    <!-- </div> -->
   </div>
 </div>

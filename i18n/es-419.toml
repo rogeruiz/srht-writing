@@ -1,2 +1,11 @@
 [nav]
 other = "Translate to:"
+
+[build_with]
+other = "Creado con"
+
+[hosted_on]
+other = "alojado en"
+
+[authorship]
+other = "Contenido & diseño por {{ .Author }}"

@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
-const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   content: ["./content/**/*.{html,js,md}", "./layouts/**/*.{html,js}"],
@@ -16,6 +15,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     require('@catppuccin/tailwindcss')({
       defaultFlavour: 'latte',
     }),

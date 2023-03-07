@@ -6,6 +6,7 @@ class="underline hover:no-underline text-rosewater hover:text-inherit"
 rel="noopener" target="_blank">TrussWorks</a> construyendo servicios digitales
 centrado en las necesidades de usuarios.
 """
+hero_img = "/images/inicio.jpg"
 +++
 
 Yo me llamo Roger Steve Ruiz, un L4 ingeniero de software trabajando en

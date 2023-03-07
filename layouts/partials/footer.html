@@ -1,15 +1,17 @@
-<footer class="text-subtext0">
-  <section class="flex flex-row justify-center py-5 px-0">
+<footer class="text-subtext0 py-5 flex flex-col justify-center text-center">
+  {{ partial "navigation/translate.html" . }}
+  <section class="flex flex-row justify-center py-5">
     {{ range .Site.Params.Social }}
     {{ partial "social-link" (dict "Name" .Name "Handle" .Handle "BaseURL" .BaseURL) }}
     {{ end }}
   </section>
-  <section class="w-auto flex-row flex justify-center pt-0 pb-5">
-    <p>
-      {{ $author := print .Site.Params.AuthorName }}
-      {{ $author }} - Built with <a class="text-rosewater hover:text-inherit underline"
-        href="https://gohugo.co">Hugo</a> &
-      hosted on <a class="text-rosewater hover:text-inherit underline" href="https://srht.org">sourcehut</a>.
+  <section class="w-full px-20 sm:px-0 flex-row flex justify-center pt-0 pb-5">
+    <p class="text-center">
+      {{ i18n "authorship" (dict "Author" .Site.Params.AuthorName) }}
+      - {{ i18n "build_with" }} <a class="text-rosewater hover:text-inherit underline" href="https://gohugo.co">Hugo</a>
+      &
+      {{ i18n "hosted_on" }} <a class="text-rosewater hover:text-inherit underline" href="https://srht.site/">sourcehut
+        pages</a>.
     </p>
   </section>
 </footer>

@@ -1,6 +1,6 @@
 ---
 title: "Innovation Specialist"
-company: "GSA / Technology Transformation Service / 18F"
+company: "GSA"
 date: "2015-11-01"
 endDate: "2019-03-01"
 logo: "images/experience/gsa.jpg"

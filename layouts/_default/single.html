@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ partial "hero.html" . }}
+<section
+  class="px-10 pb-10 content text-text prose md:prose-lg lg:prose-xl prose-headings:text-text prose-blockquote:text-overlay2 prose-a:text-rosewater hover:prose-a:no-underline hover:prose-a:text-inherit prose-strong:text-overlay1 prose-code:bg-base prose-code:text-inherit prose-pre:bg-base prose-pre:text-peach prose-pre:border-surface1 prose-pre:border-2">
+  {{ .Content }}
+</section>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ if $.Site.IsMultiLingual }}
+<nav class="">
+  {{ range $idx, $lang := $.Site.Languages }}
+  {{ if ne $.Language $lang }}
+  <p>
+    {{ i18n "nav" }}
+    <a class="hover:no-underline underline text-rosewater hover:text-inherit" href="{{ print $.Site.BaseURL $lang }}">{{
+      $lang.LanguageName }}</a>
+  </p>
+  {{ end }}
+  {{ end }}
+</nav>
+{{ end }}

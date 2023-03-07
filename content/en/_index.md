@@ -6,6 +6,7 @@ class="underline hover:no-underline text-rosewater hover:text-inherit"
 rel="noopener" target="_blank">TrussWorks</a> building user-centered digital
 services.
 """
+hero_img = "images/index.jpg"
 +++
 
 I‘m Roger Steve Ruiz, an L4 software engineer at TrussWorks building

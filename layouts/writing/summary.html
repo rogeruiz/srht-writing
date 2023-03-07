@@ -1,0 +1,9 @@
+<article class="box-border pb-10 md:pb-0 md:col-span-2 lg:col-span-2">
+  <h2 class="text-xl font-sans font-bold">
+    <a class="text-rosewater underline hover:no-underline" href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
+  </h2>
+  <span class="text-overlay1">{{ dateFormat "January 2nd 2006" .Date }}</span>
+  <p class="text-subtext0">{{ .Params.description }}</p>
+</article>

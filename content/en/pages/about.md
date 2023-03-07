@@ -1,12 +1,15 @@
----
-title: 'About'
-image: images/about.jpg
-url: "about"
-menu:
-  main:
-    name: "About"
-    weight: 4
----
++++
+title = "About"
+image = "images/about.jpg"
+image_description = """
+A view from above showing a hand and a laptop. There's commit message text in
+the top left and right of the photo
+"""
+url = "about"
+[menu.main]
+name = "About"
+weight = 4
++++
 
 I am a self-taught software engineer that found my place in web development by
 coming in through the window, specifically the browser window. Coming from a
@@ -28,14 +31,3 @@ release engineering and building the necessary infrastructure and processes to
 help teams ship and iterate on software. I feel comfortable on-boarding on teams
 to better understand how to contribute. I find myself consistently working on a
 lot of different projects and being the glue interconnecting them.
-
-<!-- ### Experience -->
-<!-- <ul class="exp-list"> -->
-<!--   {% for exp in site.data.experiences %} -->
-<!--   <li> -->
-<!--     <span class="exp-name">{{ exp.name }}</span> -->
-<!--     <span class="exp-dates" title="{{ exp.length }}">{{ exp.dates }}</span> -->
-<!--     <p>{{ exp.title }}</p> -->
-<!--   </li> -->
-<!--   {% endfor %} -->
-<!-- </ul> -->
