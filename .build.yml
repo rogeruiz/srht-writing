@@ -7,7 +7,7 @@ oauth: pages.sr.ht/PAGES:RW
 environment:
   repo: writing
   site: write.rog.gr
-  hugo_version: "v0.111.3"
+  hugo_version: "0.111.3"
 tasks:
 - setup: |
    wget "https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_extended_${hugo_version}_Linux-64bit.tar.gz"
