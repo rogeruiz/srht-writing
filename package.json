@@ -16,7 +16,7 @@
     "build": "run-s build:css:chroma build:css build:site",
     "build:css:chroma": "hugo gen chromastyles --style=catppuccin-mocha > assets/css/catppuccin-mocha.css && hugo gen chromastyles --style=catppuccin-latte > assets/css/catppuccin-latte.css",
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit",
-    "build:site": "hugo",
+    "build:site": "hugo --gc --minify",
     "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit --watch",
     "watch:site": "hugo serve --bind $(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]') --baseURL http://$(system_profiler SPNetworkDataType -json | jq -r '.SPNetworkDataType[] | select(._name == \"Wi-Fi\") | .IPv4.Addresses[]')/",
     "prestart": "run-s build:css:chroma",

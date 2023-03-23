@@ -11,10 +11,9 @@ tasks:
 - build: |
     cd ${repo}
     npm install
-    npm build
 - package: |
     cd ${repo}
-    hugo --gc --minify
+    npm run build
     tar -C public -cvz . > ../site.tar.gz
 - upload: |
     hut pages publish -d ${site} site.tar.gz
