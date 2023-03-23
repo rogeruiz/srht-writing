@@ -17,8 +17,8 @@ tasks:
    printf "calculated: %s\n  expected: %s" "$calculated_sha" "$expected_sha"
    [ "$calculated_sha" = "$expected_sha" ]
    tar xzf "hugo_${hugo_version}_Linux-64bit.tar.gz"
-   hugo env
    export PATH="$(pwd)/hugo:${PATH}"
+   hugo env
 - build: |
     cd ${repo}
     npm install
