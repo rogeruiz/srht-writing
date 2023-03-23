@@ -1,0 +1,19 @@
+image: alpine/latest
+packages:
+  - node
+  - hugo
+oauth: pages.sr.ht/PAGES:RW
+environment:
+  repo: writing
+  site: write.rog.gr
+tasks:
+- build: |
+    cd ${repo}
+    npm install
+    npm build
+- package: |
+    cd ${repo}
+    hugo --gc --minify
+    tar -C public -cvz . > ../site.tar.gz
+- upload: |
+    hut pages publish -d ${site} site.tar.gz
