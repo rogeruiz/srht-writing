@@ -26,7 +26,7 @@ want to place it in.
 ├── folder2
 │  ├── some-other-file.txt
 │  └── config.yml
-├── config.yml <- # I want to copy this file into the other directories.
+├── config.yml # <= I want to copy this file into the other directories.
 ├── carpeta1
 │  ├── algun-otro-archivo.txt
 │  └── config.yml

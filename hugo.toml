@@ -1,16 +1,17 @@
 baseURL = ""
 languageCode = "en-US"
 defaultContentLanguage = 'en-us'
+
 [languages]
-[languages.es-419]
+
+[languages.es]
 contentDir = "content/es"
 title = 'Roger Steve Ruiz es un ingeniero de software'
-languageName = "Español - Latinx America"
 weight = 2
+
 [languages.en-us]
 contentDir = "content/en"
 title = "Roger Steve Ruiz is a software engineer"
-languageName = "English - America"
 weight = 1
 
 [params]
@@ -48,12 +49,16 @@ min = "0.55.0"
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
+
 [markup.goldmark]
+
 [markup.goldmark.extensions]
 gfm = true
+
 [markup.goldmark.renderer]
 hardWraps = false
 unsafe = true
 xhtml = false
+
 [markup.highlight]
 noClasses = false

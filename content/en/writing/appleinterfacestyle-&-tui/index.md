@@ -1,5 +1,5 @@
 +++
-title = "AppleInterfaceStyle & TUI"
+title = "Apple Interface Style & TUI"
 date = "2022-11-23"
 description = """
 macOS-based Night mode supported scripting to update various confiugrations
@@ -8,12 +8,14 @@ Neovim, Starship, and Bat.
 """
 +++
 
-> `tl;dr` macOS-based Night mode supported scripting to update the configuration
+> `tl;dr`
+>
+> macOS-based Night mode supported scripting to update the configuration
 > across different development environment tools including:
 > [Alacritty][alacritty], [Tmux][tmux], [Neovim][neovim], [Starship][starship],
 > and [Bat][bat].
-> <br />
-> [🔗 code](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/bin/darwin/current_visual_mode)
+>
+> [🔗 view the source code](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/bin/darwin/current_visual_mode)
 
 [alacritty]: https://alacritty.org/
 [tmux]: https://github.com/tmux/tmux/wiki
@@ -103,7 +105,7 @@ the terminal on save.
 <img class="w-24 md:w-36 float-right ml-6" src="./images/alacritty-logo.png" alt="Alacritty
 logo" />
 
-[➡️  Checkout my Alacritty configuration](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/alacritty/alacritty.yml)
+[➡️  Checkout my Alacritty configuration](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/alacritty/alacritty.yml).
 
 The Alacritty project has stated publicly that they're looking to recreate the
 terminal emulation experience and nothing else. That's okay for me as I use Tmux
@@ -112,7 +114,7 @@ your options. If Alacritty interests you then please keep reading.
 
 ## Next up, I said what I sed
 
-[➡️  The stream editor `sed`](https://manpages.org/sed)
+[➡️  The stream editor `sed`](https://manpages.org/sed).
 
 This little Unix program is the best. I love `sed` and that might be because I
 learned regular expressions by learning Pearl and finding and replacing text
@@ -196,7 +198,7 @@ preference in the Menu Bar.
 I stumbled across the helpful project on GitHub called `plistwatch` which emits
 any changes to PLIST files on your system.
 
-[ ➡️  View the source code for `catilac/plistwatch` on GitHub](https://github.com/catilac/plistwatch)
+[ ➡️  View the source code for `catilac/plistwatch` on GitHub](https://github.com/catilac/plistwatch).
 
 With this tool, I was able to see what property list (PLIST) value was getting
 set whenever my Mac transitioned between Light and Dark modes. The global value

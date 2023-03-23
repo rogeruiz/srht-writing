@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+/**
+ * La clase `.highlight` viene de la aplicación _highlight.js_.
+ * <https://github.com/highlightjs/highlight.js>
+ *
+ * Estoy usando el tema de Catppuccin que se luce bien, pero no tiene suporte
+ * por la directiva para destacar texto. Sin el codigo de abajo, codigo
+ * resaltado aparece con un fondo amarillo. Con esta anulación el codigo
+ * tiene un fondo de `bg-crust` que es un color de Catppuccin.
+ */
+  .highlight .chroma .line.hl,
+  .highlight .chroma .hl {
+    @apply bg-mantle w-max;
+  }
+}

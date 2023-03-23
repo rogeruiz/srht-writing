@@ -1,8 +1,6 @@
 +++
-title = "Writing"
+title = "Writing."
 date = 2019-02-24
-# image = "images/landing.jpg"
-# image_description = "etc"
 description= """
 Below is a collection of essays I've written. Expect some posts to contradict or
 at least acknowledge previous posts as I learn new things and grow as an

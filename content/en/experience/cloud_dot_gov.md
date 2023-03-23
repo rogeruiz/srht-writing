@@ -12,3 +12,9 @@ Platform as a Service for federal government agencies.
 company = "cloud.gov"
 logo = "images/experience/cloud-gov.jpg"
 +++
+
+While working on ☁️.gov, I built, maintained, and supported both software
+development and operations for the platform.
+
+For me this is one of my proudest bodies of work. I felt like I had found a very
+good place to be career-wise as an SRE.

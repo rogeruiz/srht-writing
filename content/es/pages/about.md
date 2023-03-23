@@ -1,15 +1,18 @@
 +++
-title = "Sobre"
-image = "images/about.jpg"
+title = "Sobre yo."
+description = """
+¡Hola! Estoy muy contento de que estés aquí. Esta página es un buen lugar para
+saber más acerca de mí y cómo contactarme. Miro adelante a oír de usted.
+"""
 url = "sobre"
 [menu.main]
-name = "Sobre"
+name = "Sobre yo"
 weight = 4
 +++
 
 Soy un ingeniero de software autodidacta que encontró mi lugar en el desarrollo
 web por entrando a través de la ventana, específicamente la ventana del
-navegador. viniendo de un la experiencia en diseño gráfico tradicional, CSS y
+navegador viniendo de un la experiencia en diseño gráfico tradicional, CSS y
 diseño de sistemas eran dos cosas que se sentía tan natural como la teoría del
 color y la tipografía. A medida que aprendí más sobre el historia y fundamentos
 de la programación, hice mi transición a full-stack desarrollo web con un fuerte

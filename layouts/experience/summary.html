@@ -1,28 +1,27 @@
 <div class="bg-crust flex flex-row mb-6 sm:mb-0 col-span-2 max-h-36">
   <div class="w-36">
-    <img class="object-cover" src="{{ .Params.Logo | relURL }}" alt="Job logo">
+    <img class="object-cover" src="{{ .Params.Logo | relURL }}" alt="Job logo" title="{{ .Description }}">
   </div>
-  <div class="pl-5 sm:flex sm:flex-col pt-2.5">
-    <h3 class="text-sm sm:text-lg font-serif">{{ .Params.company }}</h3>
-    <h2 class="text-md sm:text-lg font-sans font-bold">
+  <div class="pl-5 md:pl-2.5 sm:flex sm:flex-col pt-2.5">
+    <h3 class="text-sm font-serif">{{ .Params.company }}</h3>
+    <h2 class="text-sm sm:hidden lg:block font-sans font-bold">
       {{ .Title }}
     </h2>
-    <div class="text-sm sm:text-md font-serif">
-      <span class="">{{ dateFormat "Jan 2006" .Date }}</span>
+    <div class="text-sm font-serif">
+      <span>{{ dateFormat "Jan 2006" .Date }}</span>
       {{ if .Params.EndDate }}
-      <span class="">—</span>
-      <span class="">{{ dateFormat "Jan 2006" .Params.EndDate }}</span>
+      <span>—</span>
+      <span>{{ dateFormat "Jan 2006" .Params.EndDate }}</span>
       {{ else }}
-      <span class="">—</span>
-      <span class="">Present</span>
+      <span>—</span>
+      <span>Present</span>
       {{- end -}}
     </div>
     <div class="pt-2.5">
       <a class="px-4 py-1 text-sm text-mauve font-semibold rounded-full border border-mauve hover:text-white hover:bg-mauve hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-        href="{{ .RelPermalink }}">Read more</a>
+        href="{{ .RelPermalink }}" title="{{ .Params.description }}">
+        Read more
+      </a>
     </div>
-    <!-- <div> -->
-    <!--   <p class="text-sm">{{ .Params.description }}</p> -->
-    <!-- </div> -->
   </div>
 </div>

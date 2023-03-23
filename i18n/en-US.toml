@@ -1,6 +1,9 @@
 [nav]
 other = "Traducir a:"
 
+[nav_to_language]
+other = "Español 🇨🇴"
+
 [build_with]
 other = "Built with"
 

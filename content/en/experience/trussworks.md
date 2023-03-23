@@ -1,13 +1,16 @@
----
-title: "Software engineer L4"
-logo: images/experience/trussworks.jpg
-description: |
-    Contributing to DoD USTC code with IAE II and IASAE II certification on
-    MilMove and working collaboratively across a multi-disciplinary consultancy
-    to help it grow in vision and size.
-company: "TrussWorks"
-date: "2021-06-01"
----
++++
+title = "Engineer IV"
+logo = "images/experience/trussworks.jpg"
+description = """
+Contributing to DoD USTC code with IAE II and IASAE II certification on
+MilMove and working collaboratively across a multi-disciplinary consultancy
+to help it grow in vision and size.
+"""
+company = "TrussWorks"
+date = "2021-06-01"
++++
+
+
 
 Operating at a principal IC level, I was hired specifically for the MilMove
 project. I gained my CASP+ 3.0 certification within six weeks of employment in

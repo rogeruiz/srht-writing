@@ -1,22 +1,24 @@
-<header class="text-overlay0 py-5 px-10 flex flex-row justify-between">
-  <section class="w-auto">
-    <a class="text-rosewater hover:text-inherit underline" href="{{ .Site.Home.RelPermalink }}">{{
-      .Site.Title
-      }}</a>
+<header class="text-overlay0 py-5 px-10">
+  <section class="w-auto flex flex-row justify-between items-end">
+    <a class="text-xl text-rosewater underline hover:text-inherit hover:no-underline"
+      href="{{ .Site.Home.RelPermalink }}">
+      {{ .Site.Title }}
+    </a>
+    <nav class="hidden md:block">{{ partial "navigation/translate.html" . }}
+    </nav>
   </section>
-  <div class="hidden md:block">{{ partial "navigation/translate.html" . }}</div>
+  <ul class="w-auto flex flex-row justify-start text-rosewater">
+    {{- $active_link_style := "" -}}
+    {{- $currentPage := . -}}
+    {{ range .Site.Menus.main -}}
+    {{ if $currentPage.IsMenuCurrent "main" . }}
+    {{ $active_link_style = "text-blue no-underline hover:underline hover:text-inherit" }}
+    {{ else }}
+    {{ $active_link_style = "" }}
+    {{ end }}
+    <li class="block mr-3 text-inherit underline hover:text-blue hover:no-underline">
+      <a class="{{ $active_link_style }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+    </li>
+    {{- end }}
+  </ul>
 </header>
-<ul class="w-auto px-10 pb-5 flex flex-row justify-start text-rosewater">
-  {{ $activePageStyles := "" }}
-  {{- $currentPage := . -}}
-  {{ range .Site.Menus.main -}}
-  {{ if $currentPage.IsMenuCurrent "main" . }}
-  {{ $activePageStyles = "text-blue no-underline hover:underline" }}
-  {{ else }}
-  {{ $activePageStyles = "" }}
-  {{ end }}
-  <li class="block mr-10 text-inherit underline hover:no-underline {{ $activePageStyles }}">
-    <a class="{{ $activePageStyles }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-  </li>
-  {{- end }}
-</ul>

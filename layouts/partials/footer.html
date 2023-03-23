@@ -1,5 +1,5 @@
 <footer class="text-subtext0 py-5 flex flex-col justify-center text-center">
-  {{ partial "navigation/translate.html" . }}
+  <nav>{{ partial "navigation/translate.html" . }}</nav>
   <section class="flex flex-row justify-center py-5">
     {{ range .Site.Params.Social }}
     {{ partial "social-link" (dict "Name" .Name "Handle" .Handle "BaseURL" .BaseURL) }}

@@ -1,0 +1,5 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  <a class="inline-block no-underline" href="#{{ .Anchor | safeURL }}">
+    <code class="before:content-[''] after:content-[''] text-mauve"></code>
+  </a>&nbsp;{{ .Text | safeHTML }}
+</h{{ .Level }}>

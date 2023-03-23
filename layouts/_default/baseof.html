@@ -2,11 +2,11 @@
 <html lang="en-us" class="light:latte dark:mocha bg-mauve">
 {{- partial "head.html" . -}}
 
-<body class="font-body bg-base text-text">
+<body class="font-body bg-base text-text min-h-screen flex flex-col">
   {{- partial "header.html" . -}}
-  <div id="content" class="bg-mantle">
+  <section id="content" class="bg-mantle flex-grow">
     {{- block "main" . }}{{- end }}
-  </div>
+  </section>
   {{- partial "footer.html" . -}}
 </body>
 

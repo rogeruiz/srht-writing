@@ -1,13 +1,12 @@
 +++
-title = "About"
-image = "images/about.jpg"
-image_description = """
-A view from above showing a hand and a laptop. There's commit message text in
-the top left and right of the photo
+title = "About me."
+description = """
+Hi there! I'm so glad you're here. This page is a good starting point to get to
+know more about me and how to contact me. I look forward to hearing from you.
 """
 url = "about"
 [menu.main]
-name = "About"
+name = "About me"
 weight = 4
 +++
 
