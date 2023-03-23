@@ -16,7 +16,7 @@ tasks:
    expected_sha=$(grep "hugo_${hugo_version}_Linux-64bit.tar.gz" "hugo_${hugo_version}_checksums.txt")
    printf "calculated: %s\n  expected: %s" "$calculated_sha" "$expected_sha"
    [ "$calculated_sha" = "$expected_sha" ]
-   tar xzf "hugo_${hugo_version}_Linux-64bit.tar.gz" --directory=/usr/local/bin/
+   sudo tar xzf "hugo_${hugo_version}_Linux-64bit.tar.gz" --directory=/usr/local/bin/
    hugo env
 - build: |
     cd ${repo}
