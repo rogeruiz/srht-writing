@@ -1,6 +1,7 @@
 image: alpine/latest
 packages:
-  - node
+  - nodejs
+  - npm
   - hugo
 oauth: pages.sr.ht/PAGES:RW
 environment:
