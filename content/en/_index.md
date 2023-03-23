@@ -4,7 +4,7 @@ description = """
 I'm Roger Steve Ruiz. I am an engineer at <a href="https://truss.works"
 class="underline hover:no-underline text-rosewater hover:text-inherit"
 rel="noopener" target="_blank" title="TrussWorks, LLC">TrussWorks</a> building
-user-centered digital services for the Deparatment of Defense.
+user-centered digital services for the Department of Defense.
 """
 +++
 

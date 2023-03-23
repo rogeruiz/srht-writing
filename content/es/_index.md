@@ -1,11 +1,11 @@
 +++
 title = "Hola."
-description = """
-Soy Roger Steve Ruiz y soy un ingeniero en <a href="https://truss.works"
-class="underline hover:no-underline text-rosewater hover:text-inherit"
-rel="noopener" target="_blank" title="TrussWorks, LLC">TrussWorks</a>
-construyendo servicios digitales centrado en las necesidades de usuarios para el
-Departamento de Defensa de los Estados Unidos.
+description = """\
+Soy Roger Steve Ruiz y soy un ingeniero en <a href="https://truss.works"\
+class="underline hover:no-underline text-rosewater hover:text-inherit"\
+rel="noopener" target="_blank" title="TrussWorks, LLC">TrussWorks</a>\
+construyendo servicios digitales centrados en los usuarios para el\
+Departamento de Defensa de los Estados Unidos.\
 """
 +++
 
