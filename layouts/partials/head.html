@@ -1,12 +1,14 @@
 <head>
   <meta charset="utf-8">
-  {{ $title := print .Site.Title " | " .Title }}
-  {{ if .IsHome }}{{ $title = .Site.Title }}{{end}}
+  {{ $title := print .Site.Params.AuthorName " | " .Title }}
+  {{ $description := .Description }}
+  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  {{ if .IsHome }}{{ $description = .Site.Params.Description }}{{ end }}
   <title>{{ $title }}</title>
-  <meta name="description" content="">
+  <meta name="description" content="{{ $description }}">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
 
-  <!-- <meta property="og:title" content=""> -->
+  <meta property="og:title" content="{{ $title }}">
   <!-- <meta property="og:type" content=""> -->
   <!-- <meta property="og:url" content=""> -->
   <!-- <meta property="og:image" content=""> -->

@@ -7,11 +7,13 @@ defaultContentLanguage = 'en-us'
 [languages.es]
 contentDir = "content/es"
 title = 'Roger Steve Ruiz es un ingeniero de software'
+description = "Ayudo a construir servicios digitales centrados en el usuario."
 weight = 2
 
 [languages.en-us]
 contentDir = "content/en"
 title = "Roger Steve Ruiz is a software engineer"
+description = "I help build user-centered digital services."
 weight = 1
 
 [params]
