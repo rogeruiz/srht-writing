@@ -12,3 +12,6 @@ other = "hosted on"
 
 [authorship]
 other = "Content & design by {{ .Author }}"
+
+[og_image]
+other = "/images/social-en.jpg"
