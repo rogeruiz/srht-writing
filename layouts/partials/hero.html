@@ -6,9 +6,18 @@
   {{ $image_container_classes = "hidden" }}
   {{ end }}
 
-  {{ if .Params.company }}
+  {{ if eq .Page.Type "experience" }}
   <h2 class="pt-2 text-2xl md:text-4xl font-sans text-overlay0">
-    at {{ .Params.company }}
+    at {{ .Params.company }} from
+    <span>{{ dateFormat "Jan 2006" .Date }}</span>
+    {{ if .Params.EndDate }}
+    <span>—</span>
+    <span>{{ dateFormat "Jan 2006" .Params.EndDate }}</span>
+    {{ else }}
+    <span>—</span>
+    <span>Present</span>
+    {{- end -}}
+
   </h2>
   <img class="absolute top-0 right-0 w-10 h-10" src="{{ .Params.logo | relURL }}"
     alt="{{ .Params.company }}'s Company logo">
