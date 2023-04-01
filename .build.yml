@@ -19,10 +19,10 @@ tasks:
     [ "$calculated_sha" = "$expected_sha" ]
     sudo tar xzf "hugo_${hugo_version}_Linux-64bit.tar.gz" --directory=/usr/local/bin/
     hugo env
-- build: |
+- install: |
     cd ${repo}
     npm install
-- package: |
+- build: |
     cd ${repo}
     npm run build
     tar -C public -cvz . > ../site.tar.gz
