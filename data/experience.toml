@@ -3,14 +3,14 @@
 [jobs.trussworks]
 name = "TrussWorks"
 title = "L4 Software Engineer"
-dates = "June 2021 - Present"
-length = "Currently working"
+dates = "June 2021 - September 2023"
+length = "2 years 4 months"
 
 [jobs.hashicorp]
 name = "HashiCorp"
 title = "Senior Software Engineer"
 dates = "March 2019 - April 2021"
-length = "2 years 1 month"
+length = "2 years 2 months"
 
 [jobs.cloud_dot_gov]
 name = "cloud.gov"
@@ -22,7 +22,7 @@ length = "3 years"
 name = "GSA / Technology Transformation Service / 18F"
 title = "Facilitator / Innovation Specialist"
 dates = "November 2015 - March 2019"
-length = "3 years 4 months"
+length = "3 years 5 months"
 
 [jobs.ai]
 name = "Alexander Interactive"
@@ -34,16 +34,16 @@ length = "3 months"
 name = "CO+LAB Multimedia, LLC"
 title = "Front-end Engineer"
 dates = "February 2015 - August 2015"
-length = "6 months"
+length = "7 months"
 
 [jobs.cne]
 name = "Conde Nast Entertainment, LLC"
 title = "Software Engineer"
 dates = "November 2014 - February 2015"
-length = "1 year 3 months"
+length = "1 year 4 months"
 
 [jobs.rokkan]
 name = "Rokkan, LLC"
 title = "Senior Technologist / Lead Developer"
 dates = "June 2012 - November 2014"
-length = "2 years 5 months"
+length = "2 years 6 months"
