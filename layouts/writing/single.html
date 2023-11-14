@@ -1,6 +1,11 @@
 {{ define "main" }}
 {{ partial "hero.html" . }}
 <section class="px-10 pb-10 content prose md:prose-lg lg:prose-xl">
+  <div class="prose-em">
+    <a class="text-sapphire" href="{{ .RelPermalink }}">{{ i18n "link_to_post" }}</a>
+    <span>|</span>
+    <span class="text-lavender font-bold">{{ i18n "author_date_prefix" }} {{ dateFormat "January 2nd 2006" .Date }}</span>
+  </div>
   {{ .Content }}
 </section>
 {{ end }}

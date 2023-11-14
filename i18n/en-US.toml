@@ -15,3 +15,9 @@ other = "Content & design by {{ .Author }}"
 
 [og_image]
 other = "/images/social-en.jpg"
+
+[author_date_prefix]
+other = "Written on"
+
+[link_to_post]
+other = "Link to this post"

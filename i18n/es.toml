@@ -15,3 +15,10 @@ other = "Contenido & diseño por {{ .Author }}"
 
 [og_image]
 other = "/images/social-es.jpg"
+
+[author_date_prefix]
+other = "Escrito en"
+
+[link_to_post]
+other = "Enlance pa' esta publicación"
+
