@@ -11,5 +11,5 @@ name= "Escrito"
 weight= 2
 +++
 
-Por ahora, no ay nada aquí. Pero si tienes ideas or algo, mándame un mensaje o
+Por ahora, no ay nada aquí. Pero si tienes ideas por algo, mándame un mensaje o
 email.
