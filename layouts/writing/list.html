@@ -1,6 +1,8 @@
 {{ define "main" }}
 {{ partial "hero.html" . }}
-{{ .Content }}
+<section class="px-10 pb-10 content prose md:prose-lg lg:prose-xl">
+  {{ .Content }}
+</section>
 <section class="px-10 pb-10 md:grid md:gap-6 md:grid-cols-4 lg:grid-cols-6">
   {{ range .Pages }}
   {{ .Render "summary" }}
