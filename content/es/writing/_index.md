@@ -12,4 +12,4 @@ weight= 2
 +++
 
 Por ahora, no ay nada aquí. Pero si tienes ideas por algo, mándame un mensaje o
-email.
+correo electrónico.
