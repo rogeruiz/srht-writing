@@ -6,7 +6,7 @@ description = """
 Este es un espacio pa' aprender mas sobre mi trabajo.
 """
 [menu.main]
-name = "Experiencia"
+name = "Experiencia."
 weight = 3
 +++
 

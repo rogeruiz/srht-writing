@@ -7,7 +7,7 @@ encontrándote en las comunidades de código abierto.
 """
 url = "sobre"
 [menu.main]
-name = "Sobre yo"
+name = "Sobre yo."
 weight = 4
 +++
 

@@ -8,6 +8,6 @@ engineer. If there's any broken links or something doesn't make sense, let me
 know and I'll work on updating it. Thanks for reading.
 """
 [menu.main]
-name= "Writing"
+name= "Writing."
 weight= 2
 +++

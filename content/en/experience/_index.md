@@ -6,7 +6,7 @@ description = """
 Here's a great place to learn more about my work.
 """
 [menu.main]
-name = "Experience"
+name = "Experience."
 weight = 3
 +++
 

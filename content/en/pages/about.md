@@ -7,7 +7,7 @@ seeing you around in the open-source community.
 """
 url = "about"
 [menu.main]
-name = "About me"
+name = "About me."
 weight = 4
 +++
 

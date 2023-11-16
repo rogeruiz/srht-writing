@@ -7,7 +7,7 @@ ensayos fueron escrito primero en ingles. Si algo esta mal or no tiene sentido,
 déjame saber y trabajo en arreglándolo. Gracias por leer.
 """
 [menu.main]
-name= "Escrito"
+name= "Escrito."
 weight= 2
 +++
 
