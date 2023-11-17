@@ -13,11 +13,17 @@ module.exports = {
             'h1, h2, h3, h4, h5, h6': {
               color: 'rgb(var(--ctp-text))',
             },
+            th: {
+              color: 'rgb(var(--ctp-text))',
+            },
+            summary: {
+              cursor: 'pointer',
+            },
             pre: {
               color: 'inherit',
               backgroundColor: 'rgb(var(--ctp-base))',
               border: 0,
-              padding: 0,
+              padding: 10,
               margin: 0,
               code: {
                 color: 'inherit',
