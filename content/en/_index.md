@@ -3,7 +3,7 @@ title = "Hi."
 description = """
 I'm Roger Ruiz. I am software engineer specializing in cloud
 infrastructure, security, and application development. I'm currently
-interviewing for roles at the Staff or Engineering Manager levels.
+looking for roles at the senior, staff, and manager levels.
 """
 +++
 

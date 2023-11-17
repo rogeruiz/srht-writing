@@ -2,8 +2,8 @@
 title = "Hola."
 description = """\
 Soy Roger Ruiz y Soy un ingeniero especializado en infraestructura de
-nube, seguridad, y desarrollo de aplicaciones. Actualmente estoy entrevistando
-para puestos a nivel Staff y Engineering Manager.
+nube, seguridad, y desarrollo de aplicaciones. Actualmente estoy buscando
+posiciones de nivel senior, staff, y manager de ingeniería.
 """
 +++
 
