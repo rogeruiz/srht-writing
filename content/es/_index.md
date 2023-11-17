@@ -1,7 +1,7 @@
 +++
 title = "Hola."
 description = """\
-Soy Roger Ruiz y Soy un ingeniero especializado en infraestructura de
+Me llamó Roger Ruiz y soy un ingeniero especializado en infraestructura de
 nube, seguridad, y desarrollo de aplicaciones. Actualmente estoy buscando
 posiciones de nivel senior, staff, y manager de ingeniería.
 """

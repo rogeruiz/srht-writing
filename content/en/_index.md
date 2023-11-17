@@ -1,7 +1,7 @@
 +++
 title = "Hi."
 description = """
-I'm Roger Ruiz. I am software engineer specializing in cloud
+I'm Roger Ruiz. I am a software engineer specializing in cloud
 infrastructure, security, and application development. I'm currently
 looking for roles at the senior, staff, and manager levels.
 """
