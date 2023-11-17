@@ -10,20 +10,20 @@
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:title" content="{{ $title }}">
-  <meta property="og:type" content="{{ .Page.Type }}">
-  <meta property="og:url" content="{{ .Page.Permalink }}">
+  <meta name="og:title" content="{{ $title }}">
+  <meta name="og:type" content="{{ .Page.Type }}">
+  <meta name="og:url" content="{{ .Page.Permalink }}">
   {{ $social_image := i18n "og_image" }}
-  <meta property="og:image" content="{{ $social_image }}">
-  <meta property="og:locale" content="{{ .Page.Language }}">
+  <meta name="og:image" content="{{ $social_image }}">
+  <meta name="og:locale" content="{{ .Page.Language }}">
 
   <!-- Twitter Meta Tags -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="{{ .Site.BaseURL }}">
-  <meta property="twitter:url" content="{{ .Page.Permalink }}">
-  <meta property="twitter:title" content="{{ $title }}">
-  <meta property="twitter:description" content="{{ $description }}">
-  <meta property="twitter:image" content="{{ $social_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:domain" content="{{ .Site.BaseURL }}">
+  <meta name="twitter:url" content="{{ .Page.Permalink }}">
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $description }}">
+  <meta name="twitter:image" content="{{ $social_image }}">
 
   <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
   <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
