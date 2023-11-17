@@ -14,7 +14,7 @@
   <meta name="og:type" content="{{ .Page.Type }}">
   <meta name="og:url" content="{{ .Page.Permalink }}">
   {{ $social_image := i18n "og_image" }}
-  <meta name="og:image" content="{{ $social_image }}">
+  <meta name="og:image" content="{{ delimit (slice .Site.BaseURL $social_image) "" }}">
   <meta name="og:locale" content="{{ .Page.Language }}">
 
   <!-- Twitter Meta Tags -->
