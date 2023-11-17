@@ -11,6 +11,9 @@ name = "Sobre yo."
 weight = 4
 +++
 
+<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+src="/images/about-3.jpg" />
+
 Soy un ingeniero de software altamente experimentado con una trayectoria
 impresionante que abarca más de 12 años en el campo del desarrollo web. A lo
 largo de mi carrera, he cultivado una profunda experiencia en este panorama
@@ -20,6 +23,9 @@ algo natural para mí, al igual que mi dominio de la teoría del color y la
 tipografía. Con el tiempo, evolucioné sin problemas hasta convertirme en un
 desarrollador web completo, especializándome en front-end, back-end,
 infraestructura y automatización.
+
+<img class="w-80 float-left mr-8" alt="lolcommit selfie of the author"
+src="/images/about-2.jpg" />
 
 Mi misión inquebrantable es infundir un toque humano distintivo en el ámbito
 digital, un recordatorio constante de que, en última instancia, la tecnología
@@ -31,6 +37,9 @@ tanto en el sector público como en el privado, prosperando en los desafíos
 únicos que presenta cada ámbito. Mi corazón siempre se ha inclinado hacia el
 sector público, impulsado por la creencia en su potencial de transformación e
 impacto significativos.
+
+<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+src="/images/about-1.gif" />
 
 Recientemente, alcancé un hito fundamental en mi viaje cuando hice la transición
 a roles de personal + ingeniería. Este nuevo capítulo me ha permitido aprovechar

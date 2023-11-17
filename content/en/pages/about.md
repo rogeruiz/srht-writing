@@ -11,6 +11,9 @@ name = "About me."
 weight = 4
 +++
 
+<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+src="/images/about-1.gif" />
+
 I am a highly experienced software engineer with an impressive track record
 spanning over 12 years in the field of web development. Throughout my career,
 I've cultivated a deep expertise in this ever-evolving digital landscape. My
@@ -19,6 +22,9 @@ concepts like CSS and systems design were second nature to me, much like my
 command of color theory and typography. Over time, I've seamlessly evolved into
 a full-stack web developer, specializing in front-end, back-end, infrastructure,
 and automation.
+
+<img class="w-80 float-left mr-8" alt="lolcommit selfie of the author"
+src="/images/about-2.jpg" />
 
 My unwavering mission is to infuse a distinct human touch into the digital
 realm, a constant reminder that technology ultimately serves people. In a world
@@ -29,6 +35,9 @@ diverse adventures in both the private and public sectors, thriving on the
 unique challenges each realm presents. My heart has always leaned towards the
 public sector, driven by the belief in its potential for significant
 transformation and impact.
+
+<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+src="/images/about-3.jpg" />
 
 Recently, I reached a pivotal milestone in my journey as I transitioned into
 staff+ engineering roles. This new chapter has allowed me to leverage my
