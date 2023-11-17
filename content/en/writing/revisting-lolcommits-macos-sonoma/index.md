@@ -212,7 +212,6 @@ carriage returns.
 
 ```sh
 {
-
 system_profiler \
     SPCameraDataType \
     -json \
