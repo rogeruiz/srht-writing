@@ -14,7 +14,7 @@ other = "hosted on"
 other = "Content & design by {{ .Author }}"
 
 [og_image]
-other = "/images/social-en.jpg"
+other = "images/social-en.jpg"
 
 [author_date_prefix]
 other = "Written on"

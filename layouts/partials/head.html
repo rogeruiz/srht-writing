@@ -23,7 +23,7 @@
   <meta name="twitter:url" content="{{ .Page.Permalink }}">
   <meta name="twitter:title" content="{{ $title }}">
   <meta name="twitter:description" content="{{ $description }}">
-  <meta name="twitter:image" content="{{ $social_image }}">
+  <meta name="twitter:image" content="{{ delimit (slice .Site.BaseURL $social_image) "" }}">
 
   <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
   <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
