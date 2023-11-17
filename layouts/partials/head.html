@@ -2,16 +2,22 @@
   <meta charset="utf-8">
   {{ $title := print .Site.Params.AuthorName " | " .Title }}
   {{ $description := .Description }}
-  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
-  {{ if .IsHome }}{{ $description = .Site.Params.Description }}{{ end }}
+  {{ $type := "website" }}
+  {{ if .IsHome }}
+  {{ $title = .Site.Title }}
+  {{ $description = .Site.Params.Description }}
+  {{ end }}
+  {{ if .IsPage }}
+  {{ $type = "article" }}
+  {{ end }}
   {{ if eq .Page.Type "experience" }}{{ $description = print "@ " .Page.Params.company " | " .Description }}{{end}}
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
 
-  <!-- Facebook Meta Tags -->
+  <!-- OpenGraph Meta Tags -->
   <meta name="title" property="og:title" content="{{ $title }}">
-  <meta property="og:type" content="{{ .Page.Type }}">
+  <meta property="og:type" content="{{ $type }}">
   <meta property="og:url" content="{{ .Page.Permalink }}">
   {{ $social_image := i18n "og_image" }}
   <meta property="og:image" content="{{ delimit (slice .Site.BaseURL $social_image) "" }}">
@@ -24,6 +30,8 @@
   <meta property="twitter:title" content="{{ $title }}">
   <meta property="twitter:description" content="{{ $description }}">
   <meta property="twitter:image" content="{{ delimit (slice .Site.BaseURL $social_image) "" }}">
+
+  <meta name="author" content="{{ .Site.Params.AuthorName }}">
 
   <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
   <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
