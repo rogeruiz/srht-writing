@@ -21,3 +21,6 @@ other = "Written on"
 
 [link_to_post]
 other = "Link to this post"
+
+[draft_post_message]
+other = "This is a draft post"

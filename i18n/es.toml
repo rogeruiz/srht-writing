@@ -22,3 +22,5 @@ other = "Escrito en"
 [link_to_post]
 other = "Enlance pa' esta publicación"
 
+[draft_post_message]
+other = "Esta es un borrador de publicación"
