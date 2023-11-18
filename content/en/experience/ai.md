@@ -14,5 +14,9 @@ left the company.
 
 My skills were specifically requested in order for the agency to fulfill their
 deliverables on-time. I worked in various different client-side build systems
-while also integrating the hundreds of HTML and Twig templates into a Laravel
+while also integrating the hundreds of HTML and Twig templates.
 backend.
+
+This was a contractor-based role. I was contracted for 2 months to help
+with the launch of various front-end projects that integrated with the PHP
+Larvel framework.

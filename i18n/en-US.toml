@@ -24,3 +24,6 @@ other = "Link to this post"
 
 [draft_post_message]
 other = "This is a draft post"
+
+[read_more]
+other = "Read more"

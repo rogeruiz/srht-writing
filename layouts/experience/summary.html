@@ -17,11 +17,11 @@
       <span>Present</span>
       {{- end -}}
     </div>
-    <!-- <div class="pt-2.5"> -->
-    <!--   <a class="px-4 py-1 text-sm text-mauve font-semibold rounded-full border border-mauve hover:text-white hover:bg-mauve hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" -->
-    <!--     href="{{ .RelPermalink }}" title="{{ .Params.description }}"> -->
-    <!--     Read more -->
-    <!--   </a> -->
-    <!-- </div> -->
+    <div class="pt-2.5">
+      <a class="px-4 py-1 text-sm text-mauve font-semibold rounded-full border border-mauve hover:text-white hover:bg-mauve hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+        href="{{ .RelPermalink }}" title="{{ .Params.description }}">
+        {{ i18n "read_more" }}
+      </a>
+    </div>
   </div>
 </div>

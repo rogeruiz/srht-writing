@@ -11,3 +11,5 @@ date = "2021-06-01"
 endDate = "2023-09-20"
 +++
 
+> Más contenido viene pronto. Gracias por su paciencia. Por ahora puedes leer mi
+> experiencia en ingles.

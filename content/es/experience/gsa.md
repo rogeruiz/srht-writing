@@ -10,3 +10,5 @@ proyectos como vote.gov, estándares de diseño web de EE. UU. y otros.
 """
 +++
 
+> Más contenido viene pronto. Gracias por su paciencia. Por ahora puedes leer mi
+> experiencia en ingles.

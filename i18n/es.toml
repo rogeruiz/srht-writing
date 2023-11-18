@@ -24,3 +24,6 @@ other = "Enlance pa' esta publicación"
 
 [draft_post_message]
 other = "Esta es un borrador de publicación"
+
+[read_more]
+other = "Lea más"
