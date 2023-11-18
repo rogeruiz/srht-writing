@@ -1,6 +1,16 @@
 {
   "links": [
     {
+      "name": "exercism",
+      "url": "https://exercism.org/profiles/rogeruiz",
+      "image": "images/social/exercism.svg"
+    },
+    {
+      "name": "codesignal",
+      "url": "https://app.codesignal.com/profile/rogeruiz",
+      "image": "images/social/codesignal.svg"
+    },
+    {
       "name": "mastadon",
       "url": "https://infosec.exchange/@rogeruiz",
       "image": "images/social/mastadon.svg"
@@ -24,6 +34,11 @@
       "name": "linkedin",
       "url": "https://www.linkedin.com/in/rogeruiz",
       "image": "images/social/linkedin.svg"
+    },
+    {
+      "name": "buymeacoffee",
+      "url": "https://www.buymeacoffee.com/rstrz",
+      "image": "images/social/buymeacoffee.svg"
     }
   ]
 }

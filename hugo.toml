@@ -22,6 +22,16 @@ description = "I help build user-centered digital services."
 AuthorName = "Roger Ruiz"
 
 [[params.social]]
+Name = "Exercism"
+BaseURL = "https://exercism.org/"
+Handle = "profiles/rogeruiz"
+
+[[params.social]]
+Name = "CodeSignal"
+BaseURL = "https://app.codesignal.com/"
+Handle = "profiles/rogeruiz"
+
+[[params.social]]
 Name = "Mastadon"
 BaseURL = "https:/infosec.exchange/"
 Handle = "@rogeruiz"
@@ -45,6 +55,11 @@ Handle = "@rogeruiz"
 Name = "LinkedIn"
 BaseURL = "https://linkedin.com/"
 Handle = "in/rogeruiz"
+
+[[params.social]]
+Name = "BuyMeACoffee"
+BaseURL = "https://www.buymeacoffee.com/"
+Handle = "rstrz"
 
 [module]
 [module.hugoVersion]
