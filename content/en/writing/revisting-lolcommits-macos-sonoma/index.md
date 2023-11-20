@@ -7,6 +7,7 @@ setup to a halt! Thankfully troubleshooting and Zsh came to the rescue. But
 while I solved the issue I was having, I did start to question whether I should
 keep using this tool while Apple fixed their CLI tools.
 """
+slug = "revisting-lolcommits-macos-sonoma"
 +++
 
 > `tl;dr`
@@ -17,7 +18,7 @@ keep using this tool while Apple fixed their CLI tools.
 > find a solution using Zsh, consolidated output `{...}`, & `std*` redirection.
 > Here's the commit history for this.
 >
-> [➡️  Commit for solving this particular headache](https://git.sr.ht/~rogeruiz/.files/commit/fbd4fadecc2b3de101829e7109ecab5f5f5ecc05).
+> [➡️ Commit for solving this particular headache](https://git.sr.ht/~rogeruiz/.files/commit/fbd4fadecc2b3de101829e7109ecab5f5f5ecc05).
 
 Whenever we upgrade software we run risks of custom tooling breaking. Especially
 tooling that touches obscure APIs. _While not upgrading the software is the best
@@ -33,7 +34,7 @@ upgrading to macOS Sonoma broke my `post-commit` hook in Git.
 
 If you want to learn more about `lolcommits`, check out their website.
 
-[➡️  lolcommits: selfies for software developers](https://lolcommits.github.io)
+[➡️ lolcommits: selfies for software developers](https://lolcommits.github.io)
 
 I've been leveraging this tool to take selfies for quite a long time. When I
 went fully remote in 2015, I created a little Tumblr site to capture all these
@@ -41,7 +42,7 @@ automatically and save them for the world to see.
 
 <img class="w-96 float-right ml-10" alt="An animated Gif of the author committing code." src="./images/tumblr_040a79e140cf9c7e91c9ea5fbf0c8f4d_96b3ad3a_640.gif" />
 
-[➡️  roger is working](https://lol.rogeruiz.com/)
+[➡️ roger is working](https://lol.rogeruiz.com/)
 
 For many many years this setup was fine. That is until I upgraded to macOS
 Sonoma and found that the tooling that I had written to find what camera was
@@ -120,6 +121,7 @@ AUTHORS
 
 Darwin                                                   June 30, 2003                                                   Darwin
 ```
+
 </details>
 
 If you opened the details above, you can notice that the author is Apple. A bug
@@ -189,13 +191,13 @@ were running under the hood. Because of this I really needed to consider a
 number of options, but ultimately went with the idea of just throwing all the
 output of the command over to `/dev/null`.
 
-| Plan | Likelihood | Solution |
-| ---- | ---------- | -------- |
-| A | Not likely | Removing `lolcommit` from my `post-commit` workflow |
-| B | Not likely | Hard-code the camera to `HD Pro Webcam C920` |
-| C | Not likely | Wait for Apple to fix things? |
-| D | Chosen | Figure out how to "trap" or redirect the output I don't want and capture the output I need |
-| E | Not likely | Do nothing and suffer the deprecation warning until Plan C plays out |
+| Plan | Likelihood | Solution                                                                                   |
+| ---- | ---------- | ------------------------------------------------------------------------------------------ |
+| A    | Not likely | Removing `lolcommit` from my `post-commit` workflow                                        |
+| B    | Not likely | Hard-code the camera to `HD Pro Webcam C920`                                               |
+| C    | Not likely | Wait for Apple to fix things?                                                              |
+| D    | Chosen     | Figure out how to "trap" or redirect the output I don't want and capture the output I need |
+| E    | Not likely | Do nothing and suffer the deprecation warning until Plan C plays out                       |
 
 #### My reasoning for going with Plan D
 
