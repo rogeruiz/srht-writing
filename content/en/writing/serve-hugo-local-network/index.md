@@ -7,6 +7,7 @@ your site. This is especially true with mobile-first design & starting
 a Hugo project from scratch. This neat feature of Hugo will help you do this
 reliably across development environments.
 """
+slug = "serve-hugo-local-network"
 +++
 
 > `tl;dr`
@@ -20,7 +21,7 @@ reliably across development environments.
 > With one simple command you can do this like this:
 >
 > `hugo serve --bind $(ipconfig getifaddr en0) --baseURL http://$(ipconfig
-> getifaddr en0)/`
+getifaddr en0)/`
 
 When you're using Hugo to serve your site locally, you can bind and add a base
 URL flag to the serve function which will allow you to view your site while
