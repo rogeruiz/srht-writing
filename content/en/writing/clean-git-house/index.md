@@ -5,6 +5,7 @@ description = """
 Learn how to delete your local Git branches with a full breakdown of how to do
 it from manual to fully automated step-by-step.
 """
+slug = "clean-git-house"
 +++
 
 > This guide is about deleting branches in Git. There's a few ways I break down
@@ -57,7 +58,6 @@ repository.
 
 On the command-line, you can delete branches by pushing nothing to the branch on
 your repository.
-
 
 ```bash {hl_lines=[3,4]}
 
