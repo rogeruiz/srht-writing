@@ -6,6 +6,7 @@ macOS-based Night mode supported scripting to update various confiugrations
 across different development environment tools including, Alacritty, Tmux,
 Neovim, Starship, and Bat.
 """
+slug = "appleinterfacestyle--tui"
 +++
 
 > `tl;dr`
@@ -33,9 +34,7 @@ Here's an excerpt from the original authors.
 > unknown, program. Don't clutter output with extraneous information. Avoid
 > stringently columnar or binary input formats. Don't insist on interactive
 > input.
-> <br />
-> <br />
-> *from Ken Thompson and Dennis Ritchie, key proponents of the Unix philosophy*.
+> <br /> > <br /> > _from Ken Thompson and Dennis Ritchie, key proponents of the Unix philosophy_.
 
 I like to reference the Unix philosophy a lot. I recommend reading it every now
 and then. It's historic information and the perspective gained from rereading it
@@ -86,9 +85,7 @@ interface isn't text-first. It's visual first. Which is great if that's what
 you're in to.
 
 > Write programs to handle text streams, because that is a universal interface.
-> <br />
-> <br />
-> *by Peter H. Salus in **A Quarter-Century of Unix** (1994).*
+> <br /> > <br /> > _by Peter H. Salus in **A Quarter-Century of Unix** (1994)._
 
 ### I had to stop using iTerm2 and start using Alacritty
 
@@ -105,7 +102,7 @@ the terminal on save.
 <img class="w-24 md:w-36 float-right ml-6" src="./images/alacritty-logo.png" alt="Alacritty
 logo" />
 
-[➡️  Checkout my Alacritty configuration](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/alacritty/alacritty.yml).
+[➡️ Checkout my Alacritty configuration](https://git.sr.ht/~rogeruiz/.files/tree/legacy/item/alacritty/alacritty.yml).
 
 The Alacritty project has stated publicly that they're looking to recreate the
 terminal emulation experience and nothing else. That's okay for me as I use Tmux
@@ -114,7 +111,7 @@ your options. If Alacritty interests you then please keep reading.
 
 ## Next up, I said what I sed
 
-[➡️  The stream editor `sed`](https://manpages.org/sed).
+[➡️ The stream editor `sed`](https://manpages.org/sed).
 
 This little Unix program is the best. I love `sed` and that might be because I
 learned regular expressions by learning Pearl and finding and replacing text
@@ -177,10 +174,9 @@ the APIs between various tooling.
 > The notion of "intricate and beautiful complexities" is almost an oxymoron.
 > Unix programmers vie with each other for "simple and beautiful" honors — a
 > point that's implicit in these rules, but is well worth making overt.
-> <br />
-> <br />
-> *by Doug McIlroy in Eric Steven Raymond's book **The Art of Unix
-> Programming***.
+> <br /> > <br />
+> \*by Doug McIlroy in Eric Steven Raymond's book **The Art of Unix
+> Programming\***.
 
 ## Let's make sure that the code runs on startup
 
@@ -198,7 +194,7 @@ preference in the Menu Bar.
 I stumbled across the helpful project on GitHub called `plistwatch` which emits
 any changes to PLIST files on your system.
 
-[ ➡️  View the source code for `catilac/plistwatch` on GitHub](https://github.com/catilac/plistwatch).
+[ ➡️ View the source code for `catilac/plistwatch` on GitHub](https://github.com/catilac/plistwatch).
 
 With this tool, I was able to see what property list (PLIST) value was getting
 set whenever my Mac transitioned between Light and Dark modes. The global value
