@@ -6,6 +6,7 @@ Manage your Gandi DNS records via Terraform with open source tools and free
 commercial products. Also, setup your repository for better documentation
 writing with Vale.
 """
+slug = "using-the-new-gandi-provider"
 +++
 
 > `tl;dr`
@@ -22,16 +23,16 @@ can start managing my DNS records using Terraform. I'd done this at 18F back in
 my time there and now that my DNS registrar has a Terraform provider I'm aware
 of, I decided to give it a shot.
 
-[➡️  Checkout the Gandi Terraform provider on the Terraform Registry](https://registry.terraform.io/providers/go-gandi/gandi/2.2.0).
+[➡️ Checkout the Gandi Terraform provider on the Terraform Registry](https://registry.terraform.io/providers/go-gandi/gandi/2.2.0).
 
 I've used Gandi for a long time as my personal choice in DNS providers. And if
 you happen to use Gandi as your domain registrar, then this should help you dive
 right in. And if you're not that's okay too. You might learn something from
 this, but I can't promise anything.
 
-[➡️  Learn more about Gandi](https://www.gandi.net/).
+[➡️ Learn more about Gandi](https://www.gandi.net/).
 
-[➡️  The blog post on marco.org about domain registrars that introduced me to Gandi](https://marco.org/2011/04/14/why-is-it-so-hard-to-be-a-good-registrar)
+[➡️ The blog post on marco.org about domain registrars that introduced me to Gandi](https://marco.org/2011/04/14/why-is-it-so-hard-to-be-a-good-registrar)
 
 ## Get the TF into version control
 
@@ -40,7 +41,7 @@ the code. I use sourcehut for my open source development now. I've made the
 switch about a year ago. I love it. If you haven't checked out sourcehut yet, I
 recommend it.
 
-[➡️  Checkout sourcehut](https://sr.ht/).
+[➡️ Checkout sourcehut](https://sr.ht/).
 
 I went ahead and started a repository from scratch with the intentions of
 writing Terraform code. The initial scaffolding here covers a license,
@@ -48,7 +49,7 @@ documentation, tooling around documentation, and the bare Terraform that's
 required to exist to get started using the provider. It won't do anything, but
 it's the foundation you need.
 
-[➡️  Here's the commits so far](https://git.sr.ht/~rogeruiz/dns/log?from=1b314fe5ccf1d3e096b5f96c29406e8235d18e10#log-1b314fe5ccf1d3e096b5f96c29406e8235d18e10)
+[➡️ Here's the commits so far](https://git.sr.ht/~rogeruiz/dns/log?from=1b314fe5ccf1d3e096b5f96c29406e8235d18e10#log-1b314fe5ccf1d3e096b5f96c29406e8235d18e10)
 
 ### The documentation is important
 
@@ -57,7 +58,7 @@ spelling, repetition, and sentence structure don't come easy to me. I like to
 have the computer suggest things based on rules I find or can even write myself.
 I like to use Vale to make sure that what I write makes sense to the reader.
 
-[➡️  Checkout the vale command-line tool](https://vale.sh/).
+[➡️ Checkout the vale command-line tool](https://vale.sh/).
 
 ```sh
 
@@ -147,7 +148,7 @@ You can still plan and work with your variables locally, but you can store your
 state file in your private account for free. There's more information about what
 you can do below.
 
-[➡️  Checkout the official documentation on Terraform Cloud Free Organizations](https://developer.hashicorp.com/terraform/cloud-docs/overview#free-organizations)
+[➡️ Checkout the official documentation on Terraform Cloud Free Organizations](https://developer.hashicorp.com/terraform/cloud-docs/overview#free-organizations)
 
 The following code is a breakdown of the least amount of work I did before
 getting started with the Terraform CLI and logging into my new Terraform Cloud
@@ -242,6 +243,7 @@ index 0000000..6ef37dc
 --
 2.34.5
 ```
+
 </details>
 
 Make sure you login to Terraform using the CLI after creating your Terraform
@@ -250,7 +252,7 @@ in, you can start using Terraform the way you expect to with a backend
 configuration such as AWS S3, but if you opt-in to remote execution you get a
 nice little web URL to track your plans and applies in the Terraform Cloud UI.
 
-[➡️  Learn more about Backend configuration for Terraform](https://developer.hashicorp.com/terraform/language/settings/backends/configuration)
+[➡️ Learn more about Backend configuration for Terraform](https://developer.hashicorp.com/terraform/language/settings/backends/configuration)
 
 ```bash
 
@@ -276,7 +278,8 @@ terraform {
   }
 }
 ```
-[➡️  Sign up for Terraform Cloud](https://app.terraform.io/public/signup/account)
+
+[➡️ Sign up for Terraform Cloud](https://app.terraform.io/public/signup/account)
 
 ### It doesn't just have to be the state
 
@@ -362,7 +365,7 @@ Usage: terraform [global options] import [options] ADDR ID
 # shortened for brevity
 ```
 
-[➡️  The Terraform import command](https://developer.hashicorp.com/terraform/cli/commands/import)
+[➡️ The Terraform import command](https://developer.hashicorp.com/terraform/cli/commands/import)
 
 When importing infrastructure via the Terraform CLI, you need to target the
 import with both an address and an identity. The address part is each to
@@ -388,7 +391,7 @@ terraform import \
 
 As I said, the code for this is pretty straight forward to read.
 
-[➡️  This is the line where the ID gets set to the name that's passed in](https://github.com/go-gandi/terraform-provider-gandi/blob/ed7469caaf82f873f82867e73aa179063f5ac23f/gandi/resource_livedns_domain.go#L57).
+[➡️ This is the line where the ID gets set to the name that's passed in](https://github.com/go-gandi/terraform-provider-gandi/blob/ed7469caaf82f873f82867e73aa179063f5ac23f/gandi/resource_livedns_domain.go#L57).
 
 If you have more questions on this, you can get some answers from the official
 documentation soon. For now, go explore the codebase to see what the
@@ -404,7 +407,7 @@ Known issues around the Gandi API and the Terraform provider include setting a
 long value for `TXT` records. The solution seems to include escaped quotes in
 your DNS record values to prevent the Gandi API from splitting up the values.
 
-[➡️  Remember to include escaped quotes in your TXT records to avoid running into this bug](https://github.com/go-gandi/terraform-provider-gandi/issues/40).
+[➡️ Remember to include escaped quotes in your TXT records to avoid running into this bug](https://github.com/go-gandi/terraform-provider-gandi/issues/40).
 
 I had minimal issues with the provider and I'm excited to manage more of my
 Gandi infrastructure with Terraform going forward. Thanks for making it this far
