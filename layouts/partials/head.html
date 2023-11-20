@@ -20,8 +20,14 @@
   <meta property="og:type" content="{{ $type }}">
   <meta property="og:url" content="{{ .Page.Permalink }}">
   {{ $social_image := i18n "og_image" }}
-  <meta property="og:image" content="{{ delimit (slice .Site.BaseURL $social_image) "" }}">
+  {{ $social_article_image := ( printf "%simages/social-%s_final.jpg" .Page.Permalink .Page.Slug ) }}
   <meta property="og:locale" content="{{ .Page.Language }}">
+
+  {{ if .Page.Slug }}
+  <meta property="example" content="{{ $social_article_image }}">
+  {{ else }}
+  <meta property="og:image" content="{{ delimit ( slice .Site.BaseURL $social_image ) "" }}">
+  {{ end }}
 
   <!-- Twitter Meta Tags -->
   <meta property="twitter:card" content="summary_large_image">
