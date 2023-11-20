@@ -24,7 +24,7 @@
   <meta property="og:locale" content="{{ .Page.Language }}">
 
   {{ if .Page.Slug }}
-  <meta property="example" content="{{ $social_article_image }}">
+  <meta property="og:image" content="{{ $social_article_image }}">
   {{ else }}
   <meta property="og:image" content="{{ delimit ( slice .Site.BaseURL $social_image ) "" }}">
   {{ end }}
