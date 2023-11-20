@@ -20,7 +20,7 @@
   <meta property="og:type" content="{{ $type }}">
   <meta property="og:url" content="{{ .Page.Permalink }}">
   {{ $social_image := i18n "og_image" }}
-  {{ $social_article_image := ( printf "%simages/social-%s_final.jpg" .Page.Permalink .Page.Slug ) }}
+  {{ $social_article_image := ( printf "%simages/social-%s.jpg" .Page.Permalink .Page.Slug ) }}
   <meta property="og:locale" content="{{ .Page.Language }}">
 
   {{ if .Page.Slug }}
