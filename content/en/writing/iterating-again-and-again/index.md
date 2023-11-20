@@ -6,6 +6,7 @@ Let's iterate across files using ls and grep to copy or move files from a parent
 directory into a bunch of sibling directories related to the file. We can do
 this in an automated way using the commands mentioned above.
 """
+slug = "iterating-again-and-again"
 +++
 
 I sometimes find myself having to iterate across a bunch of directories.
