@@ -2,8 +2,8 @@
 title = "Senior technologist"
 company = "Rokkan"
 logo = "images/experience/rokkan.jpg"
-date = "2012-06-01"
-endDate = "2014-11-01"
+date = "2011-06-01"
+endDate = "2013-11-01"
 +++
 
 This was my first job in tech. I worked on creating HTML templates to be
