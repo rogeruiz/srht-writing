@@ -5,15 +5,15 @@ description = """
 This is a review of the decisions that went into my Prompt String 1 while also
 discussing some customized fonts using NerdFonts and iTerm2.
 """
+slug = "smooth-terminal"
 +++
 
 ## Getting started
 
 > This guide is more of a review of the decisions that went into my [`Prompt
-> String 1` (PS1)][ps1-faq]. Your mileage may vary, but remember to have fun and
+String 1` (PS1)][ps1-faq]. Your mileage may vary, but remember to have fun and
 > create the PS1 you want to see in the world.
-> <br/>
-> [Skip ahead](#tldr)
+> <br/> > [Skip ahead](#tldr)
 
 [ps1-faq]: http://www.linuxnix.com/linuxunix-shell-ps1-prompt-explained-in-detail/
 
