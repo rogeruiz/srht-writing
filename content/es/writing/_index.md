@@ -1,5 +1,6 @@
 +++
 title = "Escrito."
+url = "escrito"
 date = 2019-02-24
 description= """
 Abajo se muestra una colección de ensayos que yo a escribido. Algunos de los
