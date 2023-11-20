@@ -5,6 +5,7 @@ A short essay about humanizing computer work after going fully-remote in 2015
 and sharing my work-life online using social media.
 """
 date = 2016-05-13
+slug = "humanizing-computer-work"
 +++
 
 ### Roger is working on a computer all the time
@@ -84,5 +85,5 @@ about how to set it up][setting-up-lolcommits].
 [mu-hack-and-tell]: http://www.meetup.com/hack-and-tell/ "Meetup's Hack&&Tell"
 [roger-is-working]: http://rogerisworking.tumblr.com/ "Roger Is Working"
 [eighteenf]: https://18f.gsa.gov/ "18F Homepage"
-[setting-up-lolcommits]: {{< relref "writing/setting-up-lolcommits" >}} "Setting up lolcommits guide"
 
+[setting-up-lolcommits]: {{< relref "writing/setting-up-lolcommits" >}} "Setting up lolcommits guide"
