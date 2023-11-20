@@ -5,6 +5,7 @@ description= """
 Setting up lolcommits for local selfies from Git commits you make on your
 machine using your camera. This is geared at Mac OS X users.
 """
+slug = "setting-up-lolcommits"
 +++
 
 > `tl;dr`
@@ -13,7 +14,7 @@ machine using your camera. This is geared at Mac OS X users.
 > But, basically I walk you through how to setup `lolcommits` up for yourself
 > locally and automatically post captures to Tumblr.
 >
-> [➡️  Check out my **rogerisworking** Tumblr](https://lol.rogeruiz.com/)
+> [➡️ Check out my **rogerisworking** Tumblr](https://lol.rogeruiz.com/)
 >
 > [Check out the latest source for `post-commit` script](https://git.sr.ht/~rogeruiz/.files/tree/main/item/dot_git_template/hooks/executable_post-commit)
 
@@ -49,6 +50,7 @@ customizing it. I personally use it to post everything I commit as a photo to a
 aspects of working with computers][humanizing-computer-work].
 
 [roger-is-working]: http://rogerisworking.tumblr.com/ "Roger Is Working"
+
 [humanizing-computer-work]: {{< relref "writing/humanizing-computer-work" >}} "Humanizing computer work"
 
 Feel free to skip around to any of the following sections.
@@ -63,7 +65,7 @@ Feel free to skip around to any of the following sections.
 ### Initializing teh lulz
 
 To get started you can run `lolcommits --enable` within any git repository you'd
-like. This does a few things which __are pretty destructive__ if you use the
+like. This does a few things which **are pretty destructive** if you use the
 `post-commit` hook. So make sure you back it up.
 
 ```sh
