@@ -7,6 +7,7 @@ my development environment over to Neovim. This meant learning about Lua and
 writing Lua configuration files for Neovim. My journey was cathartic and took
 less than a week.
 """
+slug = "switching-to-neovim--lua"
 +++
 
 ## Long time Vim user migrates to Neovim
@@ -76,7 +77,7 @@ This isn't really a bad thing though. I just don't think that the path I took of
 configuring Neovim is for everyone. There are a lot of super helpful guides on
 how to set this stuff up and a lot of them are opinionated enough to be useful
 for most use-cases out of the box. The issues I ran into are unique to me and
-  don't really speak to the authors of the plugins I am using.
+don't really speak to the authors of the plugins I am using.
 
 If you're the kind of person who is doesn't yet have a lot of muscle memory
 around how you will work with Neovim, starting from scratch will be super
