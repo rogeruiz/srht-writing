@@ -11,7 +11,7 @@ name = "Sobre yo."
 weight = 4
 +++
 
-<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+<img class="md:w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
 src="/images/about-3.jpg" />
 
 Soy un ingeniero de software altamente experimentado con una trayectoria
@@ -24,7 +24,7 @@ tipografía. Con el tiempo, evolucioné sin problemas hasta convertirme en un
 desarrollador web completo, especializándome en front-end, back-end,
 infraestructura y automatización.
 
-<img class="w-80 float-left mr-8" alt="lolcommit selfie of the author"
+<img class="md:w-80 md:float-left md:mr-8" alt="lolcommit selfie of the author"
 src="/images/about-2.jpg" />
 
 Mi misión inquebrantable es infundir un toque humano distintivo en el ámbito
@@ -38,7 +38,7 @@ tanto en el sector público como en el privado, prosperando en los desafíos
 sector público, impulsado por la creencia en su potencial de transformación e
 impacto significativos.
 
-<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+<img class="md:w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
 src="/images/about-1.gif" />
 
 Recientemente, alcancé un hito fundamental en mi viaje cuando hice la transición

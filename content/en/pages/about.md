@@ -11,7 +11,7 @@ name = "About me."
 weight = 4
 +++
 
-<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+<img class="md:w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
 src="/images/about-1.gif" />
 
 I am a highly experienced software engineer with an impressive track record
@@ -23,7 +23,7 @@ command of color theory and typography. Over time, I've seamlessly evolved into
 a full-stack web developer, specializing in front-end, back-end, infrastructure,
 and automation.
 
-<img class="w-80 float-left mr-8" alt="lolcommit selfie of the author"
+<img class="md:w-80 md:float-left md:mr-8" alt="lolcommit selfie of the author"
 src="/images/about-2.jpg" />
 
 My unwavering mission is to infuse a distinct human touch into the digital
@@ -36,7 +36,7 @@ unique challenges each realm presents. My heart has always leaned towards the
 public sector, driven by the belief in its potential for significant
 transformation and impact.
 
-<img class="w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
+<img class="md:w-80 md:float-right md:pl-6" alt="lolcommit selfie of the author"
 src="/images/about-3.jpg" />
 
 Recently, I reached a pivotal milestone in my journey as I transitioned into
