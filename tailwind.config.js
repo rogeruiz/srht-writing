@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ["./content/**/*.{html,js,md}", "./layouts/**/*.{html,js}"],
+  content: ['./content/**/*.{html,js,md}', './layouts/**/*.{html,js}'],
   theme: {
     extend: {
       typography: (/* theme */) => ({
@@ -30,7 +30,7 @@ module.exports = {
                 border: 0,
                 padding: 0,
                 margin: 0,
-              }
+              },
             },
             blockquote: {
               borderLeftColor: 'rgb(var(--ctp-mauve))',
