@@ -24,10 +24,10 @@ src="./images/tumblr_okt6kmINP21v08lzjo1_400.gif"
 alt="lolcommit - 37fb0c641ec - Update URL structure for registration info"
 title="That face says all of the feelings with none of the time." />
 
-I had found out about `lolcommits` from the [Meetup's Hack & Tell]
-[mu-hack-and-tell] in NYC back in 2011. I had been mesmerized by how simple the
-concept of tagging your likeness to a commit would make for better signing of
-commits than a GPG key. It made what I do on the computer more approachable.
+I had found out about `lolcommits` from the [Meetup's Hack &
+Tell][mu-hack-and-tell] in NYC back in 2011. I had been mesmerized by how simple
+the concept of tagging your likeness to a commit would make for better signing
+of commits than a GPG key. It made what I do on the computer more approachable.
 
 I would tell friends that I hacked on something over the weekend, and didn't
 have anything to show for it. It was either a script or a tweak to my system
@@ -35,7 +35,7 @@ that I couldn't really show off. But showing people a series of pictures taken
 while I was working on said thing was always easier to show off. More human too.
 
 So I continued from job to job and project to project collecting
-`.lolcommit/*.jpg` along the way.
+`.lolcommit/*.[jpg|gif]` along the way.
 
 <div class="md:flex">
     <img
@@ -83,7 +83,7 @@ that hadn't always been available. [So I installed the Tumblr one and wrote
 about how to set it up][setting-up-lolcommits].
 
 [mu-hack-and-tell]: http://www.meetup.com/hack-and-tell/ "Meetup's Hack&&Tell"
-[roger-is-working]: http://rogerisworking.tumblr.com/ "Roger Is Working"
-[eighteenf]: https://18f.gsa.gov/ "18F Homepage"
+[roger-is-working]: http://rogerisworking.tumblr.com/ 'Roger Is Working'
+[eighteenf]: https://18f.gsa.gov/ '18F Homepage'
 
 [setting-up-lolcommits]: {{< relref "writing/setting-up-lolcommits" >}} "Setting up lolcommits guide"
