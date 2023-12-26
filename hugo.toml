@@ -6,20 +6,20 @@ defaultContentLanguage = 'en-us'
 
 [languages.es]
 contentDir = "content/es"
-title = 'Roger Ruiz es un ingeniero de software.'
+title = 'Roger Steve Ruiz es un ingeniero de software.'
 weight = 2
 [languages.es.params]
 description = "Ayudo a construir servicios digitales centrados en el usuario."
 
 [languages.en-us]
 contentDir = "content/en"
-title = "Roger Ruiz is a software engineer."
+title = "Roger Steve Ruiz is a software engineer."
 weight = 1
 [languages.en-us.params]
 description = "I help build user-centered digital services."
 
 [params]
-AuthorName = "Roger Ruiz"
+AuthorName = "Roger Steve Ruiz"
 
 [[params.social]]
 Name = "Exercism"

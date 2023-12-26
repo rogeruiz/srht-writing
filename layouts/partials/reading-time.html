@@ -1,0 +1,17 @@
+{{ if .IsPage }}
+{{ if eq .Page.Type "writing" }}
+{{ if gt .ReadingTime 1 }}
+{{ .Scratch.Set "timeUnit" "mins" }}
+{{ else }}
+{{ .Scratch.Set "timeUnit" "min" }}
+{{ end }}
+<div class="mb-2 text-overlay0">
+  <div>
+    <span class="inline-block font-display italic font-light">Reading time:</span>
+    <span class="inline-block text-subtext0 font-body font-bold uppercase">
+      {{ .ReadingTime }} {{ .Scratch.Get "timeUnit" }}
+    </span>
+  </div>
+</div>
+{{ end }}
+{{ end }}

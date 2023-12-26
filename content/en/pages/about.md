@@ -1,10 +1,6 @@
 +++
 title = "About me."
-description = """
-Hi there! I'm so glad you're here. This page is a good starting point to get to
-know more about me and how to contact me. I look forward to hearing from you or
-seeing you around in the open-source community.
-"""
+description = """__Hello!__ I'm excited that you're here to learn more about me."""
 url = "about"
 [menu.main]
 name = "About me."

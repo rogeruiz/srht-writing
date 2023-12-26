@@ -11,6 +11,7 @@ module.exports = {
           css: {
             color: 'rgb(var(--ctp-text))',
             'h1, h2, h3, h4, h5, h6': {
+              fontFamily: 'Playfair',
               color: 'rgb(var(--ctp-text))',
             },
             th: {
@@ -42,13 +43,21 @@ module.exports = {
               },
             },
             'blockquote code, code': {
-              color: 'rgb(var(--ctp-blue))',
+              color: 'rgb(var(--ctp-mauve))',
             },
             strong: {
-              color: 'rgb(var(--ctp-overlay1))',
+              color: 'rgb(var(--ctp-subtext0))',
+              fontWeight: '900',
+            },
+            '.content strong': {
+              textDecorationColor: 'rgb(var(--ctp-subtext2))',
+              textDecorationLine: 'underline',
+              textDecorationStyle: 'wavy',
+              textDecorationThickness: '1px',
+              textUnderlineOffset: '2px',
             },
             a: {
-              color: 'rgb(var(--ctp-rosewater))',
+              color: 'rgb(var(--ctp-blue))',
               textDecoration: 'underline',
               '&:hover': {
                 textDecoration: 'none',
@@ -59,9 +68,8 @@ module.exports = {
         },
       }),
       fontFamily: {
-        serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
-        sans: ['Lato', ...defaultTheme.fontFamily.sans],
-        body: ['Merriweather', ...defaultTheme.fontFamily.serif],
+        display: ['Playfair', ...defaultTheme.fontFamily.sans],
+        body: ['Quattrocento', ...defaultTheme.fontFamily.serif],
         mono: ['mplus-2m-nerd-font-patched', ...defaultTheme.fontFamily.mono],
       },
     },

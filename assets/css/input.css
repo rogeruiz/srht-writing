@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer components {
-/**
+
+  /**
  * La clase `.highlight` viene de la aplicación _highlight.js_.
  * <https://github.com/highlightjs/highlight.js>
  *
@@ -15,5 +16,13 @@
   .highlight .chroma .line.hl,
   .highlight .chroma .hl {
     @apply bg-mantle w-max;
+  }
+
+  .rsr-link {
+    @apply no-underline text-blue hover:text-rosewater decoration-1 decoration-wavy hover:underline underline-offset-4;
+  }
+
+  .rsr-link-active {
+    @apply text-mauve underline decoration-1 decoration-rosewater decoration-wavy underline-offset-4;
   }
 }

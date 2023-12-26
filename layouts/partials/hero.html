@@ -1,13 +1,17 @@
 {{ $image_container_classes := "" }}
 
-<section class="relative bg-surface0 text-subtext0 p-10 mb-10">
-  <h1 class="text-6xl md:text-8xl font-sans font-bold text-blue">{{ .Title }}</h1>
+<section class="relative bg-mantle text-subtext0 p-10 mb-10">
+  {{ partial "reading-time.html" . }}
+
+  <h1 class="text-5xl md:text-8xl font-display font-black text-mauve">
+    {{ .Title }}
+  </h1>
   {{ if eq "jobs" .Type }}
   {{ $image_container_classes = "hidden" }}
   {{ end }}
 
   {{ if eq .Page.Type "experience" }}
-  <h2 class="pt-2 text-2xl md:text-4xl font-sans text-overlay0">
+  <h2 class="pt-4 text-xl md:text-3xl font-body font-extrabold italic text-overlay0">
     at {{ .Params.company }} from
     <span>{{ dateFormat "Jan 2006" .Date }}</span>
     {{ if .Params.EndDate }}
@@ -19,13 +23,15 @@
     {{- end -}}
 
   </h2>
-  <img class="absolute top-0 right-0 w-10 h-10 md:w-28 md:h-28" src="{{ .Params.logo | relURL }}"
+  <img class="absolute top-0 right-0 w-10 h-10 md:w-14 md:h-14" src="{{ .Params.logo | relURL }}"
     alt="{{ .Params.company }}'s Company logo">
   {{ end }}
 
+  {{ partial "post-detail.html" . }}
+
   <section class="pt-5 flex flex-row">
-    <p class="text-lg md:text-xl lg:text-2xl font-sans font-light text-subtext1 pb-5 md:w-5/6 xlg:w-1/2">
-      {{ .Description | safeHTML }}
+    <p class="text-xl md:text-3xl font-display font-extralight italic prose text-overlay1 lg:w-1/2 ">
+      {{ .Description | markdownify }}
     </p>
     {{ if .Params.image }}
     {{- $alt_text := default "hero image" (.Params.image_description) -}}
@@ -34,4 +40,5 @@
     </div>
     {{ end }}
   </section>
+
 </section>

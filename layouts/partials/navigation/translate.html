@@ -1,7 +1,13 @@
+{{- $bgColor := "bg-surface2" -}}
+{{- $borderColor := "border-surface2" -}}
+
 {{ if $.Site.IsMultiLingual }}
 {{ range .Translations }}
-<span>{{ i18n "nav" }}</span>
-<a class="hover:no-underline underline text-rosewater hover:text-inherit" href="{{ .Permalink }}" title="{{ .Title }}">
+<span class="self-center font-display italic block {{ $bgColor }} text-text w-28 rounded-t">
+  {{ i18n "nav" }}
+</span>
+<a class="self-center block font-body font-light border {{ $borderColor }} rounded-b text-lg rsr-link w-28"
+  href="{{ .Permalink }}" title="{{ .Title }}">
   {{ i18n "nav_to_language" }}
 </a>
 {{ end }}

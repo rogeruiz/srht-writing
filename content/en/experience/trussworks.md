@@ -1,11 +1,9 @@
 +++
 title = "Staff Engineer IV"
 logo = "images/experience/trussworks.jpg"
-description = """
-Contributing to DoD USTC code with IAE II and IASAE II certification on
-MilMove and working collaboratively across a multi-disciplinary consultancy
-to help it grow in vision and size. Attained CompTIA CASP+ during on-boarding.
-"""
+description = """**IAT II** & **IASAE II** certified contractor for the
+**Department of Defense** for MilMove while collaborating across a
+multi-disciplinary consultancy to help it grow in vision & size."""
 company = "TrussWorks"
 date = "2021-06-01"
 endDate = "2023-09-20"

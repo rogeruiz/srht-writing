@@ -1,22 +1,20 @@
-<header class="text-overlay0 py-5 px-10">
-  <section class="w-auto flex flex-row justify-between items-end">
-    <a class="text-xl text-rosewater underline hover:text-inherit hover:no-underline"
-      href="{{ .Site.Home.RelPermalink }}">
+<header class="font-display text-overlay0 py-5 px-10">
+  <section class="w-auto flex flex-row items-center justify-between">
+    <a class="top text-2xl rsr-link text-mauve" href="{{ .Site.Home.RelPermalink }}">
       {{ .Site.Title }}
     </a>
-    <nav class="hidden md:block">{{ partial "navigation/translate.html" . }}
-    </nav>
   </section>
-  <ul class="w-auto flex flex-row justify-start text-rosewater">
+  <nav class="text-center absolute top-6 right-10 rounded hidden md:block">{{ partial "navigation/translate.html" . }}</nav>
+  <ul class="pt-5 w-auto flex flex-row uppercase justify-start">
     {{- $active_link_style := "" -}}
     {{- $currentPage := . -}}
     {{ range .Site.Menus.main -}}
     {{ if $currentPage.IsMenuCurrent "main" . }}
-    {{ $active_link_style = "text-blue no-underline hover:underline hover:text-inherit" }}
+    {{ $active_link_style = "rsr-link-active" }}
     {{ else }}
     {{ $active_link_style = "" }}
     {{ end }}
-    <li class="block mr-3 text-inherit underline hover:text-blue hover:no-underline">
+    <li class="block mr-3 rsr-link">
       <a class="{{ $active_link_style }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
     </li>
     {{- end }}
