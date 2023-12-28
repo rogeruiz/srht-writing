@@ -1,10 +1,12 @@
 <header class="font-display text-overlay0 py-5 px-10">
-  <section class="w-auto flex flex-row items-center justify-between">
-    <a class="top text-2xl rsr-link text-mauve" href="{{ .Site.Home.RelPermalink }}">
+  <section
+    class="w-auto flex flex-row items-center justify-between text-4xl md:text-3xl font-display font-extralight italic">
+    <a class="rsr-link text-mauve" href="{{ .Site.Home.RelPermalink }}">
       {{ .Site.Title }}
     </a>
   </section>
-  <nav class="text-center absolute top-6 right-10 rounded hidden md:block">{{ partial "navigation/translate.html" . }}</nav>
+  <nav class="text-center absolute top-6 right-10 rounded hidden md:block">{{ partial "navigation/translate.html" . }}
+  </nav>
   <ul class="pt-5 w-auto flex flex-row uppercase justify-start">
     {{- $active_link_style := "" -}}
     {{- $currentPage := . -}}

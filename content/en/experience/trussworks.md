@@ -1,5 +1,5 @@
 +++
-title = "Staff Engineer IV"
+title = "Staff Software Engineer (IV)"
 logo = "images/experience/trussworks.jpg"
 description = """**IAT II** & **IASAE II** certified contractor for the
 **Department of Defense** for MilMove while collaborating across a

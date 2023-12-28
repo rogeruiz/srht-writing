@@ -11,7 +11,7 @@
   {{ end }}
 
   {{ if eq .Page.Type "experience" }}
-  <h2 class="pt-4 text-xl md:text-3xl font-body font-extrabold italic text-overlay0">
+  <h2 class="pt-4 text-xl md:text-3xl font-body font-black italic text-overlay0">
     at {{ .Params.company }} from
     <span>{{ dateFormat "Jan 2006" .Date }}</span>
     {{ if .Params.EndDate }}

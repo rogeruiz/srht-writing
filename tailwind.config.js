@@ -47,7 +47,7 @@ module.exports = {
             },
             strong: {
               color: 'rgb(var(--ctp-subtext0))',
-              fontWeight: '900',
+              fontWeight: '700',
             },
             '.content strong': {
               textDecorationColor: 'rgb(var(--ctp-subtext2))',

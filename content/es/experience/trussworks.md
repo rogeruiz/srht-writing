@@ -1,5 +1,5 @@
 +++
-title = "Staff Engineer IV"
+title = "Staff Software Engineer (IV)"
 logo = "images/experience/trussworks.jpg"
 description = """
 Contribuir al código DoD USTC con certificación IAE II e ISASAE II en MilMove y
