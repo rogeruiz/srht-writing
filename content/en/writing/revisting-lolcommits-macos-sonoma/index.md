@@ -42,7 +42,7 @@ automatically and save them for the world to see.
 
 <img class="w-96 float-right ml-10" alt="An animated Gif of the author committing code." src="./images/tumblr_040a79e140cf9c7e91c9ea5fbf0c8f4d_96b3ad3a_640.gif" />
 
-[➡️ roger is working](https://lol.rogeruiz.com/)
+[➡️ roger is working](https://rogeruizisworking.tumblr.com)
 
 For many many years this setup was fine. That is until I upgraded to macOS
 Sonoma and found that the tooling that I had written to find what camera was

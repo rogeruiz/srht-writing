@@ -14,7 +14,7 @@ slug = "setting-up-lolcommits"
 > But, basically I walk you through how to setup `lolcommits` up for yourself
 > locally and automatically post captures to Tumblr.
 >
-> [➡️ Check out my **rogerisworking** Tumblr](https://lol.rogeruiz.com/)
+> [➡️ Check out my **rogerisworking** Tumblr](https://rogerisworking.tumblr.com)
 >
 > [Check out the latest source for `post-commit` script](https://git.sr.ht/~rogeruiz/.files/tree/main/item/dot_git_template/hooks/executable_post-commit)
 
