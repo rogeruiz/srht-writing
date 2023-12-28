@@ -1,6 +1,6 @@
 +++
 title = "Innovation Specialist"
-company = "GSA"
+company = "General Services Administration"
 date = "2015-11-01"
 endDate = "2019-03-01"
 logo = "images/experience/gsa.jpg"

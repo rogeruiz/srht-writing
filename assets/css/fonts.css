@@ -1,112 +1,4 @@
 @font-face {
-  font-family: 'mplus-2m-nerd-font-patched';
-  src: url('/fonts/mplus_2m.eot') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'mplus-2m-nerd-font-patched';
-  src:
-    url('/fonts/mplus_2m.woff') format('woff'),
-    url('/fonts/mplus_2m.ttf') format('truetype'),
-    url('/fonts/mplus_2m.svg#mplus_2m') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Averia Serif Libre';
-  src: url('/fonts/AveriaSerifLibre-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Averia Serif Libre';
-  src: url('/fonts/AveriaSerifLibre-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Averia Serif Libre';
-  src: url('/fonts/AveriaSerifLibre-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Averia Serif Libre';
-  src: url('/fonts/AveriaSerifLibre-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Averia Serif Libre';
-  src: url('/fonts/AveriaSerifLibre-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Averia Serif Libre';
-  src: url('/fonts/AveriaSerifLibre-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Rubik Doodle Shadow';
-  src: url('/fonts/RubikDoodleShadow-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Caveat';
-  src: url('/fonts/Caveat-VariableFont_wght.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Chicle';
-  src: url('/fonts/Chicle-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Philosopher';
-  src: url('/fonts/Philosopher-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Philosopher';
-  src: url('/fonts/Philosopher-Italic.ttf');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Philosopher';
-  src: url('/fonts/Philosopher-Bold.ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Philosopher';
-  src: url('/fonts/Philosopher-BoldItalic.ttf');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
   font-family: 'Playfair';
   src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf');
   font-style: normal;
@@ -144,4 +36,21 @@
   src: url('/fonts/QuattrocentoSans-BoldItalic.ttf');
   font-weight: 700;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'mplus-2m-nerd-font-patched';
+  src: url('/fonts/mplus_2m.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mplus-2m-nerd-font-patched';
+  src:
+    url('/fonts/mplus_2m.woff') format('woff'),
+    url('/fonts/mplus_2m.ttf') format('truetype'),
+    url('/fonts/mplus_2m.svg#mplus_2m') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -1,5 +1,5 @@
 +++
-title = "Engineering consultant (front-end)"
+title = "Freelance engineer"
 company = "Alexander Interactive"
 logo = "images/experience/alexander-interactive.jpg"
 date = "2015-07-01"

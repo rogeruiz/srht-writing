@@ -1,0 +1,15 @@
+{{- $download_link := "/resume.pdf" -}}
+{{- $download_filename := printf "roger-steve-ruiz-resume-%d.pdf" now.Year -}}
+{{- $title := .Get 0 -}}
+
+<p>
+  <a title="{{ $title }}" href="{{ $download_link }}" target="_blank">
+    {{ $title }}
+  </a>
+  <span>or</span>
+  <a
+    title="{{ $title }}"
+    href="{{ $download_link }}"
+    download="{{ $download_filename }}">
+    <code>{{ "\uf019" | safeHTML }}</code>Download it directly.</a>
+</p>

@@ -1,25 +1,28 @@
 <div class="bg-crust flex flex-row mb-6 sm:mb-0 col-span-2 max-h-36">
-  <div class="w-36">
-    <img class="object-cover" src="{{ .Params.Logo | relURL }}" alt="Job logo" title="{{ .Description }}">
+  <div class="h-32 w-32 md:h-36 md:w-36 flex flex-none">
+    <img class="object-center" src="{{ .Params.Logo | relURL }}" alt="{{ .Params.company }} logo"
+      title="{{ .Description }}">
   </div>
-  <div class="pl-5 md:pl-2.5 sm:flex sm:flex-col pt-2.5">
-    <h3 class="text-sm font-serif">{{ .Params.company }}</h3>
-    <h2 class="text-sm sm:hidden lg:block font-sans font-bold">
+  <div class="flex-grow flex-col pl-5 md:pt-2.5 border-crust">
+    <h3 class="text-md font-body italic font-bold border-b border-dotted border-b-text">
       {{ .Title }}
-    </h2>
-    <div class="text-sm font-serif">
-      <span>{{ dateFormat "Jan 2006" .Date }}</span>
+    </h3>
+    <h2 class="text-md lg:text-xl font-display text-subtext1 font-extrabold border-t border-dotted border-t-text">{{
+      .Params.company
+      }}</h2>
+    <div class="text-sm font-display italic font-extrabold border-b border-dotted border-b-text">
+      <span>{{ dateFormat "01/2006" .Date }}</span>
       {{ if .Params.EndDate }}
       <span>—</span>
-      <span>{{ dateFormat "Jan 2006" .Params.EndDate }}</span>
+      <span>{{ dateFormat "01/2006" .Params.EndDate }}</span>
       {{ else }}
       <span>—</span>
       <span>Present</span>
       {{- end -}}
     </div>
     <div class="pt-2.5">
-      <a class="px-4 py-1 text-sm text-mauve font-semibold rounded-full border border-mauve hover:text-white hover:bg-mauve hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-        href="{{ .RelPermalink }}" title="{{ .Params.description }}">
+      <a class="text-lg font-display italic font-extrabold rsr-link hover:border-rosewater" href="{{ .RelPermalink }}"
+        title="{{ .Params.description }}">
         {{ i18n "read_more" }}
       </a>
     </div>
