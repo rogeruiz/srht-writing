@@ -1,17 +1,14 @@
 +++
 title = "Hola."
-description = """\
-Me llamó Roger Ruiz y soy un ingeniero especializado en infraestructura de
-nube, seguridad, y desarrollo de aplicaciones. Actualmente estoy buscando
-posiciones de nivel senior, staff, y manager de ingeniería.
-"""
+description = """Me llamó Roger Ruiz y soy un ingeniero especializado en
+__infraestructura de nube__, __seguridad__, y __desarrollo__ de aplicaciones."""
 +++
 
 Yo soy Roger, un ingeniero de software. Estoy alegro que estés aquí. Este sitio
 es donde yo hago mi escritura técnica y hablo un poco de mi experiencia en
 compañías donde yo ha trabajado.
 
-_También_, este sitio es bilingüe, como yo. Tu puedes encontrar una traducción a
+_También_, este sitio es **bilingüe, como yo**. Tu puedes encontrar una traducción a
 ingles un el rincón de arriba a la derecha o al final de la pagina, si esta
 disponible. Si no es, entonces {{< mailto
 email="hi@rog.gr"
