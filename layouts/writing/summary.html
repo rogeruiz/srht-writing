@@ -1,17 +1,10 @@
-{{ if gt .ReadingTime 1 }}
-{{ .Scratch.Set "timeUnit" "mins" }}
-{{ else }}
-{{ .Scratch.Set "timeUnit" "min" }}
-{{ end }}
-<article
-  class="{{ if .Draft }}border border-dotted border-maroon{{ end }} box-border mb-10 md:pb-0 md:col-span-2 lg:col-span-2">
-  <section class="flex flex-row justify-between">
-    <span class="font-mono z-0 text-overlay0 text-sm">
-      {{ dateFormat "02 Jan 2006" .Date }}
-    </span>
-    <span class="text-sm text-overlay0 font-mono uppercase">
-      {{ .ReadingTime }} {{ .Scratch.Get "timeUnit" }} read
-    </span>
+<article class="box-border mb-10 md:pb-0 md:col-span-2 lg:col-span-2">
+  <section class="flex flex-row justify-between text-overlay0 font-mono text-sm">
+    <span>{{ dateFormat "02 Jan 2006" .Date }}</span>
+    {{ if .Draft }}
+    <span class="uppercase text-maroon"> Draft </span>
+    {{ end }}
+    <span>{{ .ReadingTime }} min read</span>
   </section>
   <h2 class="font-display text-2xl font-bold pb-3">
     <a class="rsr-link" href="{{ .RelPermalink }}">
