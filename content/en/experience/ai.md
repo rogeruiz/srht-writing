@@ -9,7 +9,7 @@ endDate = "2015-09-01"
 As a consultant for Alexander Interactive, now known by a different name of Cake
 & Arrow, I worked on a few projects which were under very strict and tight
 deadlines. The main work was organizing and refactoring some of the more
-complicated code that was left behind by a front-end engineer who unexpected
+complicated code that was left behind by a front-end engineer who unexpectedly
 left the company.
 
 My skills were specifically requested in order for the agency to fulfill their
