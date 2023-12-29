@@ -4,11 +4,14 @@ company = "General Services Administration"
 date = "2015-11-01"
 endDate = "2019-03-01"
 logo = "images/experience/gsa.jpg"
-description = """
-Full-stack software engineer maintaining various open-source software
-projects such as vote.gov, US Web Design Standards, and others.
-"""
+description = """Full-stack software engineer maintaining various open-source software
+projects such as **vote.gov**, **US Web Design System**, and more."""
 +++
+
+| Company | Website |
+| ------- | ------- |
+| 18F | https://18f.gov |
+| GSA | https://gsa.gov |
 
 At the General Services Administration (GSA), I worked as a GS 15 federal
 employee with a specialization in automation and tooling along with web
@@ -19,7 +22,8 @@ workshops, presentations, and writing documentation to help guide and steer the
 engineering teams across 18F.
 
 One of my proudest contributions here was guiding our customized Python web
-application for time-keeping through the Authority to Operate (ATO) process in
+application called [Tock](https://github.com/18f/tock), which was used by the
+agency for time-keeping, through the Authority to Operate (ATO) process in
 roughly 8 weeks.
 
 While working here, I split my time across cloud.gov and GSA / TTS / 18F

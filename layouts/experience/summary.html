@@ -7,10 +7,10 @@
     <h3 class="text-md font-body italic font-bold border-b border-dotted border-b-text">
       {{ .Title }}
     </h3>
-    <h2 class="text-md lg:text-xl font-display text-subtext1 font-extrabold border-t border-dotted border-t-text">{{
+    <h2 class="text-md lg:text-xl font-display text-subtext1 border-t border-dotted border-t-text">{{
       .Params.company
       }}</h2>
-    <div class="text-sm font-display italic font-extrabold border-b border-dotted border-b-text">
+    <div class="text-sm font-body italic font-extralight border-b border-dotted border-b-text">
       <span>{{ dateFormat "01/2006" .Date }}</span>
       {{ if .Params.EndDate }}
       <span>—</span>
@@ -21,7 +21,7 @@
       {{- end -}}
     </div>
     <div class="pt-2.5">
-      <a class="text-lg font-display italic font-extrabold rsr-link hover:border-rosewater" href="{{ .RelPermalink }}"
+      <a class="text-lg font-display italic font-extralight rsr-link hover:border-rosewater" href="{{ .RelPermalink }}"
         title="{{ .Params.description }}">
         {{ i18n "read_more" }}
       </a>
