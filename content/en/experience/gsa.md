@@ -1,5 +1,5 @@
 +++
-title = "Innovation Specialist"
+title = "Innovation specialist"
 company = "General Services Administration"
 date = "2015-11-01"
 endDate = "2019-03-01"
