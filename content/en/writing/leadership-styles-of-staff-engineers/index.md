@@ -1,9 +1,9 @@
 +++
 title = "Leadership styles of staff engineers"
 date = "2022-08-14"
-description = """When moving up in individual contributor track will move you
-from senior technical roles into a hybrid of technical & leadership roles. These
-roles are usually fall under the **staff+ engineering path** which compliments
+description = """When moving up in an individual contributor track, you will move
+from senior exclusively-technical roles into a hybrid of technical & leadership roles. These
+roles are usually fall under the **staff+ engineering path** which is a compliment to
 the **engineering manager path**."""
 slug = "leadership-styles-of-staff-engineers"
 +++
