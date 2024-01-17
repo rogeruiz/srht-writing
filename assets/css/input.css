@@ -23,6 +23,6 @@
   }
 
   .rsr-link-active {
-    @apply text-mauve underline decoration-1 decoration-rosewater decoration-wavy underline-offset-4;
+    @apply text-mauve underline decoration-1 decoration-inherit decoration-wavy underline-offset-4;
   }
 }
