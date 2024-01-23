@@ -1,10 +1,8 @@
 +++
 title = "Clean Git house"
 date = "2021-04-29"
-description = """
-Learn how to delete your local Git branches with a full breakdown of how to do
-it from manual to fully automated step-by-step.
-"""
+description = """Learn how to delete your local Git branches with a full
+breakdown of how to do it from manual to fully automated step-by-step."""
 slug = "clean-git-house"
 +++
 
