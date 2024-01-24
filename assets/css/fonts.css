@@ -1,12 +1,14 @@
 @font-face {
   font-family: 'Playfair';
   src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Playfair';
   src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+  font-weight: 700;
   font-style: italic;
 }
 
@@ -41,7 +43,7 @@
 @font-face {
   font-family: 'mplus-2m-nerd-font-patched';
   src: url('/fonts/mplus_2m.eot') format('embedded-opentype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -51,6 +53,6 @@
     url('/fonts/mplus_2m.woff') format('woff'),
     url('/fonts/mplus_2m.ttf') format('truetype'),
     url('/fonts/mplus_2m.svg#mplus_2m') format('svg');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }

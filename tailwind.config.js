@@ -33,6 +33,9 @@ module.exports = {
                 margin: 0,
               },
             },
+            code: {
+              fontWeight: 400,
+            },
             blockquote: {
               borderLeftColor: 'rgb(var(--ctp-mauve))',
               color: 'rgb(var(--ctp-overlay0))',
@@ -47,7 +50,6 @@ module.exports = {
             },
             strong: {
               color: 'rgb(var(--ctp-subtext0))',
-              fontWeight: '700',
             },
             '.content strong': {
               textDecorationColor: 'rgb(var(--ctp-subtext2))',
