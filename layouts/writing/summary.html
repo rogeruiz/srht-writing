@@ -11,5 +11,5 @@
       {{ .Title }}
     </a>
   </h2>
-  <p class="text-text">{{ .Params.description }}</p>
+  <p class="text-text">{{ .Params.description | markdownify }}</p>
 </article>
