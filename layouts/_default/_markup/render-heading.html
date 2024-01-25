@@ -1,5 +1,7 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" class="group">
-  {{ .Text | safeHTML }}&nbsp;<a class="rsr-link hidden group-hover:inline-block" href="#{{ .Anchor | safeURL }}">
-    <code class="before:content-[' '] after:content-[' ']">#</code>
+  {{ .Text | safeHTML }}&nbsp;<a
+    class="text-lg block text-transparent no-underline group-hover:rsr-link transition ease-in-out motion-reduce:transition-none"
+    href="#{{ .Anchor | safeURL }}">
+    (Link to this header)
   </a>
 </h{{ .Level }}>

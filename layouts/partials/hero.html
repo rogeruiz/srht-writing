@@ -3,8 +3,14 @@
 <section class="relative bg-mantle text-subtext0 p-10 mb-10">
   {{ partial "reading-time.html" . }}
 
-  <h1 class="text-5xl md:text-8xl font-display font-black text-mauve break-words">
-    {{ .Title }}
+  <h1 class="text-5xl md:text-8xl font-display break-words">
+    <span class="bg-clip-text
+                 text-transparent
+                 bg-gradient-to-r
+                 from-lavender
+                 to-mauve">
+      {{ .Title }}
+    </span>
   </h1>
   {{ if eq "jobs" .Type }}
   {{ $image_container_classes = "hidden" }}
