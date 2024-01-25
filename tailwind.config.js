@@ -18,6 +18,7 @@ module.exports = {
               color: 'rgb(var(--ctp-text))',
             },
             details: {
+              border: '2px solid rgb(var(--ctp-blue))',
               borderRadius: '5px',
               padding: '10px 10px 20px 10px',
               backgroundColor: 'rgb(var(--ctp-mantle))',
