@@ -35,8 +35,8 @@
 
   {{ partial "post-detail.html" . }}
 
-  <section class="pt-5 flex flex-row">
-    <p class="text-xl md:text-3xl font-display font-extralight italic prose text-overlay1 lg:w-1/2 ">
+  <section class="pt-5 flex flex-column">
+    <p class="text-xl md:text-3xl font-display font-extralight italic prose text-overlay1 ">
       {{ .Description | markdownify }}
     </p>
     {{ if .Params.image }}
