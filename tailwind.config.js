@@ -17,8 +17,18 @@ module.exports = {
             th: {
               color: 'rgb(var(--ctp-text))',
             },
-            summary: {
+            details: {
+              borderRadius: '5px',
+              padding: '10px 10px 20px 10px',
+              backgroundColor: 'rgb(var(--ctp-mantle))',
+            },
+            "details summary": {
               cursor: 'pointer',
+              marginBottom: '-10px',
+              transition: 'margin 150ms ease-out',
+            },
+            "details[open] summary": {
+              marginBottom: '10px',
             },
             pre: {
               color: 'inherit',
