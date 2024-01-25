@@ -22,6 +22,7 @@
 {{ $replaceWith := printf `<svg class="%s" ${1}>${2}</svg>` $class }}
 {{ $match := "<svg (.*)?>(.*)</svg>" }}
 
-<a class="px-2.5 text-rosewater hover:text-inherit" target="_blank" href="{{ $href }}" title="{{ $title }}">
+<a class="px-2.5 text-blue hover:text-rosewater transition-colors" target="_blank" href="{{ $href }}"
+  title="{{ $title }}">
   {{ (replaceRE $match $replaceWith (printf "/assets/svg/%s.svg" $network | readFile) | safeHTML) }}
 </a>

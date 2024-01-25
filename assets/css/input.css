@@ -19,10 +19,10 @@
   }
 
   .rsr-link {
-    @apply no-underline text-blue hover:text-rosewater decoration-1 decoration-wavy hover:underline underline-offset-4;
+    @apply transition-colors no-underline text-blue hover:text-rosewater decoration-1 decoration-wavy hover:underline underline-offset-4;
   }
 
   .rsr-link-active {
-    @apply text-mauve underline decoration-1 decoration-inherit decoration-wavy underline-offset-4;
+    @apply transition-colors text-mauve underline decoration-1 decoration-inherit decoration-wavy underline-offset-4;
   }
 }

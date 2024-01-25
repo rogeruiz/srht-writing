@@ -72,9 +72,12 @@ module.exports = {
             a: {
               color: 'rgb(var(--ctp-blue))',
               textDecoration: 'underline',
+              transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke',
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+              transitionDuration: '150ms',
               '&:hover': {
                 textDecoration: 'none',
-                color: 'inherit',
+                color: 'rgb(var(--ctp-rosewater))',
               },
             },
           },
