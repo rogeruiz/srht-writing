@@ -120,7 +120,7 @@ to either remove or fix the path issues when running *Sudo*.
 <details>
 
 <summary>🆘 <strong> Click here to learn to how to recover from a broken
-<code>sudo_local</code> file</strong> 🆘</summary>
+<code>sudo_local</code> file</strong> </summary>
 
 ### Recovering from errors in your `/etc/pam.d/sudo_local` file
 

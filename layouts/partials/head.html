@@ -12,7 +12,7 @@
   {{ end }}
   {{ if eq .Page.Type "experience" }}{{ $description = print "@ " .Page.Params.company " | " .Description }}{{end}}
   <title>{{ $title }}</title>
-  <meta name="description" content="{{ $description }}">
+  <meta name="description" content="{{ $description | markdownify }}">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
 
   <!-- OpenGraph Meta Tags -->
@@ -34,7 +34,7 @@
   <meta property="twitter:domain" content="{{ .Site.BaseURL }}">
   <meta property="twitter:url" content="{{ .Page.Permalink }}">
   <meta property="twitter:title" content="{{ $title }}">
-  <meta property="twitter:description" content="{{ $description }}">
+  <meta property="twitter:description" content="{{ $description | markdownify }}">
   <meta property="twitter:image" content="{{ delimit (slice .Site.BaseURL $social_image) "" }}">
 
   <meta name="author" content="{{ .Site.Params.AuthorName }}">
