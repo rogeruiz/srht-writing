@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "Using TouchID with Tmux"
 date = "2024-01-23"
 description = """As I transition my dotfiles configurations over to **Nix** away
@@ -20,7 +19,7 @@ using **TouchID** for **Sudo**, but quickly found that it didn't work in
 > 
 > [➡️ Enabling **TouchID** authorization for Sudo on *macOS High Sierra*][derflounder]
 >
-> [➡️ *GitHub* pam_reattach repository][pam_reattach]
+> [➡️ *GitHub* PAM Reattach repository][pam_reattach]
 
 [derflounder]: https://derflounder.wordpress.com/2017/11/17/enabling-touch-id-authorization-for-sudo-on-macos-high-sierra/
 [pam_reattach]: https://github.com/fabianishere/pam_reattach
@@ -58,7 +57,7 @@ It's an important file that *Apple* resets during major *macOS* system updates.
 So you'll need to edit it again after upgrades if you make any changes to it. In
 this file, you will need to add the following line to enable *TouchID*.
 
-```ini{title="This is all it takes to enable *TouchID* on your *Mac*" verbatim=false}
+```ini{title="All you need to enable *TouchID*" verbatim=false}
 auth       sufficient     pam_tid.so
 ```
 
@@ -102,13 +101,15 @@ Management (PAM)* to *Tmux* sessions in order to get things working. Thankfully,
 there's already a project that does just that! It's available through all
 package managers such as *Homebrew*, *MacPorts*, or *Nixpkgs* via *Nix Darwin*.
 Once you have the *PAM* module `pam_reattach` installed & placed or linked in
-either `/usr/lib/pam/` or `/usr/local/lib/pam`, you can then can add the
+either `/usr/lib` or `/usr/local/lib`, you can then can add the
 following line to enable *TouchID* in *Tmux* sessions.
 
 [reattach-to-user-namespace]: https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 
 ```ini{title="/etc/pam.d/sudo_local"}
-auth       optional       pam_reattach.so ignore_ssh
+# sudo_local: local config file which survives system update and is included for sudo
+auth       optional       pam_reattach.so
+auth       sufficient     pam_tid.so
 ```
 
 ⚠️ It's important to remember to have the file linked in one of the two appropriate
@@ -118,8 +119,8 @@ to either remove or fix the path issues when running *Sudo*.
 
 <details>
 
-<summary> ⚠️ <strong> Click here to learn to how to recover from errors
-in your <code>sudo_local</code> file</strong> </summary>
+<summary>🆘 <strong> Click here to learn to how to recover from a broken
+<code>sudo_local</code> file</strong> 🆘</summary>
 
 ### Recovering from errors in your `/etc/pam.d/sudo_local` file
 
@@ -144,6 +145,9 @@ Here's the steps you'll need to take to fix *Sudo* and remove your broken
 1. Remove the `sudo_local` file using `rm` or rename it using `mv`.
 1. Reboot
 
+[➡️ For more information from *Apple* support, click
+here](https://support.apple.com/guide/mac-help/intro-to-macos-recovery-mchl46d531d6/mac)
+
 And with those steps you will be able to revert the broken `sudo_local` file and
 make updates to it to fix it.
 
@@ -154,70 +158,60 @@ path to the `pam_reattach.so` file. **This is especially true on *M1 Macs*
 because *Homebrew* uses `/opt/homebrew/` on those systems**. I also added
 `ignore_ssh` to avoid prompting for a touch when connected via SSH.
 
-<details>
-
-<summary> <strong>Click here to see what <code>/etc/pam.d/sudo_local</code>
-should look like in the end.</strong> </summary>
-
-### Example contents of a `/etc/pam.d/sudo_local` file
-
-Keep in mind that the example here is if `pam_reattach.so` is located in
-`/usr/lib/` or `/usr/local/lib/`. If `pam_reattach.so` is another location,
-you'll have a full path for `pam_reattach.so`.
-
 ```ini{title="/etc/pam.d/sudo_local"}
 # sudo_local: local config file which survives system update and is included for sudo
 auth       optional       pam_reattach.so ignore_ssh
 auth       sufficient     pam_tid.so
 ```
 
-Like I mentioned earlier, if you're installing `pam_reattach.so` in a different
-location, you'll need to use the full path and it might look like this.
-
-```ini{title="/etc/pam.d/sudo_local"}
-# sudo_local: local config file which survives system update and is included for sudo
-auth       optional       /opt/homebre/lib/pam/pam_reattach.so ignore_ssh
-auth       sufficient     pam_tid.so
-```
-
-</details>
+And with that, you're all done 🎊! If you're interested in seeing how this is done
+using *Nix*, keep reading. Thanks for reading this far & I hope this helped you
+get *TouchID* working in your terminal and *Tmux* sessions.
 
 ## Leveraging *Nix* with *Nix Darwin*
 
 So if you're still with me, let's use *Nix* to manage the changes that need to
 be made to this file. This is convenient as you can use this to setup your
-*macOS* system easily with the necessary *TouchID* settings to get it working
-for *Sudo* commands. The *Nix* community is great and they have folks working on
-solutions to this right now. I was able to find patch change on *GitHub* that I
-integrated into my personal configuration file. It's something more to maintain,
-but it's also working for me now rather than having to wait for upstream to
-integrate the changes into *Nix Darwin*. 
+*macOS* system easily and consistently with the necessary *TouchID* settings to
+get it working for *Sudo* commands. The *Nix* community is great and they have
+folks working on solutions to this right now. I was able to find a couple of
+patch changes on *GitHub* that I integrated into my personal configuration file.
+It's something more for me to maintain, but it means that it works today without
+having to wait for upstream to merge things in.
 
-### Using what's already in upstream
+### Enabling *TouchID* first
 
 Since 2022, you've been able to use *Nix Darwin* with the `security = { pam = {
 enableSudoTouchIdAuth } }` option in *Nix*. So to enable *TouchID* for your
 *Mac* may be as simple to as adding the following option to your *Nix*
 configuration.
 
-```nix
+```nix{title="A *Nix* expression" verbatim=false}
 { ... }:
 {
   security.pam.enableSudoTouchIdAuth = true;
 }
 ```
 
-With this, you just need to run `darwin-rebuild switch` to set the following
-line in your `/etc/pam.d/sudo`:
+With this, you just need to run `darwin-rebuild switch` to add a line to the
+`/etc/pam.d/sudo` file with a comment from `nix-darwin` with the option
+`enableSudoTouchIdAuth` added as well.
 
-```
+```ini{title="/etc/pam.d/sudo"}
+# sudo: auth account password session
 auth       sufficient     pam_tid.so # nix-darwin enableSudoTouchIdAuth
+auth       include        sudo_local 
+auth       sufficient     pam_smartcard.so
+auth       required       pam_opendirectory.so
+account    required       pam_permit.so
+password   required       pam_deny.so
+session    required       pam_permit.so
 ```
 
 This is done with using the `sed` command. You can check out the *Nix* file if
 you're curious how the changes are being handled.
 
-[➡️ *Nix Darwin* using `sed` to modify `/etc/pam.d/sudo` in
+[➡️ Source in *Nix Darwin* using `sed` to modify `/etc/pam.d/sudo` in
 place][gh-pam.nix-using-sed]
 
 [gh-pam.nix-using-sed]: https://github.com/LnL7/nix-darwin/blob/1e706ef323de76236eb183d7784f3bd57255ec0b/modules/security/pam.nix#L18-L37
@@ -225,163 +219,51 @@ place][gh-pam.nix-using-sed]
 Again this is where you can stop reading if you don't care about supporting
 *Tmux*. Using *Nix* to add the `pam_tid.so` line from above is great too because
 you don't have to worry about making any errors and are able to turn it on or
-off easily if you need to.
+off easily if you need to without having to override or incorporate upstream
+changes locally. I hope this helps explain what the `enableSudoTouchIdAuth`
+option is doing in *Nix Darwin*.
 
-### Extending *Sudo* with a custom *PAM* module using patches
+### Creating a `/etc/pam.d/sudo_local` file using *Nix Darwin*
 
-Now, if you're still with me then that's great news! The less great news is that
-as the time of this writing there is no configuration option for *Nix Darwin*
-which is named `enablePamReattach`. That would be great if there were. And there
-might be soon with the **#662** pull request. I hope it gets merged in soon. But
-it made me think. Couldn't I just extend things on my end using *Nix*?
+As I said before, the pull request **#787** should cover this all so you can use
+`security.pam.<option>` to set the needed values to use `pam_tid.so` and
+`pam_reattach.so` in some file that's getting managed by *Nix* but included from
+the *macOS* `/etc/pam.d/sudo` file that *Apple* manages. If you've made it this
+far, you're probably looking to implement some of the ideas behind the pull
+requests yourself. At least that's where I am at. Until **#787** gets merged, or
+even **#662** if upstream wants to just use `system.patches`, you can easily
+implement a simple solution yourself using *Nix Darwin*.
 
-[➡️ Add option to pam module to use pam_reattach **#662**](https://github.com/LnL7/nix-darwin/pull/662)
+To get this working you'll need to use the `text` property of `environment.etc`
+and give the property the file name you'd like it to land in. As you can see
+below it requires quoting because of the forward slash (`/`) in the path. The
+simplicity of adding files to your system and having it managed in a single
+place is so great even if you're only configuring one system.
 
-And the answer is yes! Installing `pam_reattach` is easy enough with *Nix* by
-adding it to the packages you're installing. Once you have that, you can create
-a module that you import into your configuration. I saved this in my *Nix Flake*
-configuration at `module/security/pam.nix`. I'll link to the complete file if
-you just want the code. Below, I'll go into detail breaking up the code with
-some explanations which is useful if you're new to the *Nix* language.
+[➡️ Source in *Nix Darwin* for how files get created in `/etc`][gh-system-etc]
 
-[➡️ My manually-maintained `module/security/pam.nix` file from **#662**](https://git.sr.ht/~rogeruiz/.files.nix/tree/a16d8f6f737fc702e2f866d795a9b90dd51e9f7d/item/module/security/pam.nix)
+[gh-system-etc]: https://github.com/LnL7/nix-darwin/blob/1e706ef323de76236eb183d7784f3bd57255ec0b/modules/system/etc.nix
 
-#### Creating a *Nix* expression 
+```nix{title="A Nix expression in your config" verbatim=false}
+{ pkgs, ... }:
 
-This first part setups up the function that is considered a *Nix* module. Since
-every function can only have one argument, this function uses a set `{ ... }` as
-its argument to include `config`, `lib`, and `pkgs`.
-
-[➡️ Read more about *Nix* functions in the language tutorial](https://nix.dev/tutorials/nix-language#functions)
-
-```nix
-{ config
-, lib
-, pkgs
-, ...
-}:
-```
-
-The function syntax is can be thought of as `a: b + 1`. Ultimately in this
-function we're going to be returning a set that looks like this: `{ options = {
-... } }`. But let's keep going.
-
-Here's the body of the function with everything after the colon `:`. This part
-here uses two parts of the language that help with passing attributes and
-accessing them in the body of the function. 
-
-There's a `with` expression where `lib` is defined as a convenience to avoid
-having to type `lib.` before `mkEnableOption` and similar functions. The other
-one is a `let in` expression where `cfg` is defined as a convenience variable to
-not have to type out `config.security.pam`.
-
-```nix
-with lib; let
-  cfg = config.security.pam;
-in
 {
-```
-
-The `with ...; ...` expression lets you access attributes without having to
-reference them. It's used here to include `lib` in scope so that you don't have
-to write out `lib.mkEnableOption`
-
-```nix
-  # WARN: This file only exists here because the following PR is not merged
-  # upstream: https://github.com/LnL7/nix-darwin/pull/662. Once they do exist,
-  # I'll be removing this file from my configuration.
-  options = {
-    security.pam = {
-      # README: Renamed here to include the `Patch` suffix to avoid collision with
-      # upstream option of the same name
-      enableSudoTouchIdAuthPatch = mkEnableOption ''
-        Enable sudo authentication with Touch ID
-
-        When enabled, this option adds the following line to /etc/pam.d/sudo:
-
-            auth       sufficient     pam_tid.so
-
-        (Note that macOS resets this file when doing a system update. As such, sudo
-        authentication with Touch ID won't work after a system update until the nix-darwin
-        configuration is reapplied.)
-      '';
-      enablePamReattach = mkEnableOption ''
-        Enable re-attaching a program to the user's bootstrap session.
-
-        This allows programs like tmux and screen that run in the background to
-        survive across user sessions to work with PAM services that are tied to the
-        bootstrap session.
-
-        When enabled, this option adds the following line to /etc/pam.d/sudo:
-
-            auth       optional       /path/in/nix/store/lib/pam/pam_reattach.so"
-
-        (Note that macOS resets this file when doing a system update. As such, sudo
-        authentication with Touch ID won't work after a system update until the nix-darwin
-        configuration is reapplied.)
-      '';
-      sudoPamFile = mkOption {
-        type = types.path;
-        default = "/etc/pam.d/sudo";
-        description = ''
-          Defines the path to the sudo file inside pam.d directory.
-        '';
-      };
-    };
-  };
-```
-
-Here you can see how the system.patches is used to add the necessary lines
-depending on the `if-` statements using the values saved in `cfg` matching the
-options we set earlier.
-
-```nix
-  config = {
-    environment.pathsToLink = optional cfg.enablePamReattach "/lib/pam";
-
-    system.patches =
-      if cfg.enableSudoTouchIdAuthPatch && cfg.enablePamReattach
-      then [
-        (pkgs.writeText "pam-reattach-tid.patch" ''
-          --- a/etc/pam.d/sudo
-          +++ b/etc/pam.d/sudo
-          @@ -1,4 +1,6 @@
-           # sudo: auth account password session
-          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so
-          +auth       sufficient     pam_tid.so
-           auth       sufficient     pam_smartcard.so
-           auth       required       pam_opendirectory.so
-           account    required       pam_permit.so
-        '')
-      ]
-      else if cfg.enableSudoTouchIdAuthPatch && !cfg.enablePamReattach
-      then [
-        (pkgs.writeText "pam-tid.patch" ''
-          --- a/etc/pam.d/sudo
-          +++ b/etc/pam.d/sudo
-          @@ -1,4 +1,5 @@
-           # sudo: auth account password session
-          +auth       sufficient     pam_tid.so
-           auth       sufficient     pam_smartcard.so
-           auth       required       pam_opendirectory.so
-           account    required       pam_permit.so
-        '')
-      ]
-      else if !cfg.enableSudoTouchIdAuthPatch && cfg.enablePamReattach
-      then [
-        (pkgs.writeText "pam-reattach.patch" ''
-          --- a/etc/pam.d/sudo
-          +++ b/etc/pam.d/sudo
-          @@ -1,4 +1,5 @@
-           # sudo: auth account password session
-          +auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so
-           auth       sufficient     pam_smartcard.so
-           auth       required       pam_opendirectory.so
-           account    required       pam_permit.so
-        '')
-      ]
-      else [ ];
-  };
+  environment = {
+    etc."pam.d/sudo_local".text = ''
+      # Managed by Nix Darwin
+      auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+      auth       sufficient     pam_tid.so
+    '';
 }
-
 ```
+
+```ini{title="/etc/pam.d/sudo_local"}
+# Managed by Nix Darwin
+auth       optional       /nix/store/d9as2x461lhwryx7bb33q825qssn3dr0-pam_reattach-1.3/lib/pam/pam_reattach.so ignore_ssh
+auth       sufficient     pam_tid.so
+```
+
+And that's it! 🎉 🎊
+
+With this, you'll have *TouchID* support in your *Tmux* sessions and your
+terminal emulator all while having the file managed by *Nix* on your *Mac*.
