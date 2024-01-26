@@ -62,6 +62,9 @@ module.exports = {
             strong: {
               color: 'rgb(var(--ctp-subtext0))',
             },
+            'figcaption strong': {
+              color: 'inherit',
+            },
             '.content strong': {
               textDecorationColor: 'rgb(var(--ctp-subtext2))',
               textDecorationLine: 'underline',
