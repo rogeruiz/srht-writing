@@ -49,7 +49,7 @@ module.exports = {
             },
             blockquote: {
               borderLeftColor: 'rgb(var(--ctp-mauve))',
-              color: 'rgb(var(--ctp-overlay0))',
+              color: 'rgb(var(--ctp-overlay1))',
               '& p:first-of-type, & p:last-of-type': {
                 '&:before, &:after': {
                   color: 'rgb(var(--ctp-mauve))',
