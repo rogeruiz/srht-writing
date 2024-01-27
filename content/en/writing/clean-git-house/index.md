@@ -1,36 +1,36 @@
 +++
 title = "Clean Git house"
 date = "2021-04-29"
-description = """Learn how to delete your local Git branches with a full
+description = """Learn how to delete your local **Git** branches with a full
 breakdown of how to do it from manual to fully automated step-by-step."""
 slug = "clean-git-house"
 +++
 
-> This guide is about deleting branches in Git. There's a few ways I break down
+> This guide is about deleting branches in **Git**. There's a few ways I break down
 > how to do it from manual effort to maximum automation and every step explained
 > in between. To skip that and get to the good stuff, [click here][tldr].
 
 [tldr]: #automating-and-aliasing
 
-Deleting branches in Git can be confusing and at times harrowing for folks
-getting started. The distributed nature of Git allows for remotes to have copies
+Deleting branches in *Git* can be confusing and at times harrowing for folks
+getting started. The distributed nature of *Git* allows for remotes to have copies
 of branches and your local machine to have copies of branches. Over time, you
 can create a large number of branches that exist in both places. If you delete
-your remote branches outside of your Git repository, such as on GitHub, then you
+your remote branches outside of your *Git* repository, such as on *GitHub*, then you
 still need to delete them from your local repository. And, you can delete local
 branches, but that doesn't actually delete them from the remote repository.
 
-Git has some features that easily allow you to do either of these activities
+*Git* has some features that easily allow you to do either of these activities
 easily. To really clean house though, you need to combine these commands to
-delete your local and remote stale branches from your local Git repository.
+delete your local and remote stale branches from your local *Git* repository.
 
 ## Deleting local branches
 
-There are a lot of ways to delete local branches for Git. One of the more
+There are a lot of ways to delete local branches for *Git*. One of the more
 popular ways is to delete them each on by one running the delete flag on the
 branch command.
 
-```bash
+```bash{title="Deleting a specific branch" verbatim=false}
 
 git branch --delete ${local_branch_name}
 ```
@@ -41,23 +41,23 @@ that hasn't been merged upstream or if its commits aren't currently in your
 `HEAD`. If you want to go ahead and delete the branch regardless, you run the
 `-D` flag which is a shortcut for `--delete --force`.
 
-```bash
+```bash{title="Forcing the last command" verbatim=false}
 
 git branch --delete --force ${local_branch_name}
 ```
 
 ## Deleting remote branches
 
-There's a couple of ways to delete remote branches. If you're using GitHub, you
-can do it from the `/branches` endpoint on your GitHub repository and delete
+There's a couple of ways to delete remote branches. If you're using *GitHub*, you
+can do it from the `/branches` endpoint on your *GitHub* repository and delete
 any branches from there. Also, you can set your branches to automatically delete
-branches from the **Options** section of the `/settings` endpoint on your GitHub
-repository.
+branches from the **Options** section of the `/settings` endpoint on your
+*GitHub* repository.
 
 On the command-line, you can delete branches by pushing nothing to the branch on
 your repository.
 
-```bash {hl_lines=[3,4]}
+```bash {hl_lines=[3,4] title="Anatomy of deleting remote branches" verbatim=false}
 
 git push origin :${branch_name}
                 ^ # the empty space in front of the colon is the nothing you
@@ -72,10 +72,10 @@ neat and tidy.
 
 For the sake of this post, a stale remote branch is a branch that has been
 deleted from your remote repository and your local repository still thinks it
-exists when you run `git branch --remote`. Git has a pretty straight forward way
+exists when you run `git branch --remote`. *Git* has a pretty straight forward way
 of deleting these stale branches by pruning them.
 
-```bash {hl_lines=[3,4]}
+```bash {hl_lines=[3,4] title="Anatomy of pruning remote branches" verbatim=false}
 
 git remote prune ${remote_name}
                  ^ # this is usually `origin` but you can name remotes whatever
@@ -96,11 +96,11 @@ tricky thing to do that could potentially cause you to lose your local work.
 
 ## So let's build something
 
-So even though it doesn't ship with Git, you can pipe together various commands
-to get Git to do this local branch pruning based on what remote branches don't
+So even though it doesn't ship with *Git*, you can pipe together various commands
+to get *Git* to do this local branch pruning based on what remote branches don't
 exist on the repository but do exist in your local repository.
 
-```bash
+```bash {title="A rather complex command" verbatim=false}
 
 git branch -r | \
   awk '{print $1}' | \
@@ -120,7 +120,7 @@ shells. It's a lot, so I'm going to break it down further.
 This command gets all the remote branches from all your remotes. For the sake of
 these examples, let's assume the remote is name `origin` as that's the default.
 
-```bash
+```bash {title="Getting the remote branch" verbatim=false}
 
 git branch --remote
 ```
@@ -131,7 +131,7 @@ This command leverages `awk` to print out the first column of output from the
 previous command. In this case, it outputs the names of all the remote branches
 with `origin/` in front of them. e.g. `origin/main`.
 
-```bash
+```bash {title="Printing the first column" verbatim=false}
 
 awk '{print $1}'
 ```
@@ -149,7 +149,7 @@ list of your local branches. Because the match is inverted, it means that the
 names of the branches that are matched locally don't exist in the list of remote
 branches.
 
-```bash
+```bash {title="Finding the branch names" verbatim=false}
 
 egrep -v -f /dev/fd/0 <(git branch -vv | grep origin)
 ```
@@ -161,7 +161,7 @@ egrep -v -f /dev/fd/0 <(git branch -vv | grep origin)
 This command leverages `awk` to print out the first column of output from the
 previous command. In this case, it outputs the full-name of the local branch.
 
-```bash
+```bash {title="Printing the first column again" verbatim=false}
 
 awk '{print $1}'
 ```
@@ -174,7 +174,7 @@ command runs the `git branch --delete` on the output of the previous command
 which is a newline delimited string of all the local branches that don't exist
 on the remote repository.
 
-```bash
+```bash {title="Deleting each branch we found" verbatim=false}
 
 xargs git branch --delete
 ```
@@ -187,10 +187,10 @@ branches first, then running the 7 commands in the right order and piping the
 output of one into the next.
 
 To make this easier, let's create a named function which takes an argument of
-the remote name for your Git repository and iterates through all the steps I
+the remote name for your *Git* repository and iterates through all the steps I
 previously mentioned. It looks like this.
 
-```bash
+```bash {title="A function you can add in your rc file" verbatim=false}
 
 limpia-git() {
   remote_name="${1:-origin}"

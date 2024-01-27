@@ -1,11 +1,9 @@
 +++
 title = "Coding interviews"
 date = "2023-11-24"
-description = """
-Interviewing for software engineers is a complicated topic. Here's my
+description = """Interviewing for software engineers is a complicated topic. Here's my
 observations with over a decade of experience interviewing on both sides for
-various engineering organizations.
-"""
+various engineering organizations."""
 slug = "coding-interviews"
 +++
 
@@ -126,13 +124,13 @@ senior leadership to push away talented candidates.
 
 A common example for testing someone's knowledge of programming topics such as
 linear iteration or recursion is the _Balanced Brackets_ problem. This puzzle is
-ranked as medium according to HackerRank.
+ranked as medium according to *HackerRank*.
 
 [➡️ Read more about Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets/problem)
 
 Here's a breakdown of two kinds of solutions to this puzzle.
 
-```js
+```js {title = "The bruteforce approach" verbatim = false}
 // Start with a map of closing brackets to opening brackets to easily identify
 // pairs.
 const closedBrackets = {
@@ -229,7 +227,7 @@ when dealing with bad data and long strings. This solution also uses more modern
 JavaScript syntax. It doesn't waste any time and bails as soon as a unbalanced
 bracket is found.
 
-```js
+```js {title = "The recursive approach" verbatim = false}
 /**
     @function
     @description Checks to see if the input character is an opening bracket

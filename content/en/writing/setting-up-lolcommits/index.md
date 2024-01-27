@@ -1,10 +1,9 @@
 +++
 title = "Setting up lolcommits"
 date = 2016-05-28
-description= """
-Setting up lolcommits for local selfies from Git commits you make on your
-machine using your camera. This is geared at Mac OS X users.
-"""
+description= """Setting up **lolcommits** for local selfies from **Git** commits
+you make on your machine using your camera. This is geared towards **Mac OS X**
+users."""
 slug = "setting-up-lolcommits"
 +++
 
@@ -23,10 +22,10 @@ slug = "setting-up-lolcommits"
 > This guide makes some assumptions that you're using the terminal to run the
 > following commands, and that you're using Mac hardware and software.
 
-Installing `lolcommits` is pretty easy via Ruby Gems. If you've got the `gem`
+Installing `lolcommits` is pretty easy via *Ruby Gems*. If you've got the `gem`
 command on your computer, you can simply run the following command.
 
-```sh
+```sh {title = "Installing lolcommits" verbatim = false}
 
 gem install lolcommits
 # If you've got permission errors, `sudo` like you mean it ( ie: `sudo !!` )
@@ -34,7 +33,7 @@ gem install lolcommits
 
 After it installs, you can make sure it's available by running `lolcommits`.
 
-```sh
+```sh {title = "Running lolcommits" verbatim = false}
 
 lolcommits
 
@@ -68,14 +67,14 @@ To get started you can run `lolcommits --enable` within any git repository you'd
 like. This does a few things which **are pretty destructive** if you use the
 `post-commit` hook. So make sure you back it up.
 
-```sh
+```sh {title = "Backing up the post-commit file" verbatim = false}
 
 cp .git/hooks/post-commit .git/hooks/post-commit.bak
 ```
 
 Now you can safely run `lolcommits --enable`.
 
-```sh
+```sh {title = "Enabling lolcommits locally" verbatim = false}
 
 lolcommits --enable
 
@@ -87,7 +86,7 @@ installed lolcommit hook to:
 
 Which will give you the following output inside of `.git/hooks/post-commit`.
 
-```sh
+```sh {title = ".git/hooks/post-commit"}
 
 cat .git/hooks/post-commit
 
@@ -110,7 +109,7 @@ a call to `lolcommits --capture`. This is what takes the commit image. It
 accepts some additional flags to customize your experience. Feel free to play
 around with them.
 
-```sh
+```sh {title = "Getting help with lolcommits" verbatim = false}
 
 lolcommits --help
 
@@ -125,21 +124,21 @@ Usage: lolcommits [-vedclbscpsmwga]
 ```
 
 Once you run the `--capture` command within a repo with commits, you can see
-your lolcommit image by running `lolcommits --browse`. This will open the
+your *lolcommit* image by running `lolcommits --browse`. This will open the
 `Finder.app` to the folder containing all the lulz. It's useful to keep this
 open as you tweak your `lolcommits --capture **` command so you can preview your
 changes.
 
 Here's the command I use to capture my lovely commits:
 
-```sh
+```sh {title = "Flags I use to capture" verbatim = false}
 
 lolcommits --capture --fork --stealth --delay=3 --animate=5
 ```
 
 I find that `--fork` allows me to quickly capture commits. The `--stealth` flag
 helps me forget it's taking a picture, even though the green light will still
-turn on. The `--delay=3` is great so that the iSight camera can focus on you.
+turn on. The `--delay=3` is great so that the *iSight* camera can focus on you.
 Finally, `--animate=5` is what gives me `*.gif` files that I can later upload to
 Tumblr. This means I don't get any `*.jpg` files. I personally don't mind losing
 them, but if you want you can always run the command twice once without the
@@ -149,12 +148,12 @@ them, but if you want you can always run the command twice once without the
 
 There are [quite a few plugins][lol-plugins] available for `lolcommits` that do
 all sorts of fancy things. The one I like to use is the Tumblr plugin, since I
-don't want to worry about hosting or theming of my lolcommits.
+don't want to worry about hosting or theming of my *lolcommits*.
 
 To configure Tumblr, you just need to follow the prompts after running the
 configuration command.
 
-```sh
+```sh {title = "Configuring Tumblr" verbatim = false}
 
 lolcommits --config -p tumblr
 ```
@@ -166,7 +165,7 @@ directory. This `config.yml` is what tells `lolcommits` what configurations to
 use _after it creates an image_. [You can take a look at the source for the
 Tumblr plugin here][lol-tumblr-src].
 
-```sh
+```sh {title = "Viewing the config file" verbatim = false}
 
 cat $HOME/.lolcommits/`echo ${PWD##*/}`/config.yml
 
@@ -203,7 +202,7 @@ configuration file ( ie `~/.gitconfig` ).
 
 To setup your `git_templates/` directory, you can follow these commands:
 
-```sh
+```sh {title = "Creating a *Git* template directory" verbatim = false}
 
 mkdir -p $HOME/.git_template/hooks/ && \
 git config --global init.templatedir ~/.git_template
@@ -214,7 +213,7 @@ your `git init` template directory, you can copy the `post-commit` file that
 `lolcommits` generated in the repository you ran `lolcommits --enable` and
 tweaked to your liking above.
 
-```sh
+```sh {title = "Copying the post-commit file to templates" verbatim = false}
 
 cp -v .git/hooks/post-commit $HOME/.git_template/hooks/post-commit
 ```
@@ -235,7 +234,7 @@ Tumblr, you need to make sure to copy that file over to each directory within
 `$HOME/.lolcommits/` directory and copy it over using the following command
 whenever I'm working with a new repository on my machines.
 
-```sh
+```sh {title = "Copying the config file" verbatim = false}
 
 cp -v $HOME/.lolcommits/config.yml $HOME/.lolcommits/`echo "${PWD##*/}"`/config.yml
 ```

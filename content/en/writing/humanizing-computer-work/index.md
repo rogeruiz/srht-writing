@@ -1,9 +1,7 @@
 +++
 title = "Humanizing computer work"
-description = """
-A short essay about humanizing computer work after going fully-remote in 2015
-and sharing my work-life online using social media.
-"""
+description = """A short essay about humanizing computer work after going
+fully-remote in 2015 and sharing my work-life online using social media."""
 date = 2016-05-13
 slug = "humanizing-computer-work"
 +++

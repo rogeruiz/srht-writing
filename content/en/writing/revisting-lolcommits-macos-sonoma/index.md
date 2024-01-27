@@ -1,22 +1,21 @@
 +++
 title = "Revisting lolcommits in macOS Sonoma"
 date = "2023-09-28"
-description = """
-I upgraded to macOS Sonoma recently and it brought my career-long lolcommits
-setup to a halt! Thankfully troubleshooting and Zsh came to the rescue. But
-while I solved the issue I was having, I did start to question whether I should
-keep using this tool while Apple fixed their CLI tools.
-"""
+description = """I upgraded to **macOS Sonoma** recently and it brought my
+career-long lolcommits setup to a halt! Thankfully troubleshooting and **Zsh**
+came to the rescue. But while I solved the issue I was having, I did start to
+question whether I should keep using this tool while **Apple** fixes their CLI
+tools."""
 slug = "revisting-lolcommits-macos-sonoma"
 +++
 
 > `tl;dr`
 >
-> macOS Sonoma added Continuity Camera to macOS but it had an unintended
-> side-effect to my lolcommits setup where internal Apple command-line tools
-> would leak deprecation notices that I didn't want. I was able to debug it and
-> find a solution using Zsh, consolidated output `{...}`, & `std*` redirection.
-> Here's the commit history for this.
+> **macOS Sonoma** added **Continuity Camera** to **macOS** but it had an
+> unintended side-effect to my **lolcommits** setup where internal **Apple**
+> command-line tools would leak deprecation notices that I didn't want. I was
+> able to debug it and find a solution using **Zsh**, consolidated output
+> `{...}`, & `std*` redirection. Here's the commit history for this.
 >
 > [➡️ Commit for solving this particular headache](https://git.sr.ht/~rogeruiz/.files/commit/fbd4fadecc2b3de101829e7109ecab5f5f5ecc05).
 
@@ -30,11 +29,11 @@ the very least mitigate it in your own custom way.
 
 In this post, I'll talk about how I encountered a deprecation notice within a
 tool that I use regularly called `lolcommits` and `system_profiler` and how
-upgrading to macOS Sonoma broke my `post-commit` hook in Git.
+upgrading to **macOS Sonoma** broke my `post-commit` hook in Git.
 
 If you want to learn more about `lolcommits`, check out their website.
 
-[➡️ lolcommits: selfies for software developers](https://lolcommits.github.io)
+[➡️ **lolcommits**: selfies for software developers](https://lolcommits.github.io)
 
 I've been leveraging this tool to take selfies for quite a long time. When I
 went fully remote in 2015, I created a little Tumblr site to capture all these
@@ -44,19 +43,19 @@ automatically and save them for the world to see.
 
 [➡️ roger is working](https://rogeruizisworking.tumblr.com)
 
-For many many years this setup was fine. That is until I upgraded to macOS
-Sonoma and found that the tooling that I had written to find what camera was
+For many many years this setup was fine. That is until I upgraded to *macOS
+Sonoma* and found that the tooling that I had written to find what camera was
 plugged into my Mac was spitting out all sort of internal deprecation notices
 that were outside of the scope of what I was doing. While the notices were
 interesting to me to see how the CLI tool worked, this particular deprecation
-notice targeted at the internal tools team at Apple. At least that's my best
+notice targeted at the internal tools team at *Apple*. At least that's my best
 guess. The CLI tool in question here is `system_profiler`.
 
 <details>
 <summary>Click here to see what the <code>man system_profiler</code> page looks like at the time of
 this writing.</summary>
 
-```
+``` {title = "man system_profiler"}
 SYSTEM_PROFILER(8)                                  System Manager's Manual                                  SYSTEM_PROFILER(8)
 
 NAME
@@ -124,21 +123,22 @@ Darwin                                                   June 30, 2003          
 
 </details>
 
-If you opened the details above, you can notice that the author is Apple. A bug
-in someone else's code and not my own. Also it's neat that `system_profiler` was
-introduced in 2003 which means it was in the end-of-life for Mac OS X 10.2
-Jaguar and most likely in anticipation for the release of Mac OS X 10.3 Jaguar.
+If you opened the details above, you can notice that the author is **Apple**. A
+bug in someone else's code and not my own. Also it's neat that `system_profiler`
+was introduced in 2003 which means it was in the end-of-life for **Mac OS X 10.2
+Jaguar** and most likely in anticipation for the release of **Mac OS X 10.3
+Jaguar**.
 
 ## Okay, so what is happening here?
 
 So you might be wondering what the heck is this all about? Basically, the issue
 at hand here is that there is a deprecation notice whenever the API
-`AVCaptureDeviceTypeExternal` is called due to the new Continuity Camera feature
-of macOS Sonoma. The culprit was a command that I had worked on previously to
-speed up my `post-commit` hook because it was taking longer than I wanted to
-execute.
+`AVCaptureDeviceTypeExternal` is called due to the new **Continuity Camera**
+feature of **macOS Sonoma**. The culprit was a command that I had worked on
+previously to speed up my `post-commit` hook because it was taking longer than I
+wanted to execute.
 
-```sh
+```sh {title = "Running system_profiler" verbatim = false}
 system_profiler \
     SPCameraDataType \
     -json \
@@ -149,14 +149,14 @@ system_profiler \
 Whenever I ran this command, I would get the following output. I'm breaking it
 down with `stderr` first then `stdout`.
 
-```sh
+```sh {title = "stderr"}
 # stderr*
 2023-09-28 17:37:20.563 system_profiler[34077:36102507] WARNING: AVCaptureDeviceTypeExternal is deprecated for Continuity Cameras. Please use AVCaptureDeviceTypeContinuityCamera and add NSCameraUseContinuityCameraDeviceType to your Info.plist.
 
 # * as you'll read later, it's not quite stderr
 ```
 
-```sh
+```sh {title = "stdout"}
 # stdout
 HD Pro Webcam C920
 ```
@@ -170,7 +170,7 @@ is the `stdout`, right?
 
 <img class="md:w-auto md:float-right md:ml-10" src="./images/whatd-you-do.gif" alt="What'd you do? meme" />
 
-```sh
+```sh {title = "Still printing to stderr" verbatim = false hl_lines=[8]}
 >_ system_profiler \
        SPCameraDataType \
        -json \
@@ -212,14 +212,14 @@ shell. When grouping commands like this you need to make sure that you're
 terminating lines with a `;` semicolon if they're not terminated by `\r`
 carriage returns.
 
-```sh
-{
+```sh {title = "Running system_profiler in a different scope" verbatim = false hl_lines=[1,7]}
+{ # encapsulating the command in braces
 system_profiler \
     SPCameraDataType \
     -json \
     -detailLevel basic \
     | jq -r '.SPCameraDataType[]."_name" | select(. | test("C920"))' \
-} 2>/dev/null
+} 2>/dev/null # encapsulating the command in braces
 ```
 
 With this command, all the output I get now is the return of the `jq` command
@@ -238,7 +238,7 @@ deprecation warning over when I ran `lolcommits --capture`. I handled this by
 just redirecting **all of the output** over to `/dev/null` because of the
 thought by Plan A.
 
-```sh
+```sh {title = "Redirecting lolcommits to /dev/null" hl_lines=[7] verbatim = false }
 # shellcheck disable=SC2086
 lolcommits \
     --capture \
@@ -249,21 +249,21 @@ lolcommits \
 #               ^^^^^^^^^^^^^^^^
 ```
 
-If I'm considering removing something, the first step for me
-when it comes to long-term maintainence is to see what it's like to live
-without. Now if `lolcommits --capture` ever fails, I won't know about it. For
-now I haven't noticed a problem. There are times where `lolcommits --capture`
-doesn't seem to execute, but that's okay. I find that running a camera capture
-at the end of every commit can be slow. This way I don't get bogged down by a
-slow capture for any reason.
+If I'm considering removing something, the first step for me when it comes to
+long-term maintenance is to see what it's like to live without. Now if
+`lolcommits --capture` ever fails, I won't know about it. For now I haven't
+noticed a problem. There are times where `lolcommits --capture` doesn't seem to
+execute, but that's okay. I find that running a camera capture at the end of
+every commit can be slow. This way I don't get bogged down by a slow capture for
+any reason.
 
 ## Thinking about script portability
 
-So at this point, you may have realized that I've been using Zsh as the
+So at this point, you may have realized that I've been using *Zsh* as the
 execution environment. My thoughts behind this is that while I usually execute
-my shell scripts in Bash but since this script is so Apple tooling specific due
-to `system_profiler`. Since macOS Catalina, Zsh has been the default shell for
-macOS going forward. Since I'm already being so Apple-specific in my query for a
-camera, I figured let's go all the way. It was also an issue because of the way
-output grouping works in a Bash `$(...)` sub-shell versus a Zsh `$(...)`
-sub-shell.
+my shell scripts in Bash but since this script is so *Apple* tooling specific
+due to `system_profiler`. Since *macOS Catalina*, *Zsh* has been the default
+shell for *macOS* going forward. Since I'm already being so *Apple*-specific in
+my query for a camera, I figured let's go all the way. It was also an issue
+because of the way output grouping works in a *Bash* `$(...)` sub-shell versus a
+*Zsh* `$(...)` sub-shell.

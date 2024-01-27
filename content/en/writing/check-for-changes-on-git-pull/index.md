@@ -1,12 +1,10 @@
 +++
 title = "Check for changes on git pull"
 date = "2021-10-01"
-description = """
-As projects grow, there are dependencies that fall outside of the project's
-dependency graph. This means that there are some actions you need to perform on
-your code base when things change. Using the post-merge git-hook can help
-automate this for your team.
-"""
+description = """As projects grow, there are dependencies that fall outside of
+the project's dependency graph. This means that there are some actions you need
+to perform on your code base when things change. Using the **post-merge**
+**git-hook** can help automate this for your team."""
 slug = "check-for-changes-on-git-pull"
 +++
 
@@ -35,12 +33,12 @@ Below is an example of a Git hook that is saved as an executable file in your
 project's `.git/hooks/post-merge` file. This one is written using Bash, but feel
 free to tweak things
 
-```bash
+```bash{title="Viewing the contents of the file" verbatim=false}
 
 cat .git/hooks/post-merge
 ```
 
-```bash
+```bash{title=".git/hooks/post-merge"}
 
 #!/usr/bin/env bash
 
@@ -106,7 +104,7 @@ other common files or directories that have changed.
 
 ### Check for changes in the _docs/adrs_ directory.
 
-```bash
+```bash{title=".git/hooks/post-merge"}
 if changed 'docs/adrs/'; then
   echo
   echo "📄 The docs/adrs directory has changed. Please review any ADR changes."
@@ -116,7 +114,7 @@ fi
 
 ### Check for changes of the _package.json_ file.
 
-```bash
+```bash{title=".git/hooks/post-merge"}
 if changed 'package.json'; then
   echo
   echo "🧰 The contents of package.json has changed. Run \`npm install\` or \`yarn\` to update your local dependencies."
