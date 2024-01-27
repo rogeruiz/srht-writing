@@ -3,8 +3,8 @@ title = "Using TouchID with Tmux"
 date = "2024-01-23"
 description = """As I transition my dotfiles configurations over to **Nix** away
 from **Homebrew** & **Chezmoi**, I found myself elevating my priviledges a lot
-more than usual. Having to type my password so much lead me question my life
-choices in how I can improve things for myself. In my research, I learned about
+more than usual. Having to type my password so much lead me to question my life
+choices and how I can improve things for myself. In my research, I learned about
 using **TouchID** for **Sudo**, but quickly found that it didn't work in
 **Tmux**."""
 +++
