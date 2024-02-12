@@ -2,9 +2,9 @@
 <html lang="en-us" class="light:latte dark:mocha bg-mauve">
 {{- partial "head.html" . -}}
 
-<body class="font-body bg-base text-text min-h-screen flex flex-col">
+<body class="font-body bg-base text-text">
   {{- partial "header.html" . -}}
-  <section id="content" class="bg-crust flex-grow">
+  <section id="content" class="bg-crust">
     {{- block "main" . }}{{- end }}
   </section>
   {{- partial "footer.html" . -}}
