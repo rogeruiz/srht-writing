@@ -8,6 +8,7 @@ mkShell {
   buildInputs = [
     hugo
     nodejs_20
+    vale
   ];
   shellHook = /* bash */ ''
     mkdir -p .nix-node
