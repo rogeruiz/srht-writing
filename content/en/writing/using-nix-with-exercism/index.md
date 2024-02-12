@@ -1,10 +1,10 @@
 +++
-title = "Using Nix with Exercism locally"
+title = "Using Nix with Exercism"
 date = "2024-02-01"
 description = """Want to get really good at programming? Use **Exercism**. Want
 to get really good while using your own personal development environment? Use
 **Nix**. I'll show you how to manage each **Exercism** track using **Nix
-Shells**. I hope it inspires you to try out **Nix**."""
+Shells**. I hope it inspires you to try out **Nix** when using **Exercism**."""
 draft = true
 +++
 
@@ -12,7 +12,7 @@ draft = true
 >
 > I highly recommend you read the whole post, but if you want to get started on
 > your own, please read through the documentation for [**Exercism
-> CLI**][exercism-cli], [**Nix**][nix], & [**DevShell**][devshell].
+> CLI**][exercism-cli], [**Nix**][nix], & [**Devshell**][devshell].
 
 [nix]: https://nix.dev/ "Official documentation for getting things done with Nix."
 
@@ -87,7 +87,7 @@ my development environment. While it's not a necessity, it's an important aspect
 of how I use *Nix shell* so I'm writing this from the perspective that `direnv`
 is installed on your machine & working as expected.
 
-### Using Nix `mkShell` to get things done
+### Using *Nix* `mkShell` to build a track environment
 
 A very quick way to set up a *Nix shell* is to leverage the `mkShell` function
 in a `shell.nix` file. This file contains the *Nix* expressions that will allow
