@@ -25,4 +25,22 @@
   .rsr-link-active {
     @apply transition-colors text-mauve underline decoration-1 decoration-inherit decoration-wavy underline-offset-4;
   }
+
+  .rsr-toc > summary {
+    list-style: none;
+  }
+  .rsr-toc > summary::-webkit-details-marker {
+    display: none;
+  }
+  .rsr-toc > summary::after {
+    content: '  ';
+    float: right;
+  }
+  .rsr-toc[open] > summary::after {
+    content: '  ';
+    float: right;
+  }
+  .rsr-toc ul {
+    @apply list-none pl-2 m-0;
+  }
 }
