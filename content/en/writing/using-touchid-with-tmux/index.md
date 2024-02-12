@@ -12,10 +12,10 @@ using **TouchID** for **Sudo**, but quickly found that it didn't work in
 > `tl;dr`
 > 
 > This post is going to cover how to I setup **TouchID** for **Sudo** commands
-> in **Tmux** using **Nix**. But there are **other ways to do this** without Nix
-> at all that you'll need to maintain yourself. I'll cover those first, but if you
-> just want to read how to do it yourself then you can read the following
-> helpful links covering this.
+> in **Tmux** using **Nix**. But there are **other ways to do this** without
+> **Nix** at all that you'll need to maintain yourself. I'll cover those first,
+> but if you just want to read how to do it yourself then you can read the
+> following helpful links covering this.
 > 
 > [➡️ Enabling **TouchID** authorization for Sudo on *macOS High Sierra*][derflounder]
 >

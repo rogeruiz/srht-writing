@@ -2,8 +2,8 @@
 date = "2017-06-22"
 title = "Smooth terminal"
 description = """
-This is a review of the decisions that went into my Prompt String 1 while also
-discussing some customized fonts using NerdFonts and iTerm2.
+This is a review of the decisions that went into my `$PS1` while also
+discussing some customized fonts using **NerdFonts** and **iTerm2**.
 """
 slug = "smooth-terminal"
 +++
@@ -103,7 +103,7 @@ source of a theme for your favorite text editor.
 I like the [open-source M+ font][m_plus] a lot because of how much the lowercase
 g in the M+ M Type-2 family looks like my hand-written lowercase g.
 
-```
+``` {title="A \"g\" character" verbatim = false}
 gggggggggggggggggggggggggggggggggggg
 it's a really nice g, isn't it?
 ```
@@ -143,7 +143,7 @@ icons, I customized every last pixel on my PS1 prompt.
 
 Below are some excerpts from my modified _pure_ theme, real.
 
-```sh
+```sh {title = "oh-my-zsh/custom/real.zsh-theme"}
 prompt_pure_job_count() {
   local job_count=$(jobs | wc -l | xargs)
   if (( $job_count > 0 ))
@@ -159,7 +159,7 @@ that feeling of having a floppy in disk in your computer and hearing that
 rattling sound when the computer was reading from it? This function brings me
 back to those days.
 
-```sh
+```sh {title = "oh-my-zsh/custom/real.zsh-theme"}
 prompt_pure_git_diary() {
     command git rev-parse --is-inside-work-tree &>/dev/null || return
     command git log -1 &>/dev/null || return
@@ -175,7 +175,7 @@ I like to keep diaries even if they're absurd or visual. Git keeps a really good
 record of activity so I figured, why not show what the activity for a particular
 branch is using spark charts.
 
-```sh
+```sh {title = "oh-my-zsh/custom/real.zsh-theme"}
 prompt_pure_precmd() {
     # ... shortened for brevity
 
@@ -201,7 +201,7 @@ prompt_pure_precmd() {
 The `precmd` function here is what prints out the little manilla folder and
 cloud icons when there are remote changes in a git repository.
 
-```sh
+```sh {title = "oh-my-zsh/custom/real.zsh-theme"}
 prompt_pure_setup() {
     # ... shortened for brevity
 
