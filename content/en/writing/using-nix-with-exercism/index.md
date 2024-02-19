@@ -93,7 +93,7 @@ in a `shell.nix` file. This file contains the *Nix* expressions that will allow
 you to install the necessary packages. The following example is not considered
 reproducible & is subject to change if `nixpkgs` gets updated.
 
-```nix { title = "shell.nix" hl_lines = [4,5,9] }
+```nix { title = "shell.nix" hl_lines = [4,5,9,10] }
 { pkgs ? import <nixpkgs> { } }: with pkgs;
 
 mkShell {
@@ -114,7 +114,7 @@ variable is set to the packages that you need to work within the track as well.
 Also using this method, you can set the `shellHook` variable to a multi-line
 string to setup anything in the directory as needed. The `shellHook` is a useful
 way to create directories or set environment variables you might need for a
-specific track. 
+specific track.
 
 ```sh { title = ".envrc" }
 use nix
