@@ -7,16 +7,17 @@ more than usual. Having to type my password so much lead me to question my life
 choices and how I can improve things for myself. In my research, I learned about
 using **TouchID** for **Sudo**, but quickly found that it didn't work in
 **Tmux**."""
+slug = "using-touchid-with-tmux"
 +++
 
 > `tl;dr`
-> 
+>
 > This post is going to cover how to I setup **TouchID** for **Sudo** commands
 > in **Tmux** using **Nix**. But there are **other ways to do this** without
 > **Nix** at all that you'll need to maintain yourself. I'll cover those first,
 > but if you just want to read how to do it yourself then you can read the
 > following helpful links covering this.
-> 
+>
 > [➡️ Enabling **TouchID** authorization for Sudo on *macOS High Sierra*][derflounder]
 >
 > [➡️ *GitHub* PAM Reattach repository][pam_reattach]
@@ -28,7 +29,7 @@ I started using *Nix* while my laptop was at the *Apple* repair center earlier
 this month. It started with learning *NixOS* with an old *Dell Chromebook*, then
 quickly moving into learning how to use *Home Manager* to reproducibly build my
 user space. When I eventually got my laptop back from *Apple*, I liked *Nix* so
-much that I decided to learn *Nix Darwin*. 
+much that I decided to learn *Nix Darwin*.
 
 This is a long-winded way of saying that I went down the *Nix* rabbit-hole 🐰🕳️,
 **though my writing about that journey is for another series of posts**. For
@@ -66,7 +67,7 @@ find an `include` directive for something called `sudo_local` in this file.
 
 ```ini{title="/etc/pam.d/sudo"}
 # sudo: auth account password session
-auth       include        sudo_local 
+auth       include        sudo_local
 auth       sufficient     pam_smartcard.so
 auth       required       pam_opendirectory.so
 account    required       pam_permit.so
@@ -92,7 +93,7 @@ low-level files in their OS.
 
 Now with the `/etc/pam.d/sudo_local` file updated, you'll now have *TouchID*
 support within your favorite terminal emulators. You won't even need to restart
-your system. 
+your system.
 
 That's great 🎉! But it doesn't work inside of *Tmux* 😢. Similar to how
 [`pbpaste` and `pbcopy` needed to be **reattached**][reattach-to-user-namespace]
@@ -200,7 +201,7 @@ With this, you just need to run `darwin-rebuild switch` to add a line to the
 ```ini{title="/etc/pam.d/sudo"}
 # sudo: auth account password session
 auth       sufficient     pam_tid.so # nix-darwin enableSudoTouchIdAuth
-auth       include        sudo_local 
+auth       include        sudo_local
 auth       sufficient     pam_smartcard.so
 auth       required       pam_opendirectory.so
 account    required       pam_permit.so

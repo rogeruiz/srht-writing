@@ -14,7 +14,7 @@ other = "alojado en"
 other = "Contenido & diseño por {{ .Author }}"
 
 [og_image]
-other = "images/social-es.jpg"
+other = "images/social-es.png"
 
 [author_date_prefix]
 other = "Escrito en"
