@@ -93,7 +93,7 @@ in a `shell.nix` file. This file contains the *Nix* expressions that will allow
 you to install the necessary packages. The following example is not considered
 reproducible & is subject to change if `nixpkgs` gets updated.
 
-```nix { title = "shell.nix" hl_lines = [4,5,9,10] }
+```nix { title = "shell.nix" hl_lines = [4,"5-10"] }
 { pkgs ? import <nixpkgs> { } }: with pkgs;
 
 mkShell {
