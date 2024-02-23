@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-
   /**
  * La clase `.highlight` viene de la aplicación _highlight.js_.
  * <https://github.com/highlightjs/highlight.js>
@@ -42,5 +41,13 @@
   }
   .rsr-toc ul {
     @apply list-none pl-2 m-0;
+  }
+
+  .rsr-page-link {
+    @apply py-1 px-2 text-blue rounded border border-crust hover:border-base hover:bg-rosewater hover:text-base;
+  }
+
+  .rsr-page-link-active {
+    @apply bg-mauve text-base hover:bg-mauve cursor-default;
   }
 }

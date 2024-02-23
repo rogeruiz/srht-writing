@@ -6,8 +6,10 @@
 </section>
 {{ end }}
 <section class="px-10 pb-10 md:grid md:gap-6 md:grid-cols-4 lg:grid-cols-6">
-  {{ range .Pages }}
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "writing") }}
+  {{ range $paginator.Pages }}
   {{ .Render "summary" }}
   {{ end }}
 </section>
+{{ partial "pagination.html" . }}
 {{ end }}
