@@ -1,0 +1,9 @@
+{{ with .GetTerms "tags" }}
+<section class="flex flex-row justify-start text-base font-mono text-xs mb-2">
+  {{ range . }}
+  <a href="{{ .RelPermalink }}" class="mr-2 px-2 py-1 {{ .Params.Background }} rounded hover:animate-pulse">
+    {{ .Params.Display }}
+  </a>
+  {{ end }}
+</section>
+{{ end }}

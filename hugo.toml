@@ -2,6 +2,9 @@ baseURL = "https://write.rog.gr/"
 languageCode = "en-US"
 defaultContentLanguage = 'en-us'
 
+[taxonomies]
+tag = 'tags'
+
 [languages]
 
 [languages.es]

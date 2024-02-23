@@ -5,6 +5,7 @@ description = """Interviewing for software engineers is a complicated topic. Her
 observations with over a decade of experience interviewing on both sides for
 various engineering organizations."""
 slug = "coding-interviews"
+tags = ["management"]
 +++
 
 > `tl;dr`

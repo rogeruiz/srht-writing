@@ -8,6 +8,7 @@ choices and how I can improve things for myself. In my research, I learned about
 using **TouchID** for **Sudo**, but quickly found that it didn't work in
 **Tmux**."""
 slug = "using-touchid-with-tmux"
+tags = ["devex", "mac", "nix"]
 +++
 
 > `tl;dr`

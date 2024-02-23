@@ -8,4 +8,5 @@ complicated quickly. I'll show you how to enable autocompletion for those custom
 scripts in a couple of different ways.
 """
 slug = "adding-autocompletion-in-zsh"
+tags = ["devex"]
 +++

@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ partial "tags-hero.html" . }}
+{{ if .Content }}
+<section class="px-10 pb-10 content prose md:prose-lg lg:prose-xl">
+  {{ .Content }}
+</section>
+{{ end }}
+{{ if gt .Pages.Len 1 }}
+{{ .Scratch.Set "postUnits" "posts" }}
+{{ else }}
+{{ .Scratch.Set "postUnits" "post" }}
+{{ end }}
+<div class="relative pb-10 inline-flex items-center justify-center w-full">
+  <hr class="w-48 h-px my-8 bg-surface0 border-0">
+  <span
+    class="absolute px-4 rounded font-body italic font-bold text-xl text-overlay2 -translate-x-1/2 bg-surface0 left-1/2">
+    {{ .Pages.Len }} {{ .Scratch.Get "postUnits" }}
+  </span>
+</div>
+<section class="px-10 pb-10 md:grid md:gap-6 md:grid-cols-4 lg:grid-cols-6">
+  {{ range .Data.Pages }}
+  {{ .Render "summary" }}
+  {{ end }}
+</section>
+{{ end }}

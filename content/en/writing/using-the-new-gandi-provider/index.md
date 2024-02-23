@@ -5,6 +5,7 @@ description = """Manage your **Gandi** DNS records via **Terraform** with open
 source tools and free commercial products. Also, setup your repository for
 better documentation writing with **Vale**."""
 slug = "using-the-new-gandi-provider"
+tags = ["automation", "cloud", "devex"]
 +++
 
 > `tl;dr`

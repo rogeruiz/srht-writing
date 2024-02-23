@@ -6,6 +6,7 @@ to get really good while using your own personal development environment? Use
 **Nix**. I'll show you how to manage each **Exercism** track using **Nix
 Shells**. I hope it inspires you to try out **Nix** when using **Exercism**."""
 slug = "using-nix-with-exercism"
+tags = ['devex', 'learning', 'nix']
 +++
 
 > `tl;dr`

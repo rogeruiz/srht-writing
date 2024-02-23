@@ -5,6 +5,7 @@ description = """**macOS**-based Night mode supported scripting to update
 various configurations across different development environment tools including,
 **Alacritty**, **Tmux**, **Neovim**, **Starship**, and **Bat**."""
 slug = "appleinterfacestyle--tui"
+tags = ["automation", "devex", "mac"]
 +++
 
 > `tl;dr`
@@ -31,7 +32,7 @@ Here's an excerpt from the original authors.
 > unknown, program. Don't clutter output with extraneous information. Avoid
 > stringently columnar or binary input formats. Don't insist on interactive
 > input.
-> 
+>
 > from Ken Thompson and Dennis Ritchie, key proponents of the **Unix
 > philosophy**.
 
@@ -84,7 +85,7 @@ interface isn't text-first. It's visual first. Which is great if that's what
 you're in to.
 
 > Write programs to handle text streams, because that is a universal interface.
-> 
+>
 > by Peter H. Salus in **A Quarter-Century of Unix** (1994).
 
 ### I had to stop using iTerm2 and start using Alacritty

@@ -7,6 +7,7 @@ came to the rescue. But while I solved the issue I was having, I did start to
 question whether I should keep using this tool while **Apple** fixes their CLI
 tools."""
 slug = "revisting-lolcommits-macos-sonoma"
+tags = ["git", "mac"]
 +++
 
 > `tl;dr`

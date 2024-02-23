@@ -5,6 +5,7 @@ description= """Setting up **lolcommits** for local selfies from **Git** commits
 you make on your machine using your camera. This is geared towards **Mac OS X**
 users."""
 slug = "setting-up-lolcommits"
+tags = ["automation", "devex", "git", "mac"]
 +++
 
 > `tl;dr`

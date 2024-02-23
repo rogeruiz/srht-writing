@@ -6,6 +6,7 @@ finally time to migrate my development environment over to **Neovim**. This
 meant learning about Lua and writing **Lua** configuration files for **Neovim**.
 My journey was cathartic and took less than a week."""
 slug = "switching-to-neovim--lua"
+tags = ["learning", "programming"]
 +++
 
 ## Long time Vim user migrates to Neovim

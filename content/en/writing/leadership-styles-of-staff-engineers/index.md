@@ -6,6 +6,7 @@ from senior exclusively-technical roles into a hybrid of technical & leadership 
 roles are usually fall under the **staff+ engineering path** which is a compliment to
 the **engineering manager path**."""
 slug = "leadership-styles-of-staff-engineers"
+tags = ["management"]
 +++
 
 At the companies I've worked at throughout my career, I've had the pleasure of

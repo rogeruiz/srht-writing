@@ -6,6 +6,7 @@ devices to view your site. This is especially true with mobile-first design &
 starting a **Hugo** project from scratch. This neat feature will help you do
 this reliably across development environments."""
 slug = "serve-hugo-local-network"
+tags = ["devex", "hugo"]
 +++
 
 > `tl;dr`

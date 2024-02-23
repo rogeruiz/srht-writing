@@ -6,6 +6,7 @@ the project's dependency graph. This means that there are some actions you need
 to perform on your code base when things change. Using the **post-merge**
 **git-hook** can help automate this for your team."""
 slug = "check-for-changes-on-git-pull"
+tags = ["automation", "devex", "git"]
 +++
 
 Working on large projects with people means that you're going to be

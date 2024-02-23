@@ -1,0 +1,17 @@
+{{ $image_container_classes := "" }}
+<section class="relative bg-mantle text-subtext0 p-10 mb-10">
+  <h1 class="text-5xl md:text-8xl font-display break-words">
+    <span class="bg-clip-text
+                 text-transparent
+                 bg-gradient-to-r
+                 from-lavender
+                 to-mauve">
+      Writing about {{ .Title }}.
+    </span>
+  </h1>
+  <section class="pt-5 flex flex-column">
+    <p class="text-xl md:text-3xl font-display font-extralight italic prose text-overlay1 ">
+      {{ .Description | markdownify }}
+    </p>
+  </section>
+</section>

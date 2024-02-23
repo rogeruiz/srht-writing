@@ -1,11 +1,11 @@
 +++
 date = "2017-06-22"
 title = "Smooth terminal"
-description = """
-This is a review of the decisions that went into my `$PS1` while also
-discussing some customized fonts using **NerdFonts** and **iTerm2**.
-"""
+description = """This is a review of the decisions that went into my `$PS1`
+while also discussing some customized fonts using **NerdFonts** and
+**iTerm2**."""
 slug = "smooth-terminal"
+tags = ["devex", "linux"]
 +++
 
 ## Getting started
