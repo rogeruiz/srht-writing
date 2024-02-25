@@ -8,7 +8,7 @@ other = "English 🇺🇸"
 other = "Creado con"
 
 [hosted_on]
-other = "alojado en"
+other = "Alojado en"
 
 [authorship]
 other = "Contenido & diseño por {{ .Author }}"

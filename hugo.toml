@@ -42,7 +42,7 @@ BaseURL = "https:/infosec.exchange/"
 Handle = "@rogeruiz"
 
 [[params.social]]
-Name = "Twitter"
+Name = "X"
 BaseURL = "https://twitter.com/"
 Handle = "@rogeruiz"
 

@@ -5,10 +5,10 @@ other = "Traducir a"
 other = "Español 🇨🇴"
 
 [build_with]
-other = "Built with"
+other = "Built using"
 
 [hosted_on]
-other = "hosted on"
+other = "Deployed on"
 
 [authorship]
 other = "Content & design by {{ .Author }}"
