@@ -1,33 +1,11 @@
 {{ define "main" }}
 
+{{ partial "draft-banner.html" . }}
+
 {{ partial "hero.html" . }}
 
 <section class="px-10 pb-10 content prose md:prose-lg lg:prose-xl">
-  {{ if .Draft }}
-  <span class="block
-             sticky
-             top-0
-             z-10
-             text-xl
-             tracking-tight
-             text-yellow
-             w-full
-             text-center
-             py-4
-             bg-gradient-to-r
-             from-crust
-             via-mantle
-             to-crust">
-    ⚠️ {{ i18n "draft_post_message" }} ⚠️
-  </span>
-  {{ end }}
-
-  <details class="rsr-toc">
-    <summary class="text-sm font-mono">Table of contents</summary>
-    <aside class="font-mono prose">
-      {{ .TableOfContents }}
-    </aside>
-  </details>
+  {{ partial "toc.html" . }}
 
   {{ .Content }}
 </section>

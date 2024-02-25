@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "hero.html" . }}
+<section class="px-10 pb-10 content prose md:prose-lg lg:prose-xl">
+  {{ .Content }}
+</section>
+
+<section class="px-10 pb-10 flex flex-wrap text-base font-mono text-lg">
+  {{ range .Data.Terms.Alphabetical }}
+  <span class="block relative mr-2">
+    <span
+      class="absolute top-0 right-1 text-center py-0.5 px-2 inline text-sm border-crust border rounded-full bg-red text-base">{{
+      .Count
+      }}</span>
+    <a href="{{ .Page.RelPermalink }}" class="block {{ .Page.Params.Background }} rounded px-2 py-1 m-4">{{
+      .Page.Params.Display }}</a>
+  </span>
+  {{ end }}
+</section>
+
+{{ end }}
