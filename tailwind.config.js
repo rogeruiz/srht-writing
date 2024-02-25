@@ -65,8 +65,12 @@ module.exports = {
               fontWeight: 400,
             },
             blockquote: {
+              backgroundColor: 'rgb(var(--ctp-base))',
+              padding: '5px 15px',
+              borderRadius: '5px',
               borderLeftColor: 'rgb(var(--ctp-mauve))',
-              color: 'rgb(var(--ctp-overlay1))',
+              borderLeftWidth: '10px',
+              color: 'rgb(var(--ctp-overlay2))',
               '& p:first-of-type, & p:last-of-type': {
                 '&:before, &:after': {
                   color: 'rgb(var(--ctp-mauve))',

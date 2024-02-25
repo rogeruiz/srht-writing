@@ -1,10 +1,10 @@
 {{ if .IsPage }}
 {{ if eq .Page.Type "writing" }}
-<section class="mt-5">
+<section class="mt-5 mb-3">
   <span class="inline-block font-serif uppercase">
     {{ i18n "author_date_prefix" }} {{ dateFormat "02 Jan 2006" .Date }}
   </span>
-  <a class="block md:inline-block font-display rsr-link" href="{{ .RelPermalink }}">
+  <a class="inline-block font-display rsr-link" href="{{ .RelPermalink }}">
     ({{ i18n "link_to_post" }})
   </a>
 </section>

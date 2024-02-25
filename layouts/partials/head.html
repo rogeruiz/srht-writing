@@ -46,7 +46,6 @@
   <meta name="apple-mobile-web-app-title" content="write.rog.gr">
   <meta name="application-name" content="write.rog.gr">
   <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="theme-color" content="#e6e6e6">
 
   {{ $catppuccin_latte := resources.Get "css/catppuccin-latte.css" }}
   <link rel="stylesheet" media="(prefers-color-scheme: light)" href="{{ $catppuccin_latte.Permalink }}">
@@ -60,7 +59,6 @@
   {{ $css := resources.Get "css/index.css" }}
   <link rel="stylesheet" href="{{ $css.Permalink }}">
 
-  <!-- <link rel="manifest" href="site.webmanifest"> -->
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="--ctp-base">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="--ctp-base">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eff1f5">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1e1e2e">
 </head>
