@@ -6,8 +6,8 @@
   {{- with .Attributes.title }}
   <figcaption>
     {{- if $isVerbatim -}}
-    <tt class="font-mono h-full border-b border-yellow bg-yellow text-mantle ml-3 rounded-t px-4 inline-block">{{ .
-      }}</tt>
+    <span class="font-mono h-full border-b border-yellow bg-yellow text-mantle ml-3 rounded-t px-4 inline-block">{{ .
+      }}</span>
     {{- else -}}
     <span class="font-bold h-full border-b border-sky bg-sky text-mantle ml-3 rounded-t px-4 inline-block">{{ .
       | markdownify }}</span>

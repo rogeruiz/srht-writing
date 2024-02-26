@@ -81,7 +81,7 @@ module.exports = {
               color: 'rgb(var(--ctp-mauve))',
             },
             strong: {
-              color: 'rgb(var(--ctp-subtext0))',
+              color: 'rgb(var(--ctp-text))',
             },
             'figcaption strong': {
               color: 'inherit',
