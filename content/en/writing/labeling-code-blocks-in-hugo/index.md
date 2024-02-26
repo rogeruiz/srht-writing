@@ -11,9 +11,10 @@ tags = ["devex", "hugo", "learning"]
 The great thing about writing in *Markdown* is that there are two convenient
 shortcuts for designating text to be `code`. To write an inline code block, you
 wrap text in a single backtick character on either side like the last word of
-the previous sentence. Then there's the multi-line code block that us created by
+the previous sentence. Then there's the multi-line code block that are created by
 wrapping lines in triple backtick characters. In this post, we'll be focusing
-exclusively on how to render these code blocks in *Hugo*.
+exclusively on how to render these multi-line code blocks in *Hugo* with custom
+markup.
 
 ```sh
 echo "hello world"
