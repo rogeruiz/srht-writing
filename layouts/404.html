@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="relative bg-mantle text-subtext0 p-10 mb-10">
+
+  <h1 class="text-4xl md:text-8xl font-display break-words">
+    <span class="bg-clip-text
+                 text-transparent
+                 bg-gradient-to-r
+                 from-lavender
+                 to-mauve">
+      Uh-oh. Looks like something is missing here.
+    </span>
+  </h1>
+
+  <section class="pt-5 flex flex-column">
+    <p class="text-lg md:text-3xl font-display font-extralight italic prose text-overlay1">
+      <code>error 404</code> page not found
+    </p>
+  </section>
+</section>
+<section class="px-10 pb-10 content prose md:prose-lg lg:prose-xl">
+  <p>
+    Sorry, but it looks like you stumbled on a page that can't be found. <a href="{{ "" | relURL }}">Click here to go
+      back to the
+      homepage.</a>
+  </p>
+</section>
+{{ end }}
