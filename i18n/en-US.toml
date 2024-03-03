@@ -27,3 +27,12 @@ other = "This is a draft post"
 
 [read_more]
 other = "Read more"
+
+[or]
+other = "or"
+
+[view_resume]
+other = "You can also view it online at"
+
+[download_resume]
+other = "Download it directly."

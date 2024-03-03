@@ -3,16 +3,16 @@
 {{- $title := .Get 0 -}}
 
 <p>
-  <a title="{{ $title }}" href="{{ $download_link }}" target="_blank">
+  <a title="{{ $title }}" href="{{ $download_link }}" target="_blank" rel="noopener noreferrer">
     {{ $title }}
   </a>
-  <span>or</span>
+  <span> {{ i18n "or" }} </span>
   <a title="{{ $title }}" href="{{ $download_link }}" download="{{ $download_filename }}">
-    <code>{{ "\uf019" | safeHTML }}</code>Download it directly.</a>
+    <code>{{ "\uf019" | safeHTML }}</code>{{ i18n "download_resume" }}</a>
 </p>
 
 <p>
-  You can also view it online at <a href="https://resume.rog.gr/" target="_blank"
+  {{ i18n "view_resume" }}<a href="https://resume.rog.gr/" target="_blank" rel="noopener noreferrer"
     title="Roger Steve Ruiz's JSON resume">
     https://resume.rog.gr/
   </a>.

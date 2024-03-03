@@ -10,6 +10,8 @@ name = "Experiencia."
 weight = 3
 +++
 
+{{< resume-link "Miré a mi CV en una nueva página." >}}
+
 Yo a trabajado en un numero de compañías un diferente posiciones.
 
 [📄 Descargar mi último curriculm aquí (por ahora solo en ingles)](/resume.pdf)

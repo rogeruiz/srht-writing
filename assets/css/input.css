@@ -14,7 +14,7 @@
  */
   .highlight .chroma .line.hl,
   .highlight .chroma .hl {
-    @apply bg-crust text-subtext1 w-max;
+    @apply bg-crust text-subtext1 rounded border border-overlay0 w-max;
   }
 
   .rsr-link {

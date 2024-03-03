@@ -27,3 +27,12 @@ other = "Esta es un borrador de publicación"
 
 [read_more]
 other = "Leer más"
+
+[or]
+other = "o"
+
+[view_resume]
+other = "También lo puedves ver aquí "
+
+[download_resume]
+other = "Descárgalo directamente."
