@@ -14,9 +14,13 @@ Here's a list of the places I've worked. My career has taken me all across the
 software development stack along with to some interesting edges around
 infrastructure, security, and compliance.
 
+> I've been told that I have **full full-stack experience**. Others would call
+> it **DevOps**. I think of myself as a curious learner willing to dive into
+> complex problems as I need to in order to delivery solutions on-time in a
+> cost-effective way.
+
 While I prefer working within a web application domain, I am open to new
 opportunities outside of building for the web. In recent years, I've been
-thinking more about how to help with developer experience. It's something that's
-always interested me since I do it for myself as well. I write a lot about my
-own experiences [on my blog]({{< relref "writing" >}}). So check it out if
-you're interested.
+thinking more about how to help with developer experience & internal platform
+development teams. As I've grown through my career, I've realized that I do my
+best work in supporting & growing engineering teams.
