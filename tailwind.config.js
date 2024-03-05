@@ -10,26 +10,35 @@ module.exports = {
         DEFAULT: {
           css: {
             color: 'rgb(var(--ctp-text))',
-            'h1, h2, h3, h4, h5, h6': {
+            'h2, h3, h4, h5, h6': {
               fontFamily: 'Playfair',
-            },
-            h1: {
-              color: 'rgb(var(--ctp-red))',
+              color: 'rgb(var(--ctp-subtext2))',
+              position: 'relative',
             },
             h2: {
-              color: 'rgb(var(--ctp-peach))',
+              '& > a:hover': {
+                borderColor: 'rgb(var(--ctp-peach))',
+              },
             },
             h3: {
-              color: 'rgb(var(--ctp-yellow))',
+              '& > a:hover': {
+                borderColor: 'rgb(var(--ctp-yellow))',
+              },
             },
             h4: {
-              color: 'rgb(var(--ctp-green))',
+              '& > a:hover': {
+                borderColor: 'rgb(var(--ctp-green))',
+              },
             },
             h5: {
-              color: 'rgb(var(--ctp-sapphire))',
+              '& > a:hover': {
+                borderColor: 'rgb(var(--ctp-sapphire))',
+              },
             },
             h6: {
-              color: 'rgb(var(--ctp-lavender))',
+              '& > a:hover': {
+                borderColor: 'rgb(var(--ctp-lavender))',
+              },
             },
             th: {
               color: 'rgb(var(--ctp-text))',

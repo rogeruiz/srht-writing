@@ -1,10 +1,14 @@
-{{ if and (gt .WordCount 400) (ne .Params.toc false) }}
+{{- if and (gt .WordCount 400) (ne .Params.toc false) -}}
 
-<details class="rsr-toc">
-  <summary class="text-sm font-mono">Table of contents</summary>
+{{- if ge .ReadingTime 8 -}}
+{{- .Scratch.Set "toc-open-attr" "open" -}}
+{{- end -}}
+
+<details class="rsr-toc" {{ .Scratch.Get "toc-open-attr" }}>
+  <summary class="text-sm font-mono">Table of contents </summary>
   <aside class="font-mono prose">
     {{ .TableOfContents }}
   </aside>
 </details>
 
-{{ end }}
+{{- end -}}

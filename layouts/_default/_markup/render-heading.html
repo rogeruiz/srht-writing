@@ -1,4 +1,6 @@
-<h{{ .Level }} id="{{ .Anchor | safeURL }}" class="group">
-  <a class="no-underline text-inherit animate-none hover:text-inherit" href="#{{ .Anchor | safeURL }}">{{ .Text |
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  <a class="border-b-2 border-b-transparent no-underline text-inherit animate-none hover:text-inherit"
+    href="#{{ .Anchor | safeURL }}">{{
+    .Text |
     safeHTML }} </a>
 </h{{ .Level }}>
