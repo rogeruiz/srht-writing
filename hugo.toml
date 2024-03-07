@@ -84,6 +84,10 @@ hardWraps = false
 unsafe = true
 xhtml = false
 
+[markup.goldmark.renderHooks]
+[markup.goldmark.renderHooks.link]
+enableDefault = true
+
 [markup.highlight]
 noClasses = false
 
