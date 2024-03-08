@@ -8,7 +8,6 @@ class a breeze when requirements change for how the underlying data is
 represented."""
 slug = "data-classes-in-python"
 tags = ["devex", "programming"]
-draft = true
 +++
 
 Let's talk classes in *Python*. They're a great way to organized functions &
@@ -98,7 +97,7 @@ the `__eq__` & `__ne__` short for equal & not equal respectively.
       return not result
 ```
 
-Now that we can compare instances of the `SimpleFlag`, we can think about
+Now that we can compare instances of `SimpleFlag`, we can think about
 **hashability & making this class hashable**. In order to do that we'll need to
 create a `__hash__` deterministic method that returns a value based on the
 unique properties of the class.
@@ -534,7 +533,8 @@ property when `frozen=True` is passed into the decorator using the
 
 ### Adding ordering to *Data Classes*
 
-
+Adding comparisons to a *Data Class* is easy with the `order=True` argument
+passed into the decorator.
 
 ```py { title = "ordered-simple-flag.py" hl_lines = [4] }
 from dataclasses import dataclass
@@ -593,11 +593,12 @@ class to run after the initializing step. This is where we set the value for
 `sort_order` from the `created_at` property. This will now be the property that
 is used in *rich comparisons* like, `>`, `>=`, `<`, `<=`.
 
-##### Setting `sort_index` when the class is immutable-simple-flag
+##### Setting `sort_index` when the class is immutable
 
 If you're using `frozen=True` & `order=True` in the decorator, you won't be able
-to set variables in the `__post_init__` method from above. You'll have to modify
-the *special method* to use the `object.__setattr__` method.
+to set variables in the `__post_init__` method in the same way as above. Instead
+of assigning a value to the property on `self` directly, you'll need to use the
+`object.__setattr__` method to assign a value to the immutable property.
 
 ```py { title = "ordered-index-frozen-simple-flag.py" hl_lines = [ 4, 15 ] }
 from dataclasses import dataclass, field
