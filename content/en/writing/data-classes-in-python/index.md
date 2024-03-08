@@ -10,7 +10,7 @@ slug = "data-classes-in-python"
 tags = ["devex", "programming"]
 +++
 
-Let's talk classes in *Python*. They're a great way to organized functions &
+Let's talk classes in *Python*. They're a great way to organize functions &
 behaviors that center around a particular instance of data & functionality. A
 simple class is with an `__init__` method to initialize some properties on the
 instance. There are other **special methods** in *Python* like the `__repr__`
