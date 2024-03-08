@@ -43,10 +43,17 @@ centered around data specifically using *Data Classes*.
 
 Okay, so bare with me here. The next few sections are going to show you how to
 write a good-practice data-driven class without using the *Data Classes* library
-in *Python* >= 3.7. If you'd like to skip all this and get section using the
-`@dataclass` decorator, [you can click here to that section][skip].
+in *Python* >= 3.7.
+
+<details>
+<summary>Curious to see <code>@dataclass</code> in action?</summary>
+
+If you'd like to skip examples of *special methods* for a *Python* class without
+*Data Classes* then [⬇️ you can skip to that section by clicking here][skip].
 
 [skip]: {{< relref "writing/data-classes-in-python#writing-our-simpleflag-class-with-dataclasses" >}}
+
+</details>
 
 ```python { title = "simple-flag.py" hl_lines = [ 3, 7 ] }
 class SimpleFlag:
@@ -404,8 +411,15 @@ succinctly define classes that store data.
 
 ## Writing our `SimpleFlag` class with `dataclasses`
 
-To write the same `simple-flag.py` class using the *Data Classes* decorator, you
-will first notice that there is a lot less method definitions involved.
+To write the same `simple-flag.py` class from above using the *Data Classes*
+decorator, you will first notice that there is a lot less method definitions
+involved.
+
+[➡️ You can read all the *special methods* that get added to the class
+automatically along with the arguments to the `@dataclass` decorator
+here][docs-dcmethods].
+
+[docs-dcmethods]: https://docs.python.org/3/library/dataclasses.html#dataclasses.dataclass
 
 ```py { title = "simple-flag.py" hl_lines = [4] }
 from dataclasses import dataclass
@@ -416,6 +430,9 @@ class SimpleFlag:
   name: str
   is_active: bool
   created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
 ```
 
 Your eyes aren't playing tricks on you. That's it. As [PEP 557][docs-pep557]
@@ -424,6 +441,8 @@ takes the type annotations from the class variables definitions & adds the
 following *special methods* to our `SimpleFlag` instance.
 
 - `__init__` - How the class gets initialized is taken care for us.
+  - You can run your own code with `__post_init__` if you want to run something
+    after the auto-created `__init__` method.
 - `__repr__` - How the class is represented is taken care for us.
 - `__eq__` - How the class is compared between instances is taken care for us.
 
@@ -434,7 +453,7 @@ You can also assign default values to properties is straight-forward. Taking the
 example above, let's add a default value of `False` to the `is_active` property
 if it's not passed in.
 
-```py { title = "" hl_lines = [ 7 ] }
+```py { title = "default-value-simple-flag.py" hl_lines = [ 7 ] }
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -443,9 +462,15 @@ class SimpleFlag:
   name: str
   is_active: bool = True
   created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
 ```
 
 ### Adding immutability to *Data Classes*
+
+Next, let's add immutability to `SimpleFlag` by passing the `frozen=True`
+keyword argument into the decorator call.
 
 ```py { title = "immutable-simple-flag.py" hl_lines = [4] }
 from dataclasses import dataclass
@@ -456,22 +481,28 @@ class SimpleFlag:
   name: str
   is_active: bool
   created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
 ```
 
-Now, if you'd like to add immutability, you can pass arguments into the
-`@dataclass` decorator. This has the added feature of adding the following
-*special methods* as well.
+Now the *Data Classes* library will add following *special methods* as well.
 
-- `__hash__`
-- `__setattr__`
+- `__eq__` - How the class is compared between instances is taken care for us.
+- `__hash__` - How the class generates an integer hashed by the values of the
+  instance to support using instances as keys in a dictionary or items in a set.
+- `__setattr__` This is used to raise a `FrozenInstanceError` if it's called to
+  set a value to an immutable property.
+- `__delattr__` This is used to raise a `FrozenInstanceError` if `del` is called to
+  delete an immutable property.
 
 #### Modifying properties by creating new copies
 
 With the `frozen=True` keyword argument in the decorator call for the *Data
-Class*, you can't modify properties of an instance directly. But if you can
-create a copy with a different value for an immutable property like so.
+Class*, you can't modify properties of an instance directly anymore. But. You
+can create a copy with a different value for an immutable property like so.
 
-```py { title = "main.py" hl_lines = [13] }
+```py { title = "replace-simple-flag.py" hl_lines = [16] }
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -480,6 +511,9 @@ class SimpleFlag:
   name: str
   is_active: bool
   created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
 
 
 def main():
@@ -491,7 +525,16 @@ With the `dataclasses.replace()` function, you pass in the class you'd like to
 modify as the first argument with keyword arguments for the properties you'd
 like to modify.
 
+It is possible to still modify properties when the class has immutable
+properties. There's an example [further along that shows how to modify a
+property when `frozen=True` is passed into the decorator using the
+`object.__setattr__` method][skip2].
+
+[skip2]: {{< relref "writing/data-classes-in-python#setting-sort_index-when-the-class-is-immutable-simple-flag" >}}
+
 ### Adding ordering to *Data Classes*
+
+
 
 ```py { title = "ordered-simple-flag.py" hl_lines = [4] }
 from dataclasses import dataclass
@@ -502,45 +545,144 @@ class SimpleFlag:
   name: str
   is_active: bool
   created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
 ```
 
-- `__ge__`
-- `__gt__`
-- `__le__`
-- `__lt__`
+All of the following *special methods* get generated. The comparison is done
+between tuples of the classes fields, in order.
+
+- `__ge__` - How the class runs a **rich comparison** for greater than or equal
+comparisons.
+- `__gt__` - How the class runs a **rich comparison** for greater than
+comparisons.
+- `__le__` - How the class runs a **rich comparison** for greater than or equal
+comparisons.
+- `__lt__` - How the class runs a **rich comparison** for greater than
+comparisons.
 
 #### Adding a `sort_index` to control ordering
 
-Since we're no longer writing our own sorting methods, we will have to implement
-a control for how our instances are ordered. We can do this with the
-control the how
+While `order=True` writes our functions for us, we can still control ordering
+operations by tying them to a particular property on the class.
+
+```py { title = "ordered-with-index-simple-flag.py" hl_lines = [ 1,6,"14-15" ] }
+from dataclasses import dataclass, field
+from datetime import datetime
+
+@dataclass(order=True)
+class SimpleFlag:
+  sort_index: int = field(init=False, repr=False)
+  name: str
+  is_active: bool
+  created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
+
+  def __post_init__(self):
+    self.sort_index = self.created_at
+```
+
+Take a look at the highlighted sections above. First, we have to import a new
+function from `dataclasses` called `field`. We need to this to control how the
+`sort_order` property gets initialized and how it's represented in string form.
+You can also see that there's a new *special method* that we need to add to our
+class to run after the initializing step. This is where we set the value for
+`sort_order` from the `created_at` property. This will now be the property that
+is used in *rich comparisons* like, `>`, `>=`, `<`, `<=`.
+
+##### Setting `sort_index` when the class is immutable-simple-flag
+
+If you're using `frozen=True` & `order=True` in the decorator, you won't be able
+to set variables in the `__post_init__` method from above. You'll have to modify
+the *special method* to use the `object.__setattr__` method.
+
+```py { title = "ordered-index-frozen-simple-flag.py" hl_lines = [ 4, 15 ] }
+from dataclasses import dataclass, field
+from datetime import datetime
+
+@dataclass(order=True, frozen=True)
+class SimpleFlag:
+  sort_index: int = field(init=False, repr=False)
+  name: str
+  is_active: bool
+  created_at: datetime
+
+  def toggle(self):
+    self.is_active = not self.is_active
+
+  def __post_init__(self):
+    object.__setattr__(self, 'sort_index', self.created_at)
+```
+
+As you can see from the highlight above, the function signature is the object
+(`self`), the property (`sort_index`), and the value (`self.created_at`) for
+that property.
 
 ### Setting default values
 
-With *Data Classes* you can also set defaults for properties of the class. This
-is done with the syntax.
+With *Data Classes* you can also set defaults for properties of the class. You
+may have noticed this in the example for the section [*Assigning default
+values*][callback] where we made the `is_active` property have a default value
+of `True`.
+
+[callback]: {{< relref "writing/data-classes-in-python#assigning-default-values" >}}
+
+While this works well with types such as `bool`, `str`, or `int`. But for types
+like `dict`, `list`, or `set`, we will need to set it the value for the property
+with the `field` function and the argument `default_factory=<type>`.
 
 #### Creating properties that are unique to an instance
 
 When working with *Data Classes*, you will have to use the `fields` function
 from the `dataclasses` library to make certain mutable properties unique to the
-instance.
+instance. Bellow we'll create a new `tags` property that is a list of strings.
 
-> Take the following code where one of the properties is a list.
+```py { title = "shared-list-simple-flags" hl_lines = [ 9 ] }
+from dataclasses import dataclass
+from datetime import datetime
+
+@dataclass()
+class SimpleFlag:
+  name: str
+  is_active: bool
+  created_at: datetime
+  tags: list[str] = []
+
+  def toggle(self):
+    self.is_active = not self.is_active
+```
 
 In this example above, the list will be shared across all instances of the
-class. If you want to make things unique, you will need to import the `fields`
-function from `dataclasses`.
+class. In order to make `tags` unique, we will need to import the `fields`
+function from `dataclasses` and set a `default_factory` argument equal to the
+`list` function in *Python*.
 
-> See how easy it is to make a unique list per instance of the class.
+```py { title = "unique-list-simple-flags.py" hl_lines = [ 1, 9 ] }
+from dataclasses import dataclass, field
+from datetime import datetime
+
+@dataclass()
+class SimpleFlag:
+  name: str
+  is_active: bool
+  created_at: datetime
+  tags: list[str] = field(default_factory=list)
+
+  def toggle(self):
+    self.is_active = not self.is_active
+```
+
+With the highlighted code added above, you will now have the `tags` property
+unique for each instance of `SimpleFlag`.
 
 ## Whew, & that's a wrap folks
 
 I've covered a lot in this post. *Python* classes can be written in two distinct
-ways such as a behavior-driven class and a data-driven class. If you're writing
+ways such as a behavior-driven class or a data-driven class. If you're writing
 the latter of these types, you will want to write much less boilerplate & use
-the new `@dataclass` decorator to make the maintenance of these classes easy
-going forward. It might even inspire you to write your behavior-driven classes
-as a *Data Class* to save time & complexity for your class writing. Thanks for
-making it this far in this post. I hope you enjoyed reading it as much as I did
-writing it.
+the new `@dataclass` decorator to make the maintenance of *Python* classes much
+easier without having to create *special methods* that could lead to mistakes if
+they're written manually. Thanks for reading!
