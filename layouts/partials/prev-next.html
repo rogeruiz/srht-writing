@@ -1,13 +1,13 @@
-<section class="flex flex-row content-between mt-10">
+<section class="flex flex-col md:flex-row content-between mt-10">
   {{ with .NextInSection }}
-  <div class="w-full text-left">
+  <div class="w-full text-center md:text-left pb-4">
     <span class="block">Previous Post</span>
     <a class="rsr-link" href="{{ .RelPermalink }}" title="{{ .Description | markdownify }}"><code
         class="before:content-none after:content-none text-inherit"></code> {{ .Title }}</a>
   </div>
   {{ end }}
   {{ with .PrevInSection }}
-  <div class="w-full text-right">
+  <div class="w-full text-center md:text-right pb-4">
     <span class="block">Next Post</span>
     <a class="rsr-link" href="{{ .RelPermalink }}" title="{{ .Description | markdownify }}">
       {{ .Title }} <code class="before:content-none after:content-none text-inherit"></code></a>
