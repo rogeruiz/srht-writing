@@ -1,0 +1,16 @@
+{{- if and (gt .WordCount 250) (ne .Params.ai true) -}}
+<hr class="h-px my-8 bg-surface2 border-0">
+<section class="flex flex-col md:flex-row">
+  <p>
+    This post was written by a human & not by artificial intelligence (AI)
+    tools. I don't have anything against AI but I am interested in
+    differenciating content created by people versus machines. To find out more
+    about the <em>Not by AI</em> badge, please click it.
+  </p>
+  <p class="flex flex-col justify-center md:ml-10">
+    <a href="https://notbyai.fyi/">{{ (printf "/assets/svg/%s.svg" "not-by-ai-black" | readFile) |
+      safeHTML
+      }}</a>
+  </p>
+</section>
+{{- end -}}

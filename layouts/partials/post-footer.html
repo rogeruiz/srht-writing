@@ -1,0 +1,8 @@
+{{- if and (gt .WordCount 250) -}}
+<hr class="h-px my-8 bg-surface2 border-0">
+<section>
+  <p class="text-lg">If you enjoyed this post, please explore other posts by the topics listed below.</p>
+  {{ partial "tags-row.html" . }}
+</section>
+{{ partial "prev-next.html" . }}
+{{- end -}}

@@ -18,7 +18,7 @@
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit",
     "build:site": "hugo --gc --minify",
     "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/index.css --jit --watch",
-    "watch:site": "hugo serve -D --bind $(ipconfig getifaddr en0) --baseURL http://$(ipconfig getifaddr en0)/",
+    "watch:site": "hugo serve -D --bind $(ipconfig getifaddr en0) --baseURL http://$(ipconfig getifaddr en0)/ --ignoreCache",
     "prestart": "run-s build:css:chroma",
     "start": "run-p watch:css watch:site"
   },
