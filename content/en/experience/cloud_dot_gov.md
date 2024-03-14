@@ -2,24 +2,48 @@
 title = "Site reliability engineer"
 date = "2016-03-01"
 endDate = "2019-03-01"
-description = """Built, maintained, & operated a PaaS for the federal
-government using Cloud Foundry"""
+description = """Built, maintained, & operated a **PaaS** for the federal government using **Cloud Foundry**."""
 company = "cloud.gov"
 logo = "images/experience/cloud-gov.jpg"
 +++
 
-At cloud.gov, I worked as a site reliability engineer with a focus on
-integrations and tooling. I conducted on-call rotations, incident responses, and
-application development to help build, maintain, and operate the cloud.gov PaaS
-on AWS commercial and **GovCloud**. While cloud.gov was being built, we had to also
-take into account **FedRamp JAB** authorization and compliance in order to support
-**FISMA Low** and **FISMA Moderate** systems running on the platform.
+In my role as a *site reliability engineer* (SRE), I contributed & lead the
+development, maintenance, & operation of a *Platform-as-a-Service* (PaaS)
+utilizing the open-source software *Cloud Foundry*. This involved overseeing the
+creation & management of a robust infrastructure to support the platform's
+functionalities. To effectively deploy *Cloud Foundry*, we leveraged *Bosh* for
+VM orchestration & *ConcourseCI* for delivering updates to the PaaS.
 
-While working here, I was also an **engineering manager for a team of 5 to 8
-engineers to ease the burden of other engineering managers who were unfamiliar
-with the technology we were using**. I was involved in hiring for this team as
-well and would delegate different aspects of the interview process in a balanced
-way across the team depending on the necessary knowledge.
+As part of my responsibilities, I managed a team comprising 8 engineers with
+diverse specializations. My aim was to help coordinate their efforts towards the
+successful implementation & enhancement of our PaaS solution. This involved
+delegating tasks, providing guidance, & ensuring smooth collaboration among team
+members.
 
-I also conducted workshops and presentations for the upcoming features around
-cloud.gov to gain broader adoption across US federal agencies.
+> Additionally, I took charge of designing & publishing compliance diagrams
+> essential for securing *FedRamp JAB Authorization*. These diagrams outlined
+> our adherence to stringent regulatory standards, ensuring the platform's
+> suitability for hosting sensitive government systems.
+>
+> You can see these *Diagrams as Code* at
+> [https://diagrams.fr.☁️.gov/](https://diagrams.fr.cloud.gov/).
+
+To facilitate broader adoption of our platform across the US federal government,
+I led training sessions & workshops focused on showcasing *cloud.gov* features.
+These sessions were designed to educate stakeholders about the capabilities &
+benefits of our PaaS solution, encouraging its integration into various
+government agencies.
+
+> I actively participated in on-call rotations & incident response training to
+> ensure the platform's reliability & resilience. This involved promptly
+> addressing any issues or emergencies that arose, implementing effective
+> solutions, & refining incident response procedures for future incidents.
+
+Through our concerted efforts, we successfully built & maintained a robust PaaS
+solution using *Cloud Foundry*. By managing a skilled team of engineers,
+designing compliance diagrams, conducting training sessions, & actively
+participating in incident response activities, we achieved broader adoption of
+*cloud.gov* across the US federal government. Our platform's reliability,
+security, & user-friendly features positioned it as a trusted choice for hosting
+critical government systems, contributing to the modernization of digital
+services in the public sector.
