@@ -1,10 +1,7 @@
 +++
 title = "Switching to Neovim & Lua"
 date = "2022-03-16"
-description = """I've been using **Vim** for 8 years and found that it was
-finally time to migrate my development environment over to **Neovim**. This
-meant learning about Lua and writing **Lua** configuration files for **Neovim**.
-My journey was cathartic and took less than a week."""
+description = """I've been using **Vim** for 8 years and found that it was finally time to migrate my development environment over to **Neovim**. This meant learning about **Lua** and writing **Lua** configuration files for **Neovim**. My journey was cathartic and took less than a week."""
 slug = "switching-to-neovim--lua"
 tags = ["learning", "programming"]
 +++
