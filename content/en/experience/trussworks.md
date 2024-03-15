@@ -3,6 +3,7 @@ title = "Staff software engineer"
 logo = "images/experience/trussworks.jpg"
 description = """**IAT II** & **IASAE II** certified contractor for the **Department of Defense** for **MilMove** while collaborating across a multi-disciplinary consultancy to help it grow in vision & size."""
 company = "TrussWorks"
+company_url = "https://truss.works/"
 date = "2021-06-01"
 endDate = "2023-09-20"
 +++

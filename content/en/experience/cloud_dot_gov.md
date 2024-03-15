@@ -5,6 +5,7 @@ endDate = "2019-03-01"
 description = """Built, maintained, & operated a **PaaS** for the federal government using **Cloud Foundry**."""
 company = "cloud.gov"
 logo = "images/experience/cloud-gov.jpg"
+company_url = "https://cloud.gov/"
 +++
 
 In my role as a *site reliability engineer* (SRE), I contributed & lead the

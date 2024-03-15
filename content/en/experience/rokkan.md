@@ -5,6 +5,7 @@ logo = "images/experience/rokkan.jpg"
 date = "2011-06-01"
 endDate = "2013-11-01"
 description = """In my debut tech role, led **SVN** to **Git** transition, engineered internal libraries, mentored devs, & operated a **Gitolite** instance."""
+company_url = "https://rokkan.com/"
 +++
 
 In my first tech role, I embarked on a journey to contribute significantly to

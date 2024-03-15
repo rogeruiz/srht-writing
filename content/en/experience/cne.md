@@ -5,6 +5,7 @@ logo = "images/experience/cne.jpg"
 date = "2013-11-01"
 endDate = "2015-02-01"
 description = """Senior engineer & leader in **Ember.js** framework, driving high-traffic application launch. Expertise in architecture, tooling, & team empowerment."""
+company_url = "https://www.condenast.com/entertainment"
 +++
 
 As a senior engineer & leader, I spearheaded the launch of *The Scene*, a

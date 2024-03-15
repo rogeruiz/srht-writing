@@ -1,15 +1,19 @@
 <div class="bg-crust flex flex-row mb-6 col-span-2 max-h-36">
   <div class="h-32 w-32 md:h-36 md:w-36 flex flex-none">
     <img class="object-center" src="{{ .Params.Logo | relURL }}" alt="{{ .Params.company }} logo"
-      title="{{ .Description }}">
+      title="{{ .Description | markdownify }}">
   </div>
   <div class="flex-grow flex-col pl-5 md:pt-2.5 border-crust">
     <h3 class="text-md font-body italic font-bold border-b border-dotted border-b-text text-subtext0">
       {{ .Title }}
     </h3>
-    <h2 class="text-md lg:text-xl font-display text-subtext2 border-t border-dotted border-t-text">{{
-      .Params.company
-      }}</h2>
+    <h2 class="text-md lg:text-xl font-display text-subtext2 border-t border-dotted border-t-text">
+      {{- with .Params.company_url }}
+      <a href="{{ . }}" class="rsr-link" rel="external noopener noreferrer" target="_blank">{{ $.Params.company }}</a>
+      {{- else -}}
+      {{ .Params.company }}
+      {{- end -}}
+    </h2>
     <div class="text-sm text-overlay2 font-body italic font-extralight border-b border-dotted border-b-text">
       <span>{{ dateFormat "01/2006" .Date }}</span>
       {{ if .Params.EndDate }}

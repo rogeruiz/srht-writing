@@ -5,6 +5,7 @@ logo = "images/experience/colab.jpg"
 date = "2015-02-01"
 endDate = "2015-08-01"
 description = """Collaborated with CEO to optimize developer workflows & practices, boosting project delivery efficiency by 110%. Expert in **JSDoc** automation & standardization."""
+company_url = "https://www.teamcolab.com/"
 +++
 
 As an engineering consultant, I collaborated directly with the CEO of the

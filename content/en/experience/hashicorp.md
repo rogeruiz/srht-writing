@@ -5,6 +5,7 @@ description = """Helping ship **Terraform Enterprise** as part of a small team t
 company = "HashiCorp"
 date = "2019-03-01"
 endDate = "2021-04-01"
+company_url = "https://www.hashicorp.com/"
 +++
 
 As a senior software engineer at HashiCorp, I worked on the *Terraform
