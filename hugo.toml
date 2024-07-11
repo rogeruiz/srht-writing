@@ -1,7 +1,7 @@
 baseURL = "https://write.rog.gr/"
 languageCode = "en-US"
 defaultContentLanguage = 'en-us'
-paginate = 9
+paginate = 6
 paginatePath = 'pg'
 
 [taxonomies]

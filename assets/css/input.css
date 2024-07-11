@@ -44,7 +44,7 @@
   }
 
   .rsr-page-link {
-    @apply py-1 px-2 text-blue rounded border border-crust hover:border-base hover:bg-rosewater hover:text-base;
+    @apply transition-all duration-300 py-1 px-2 text-blue rounded border border-crust hover:border-base hover:bg-rosewater hover:text-base;
   }
 
   .rsr-page-link-active {
