@@ -4,6 +4,8 @@ defaultContentLanguage = 'en-us'
 paginate = 6
 paginatePath = 'pg'
 
+titleCaseStyle = 'firstupper'
+
 [taxonomies]
 tag = 'tags'
 
