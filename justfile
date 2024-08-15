@@ -24,7 +24,10 @@ new title type="writing" lang="en":
     l="{{ lang }}"
     s="{{ kebabcase(title) }}"
     case $t in
-        "writing" | "tags")
+        "writing")
+            p="./content/${l}/${t}/${s}/index.md"
+            ;;
+        "tags")
             p="./content/${l}/${t}/${s}/_index.md"
             ;;
         *)
