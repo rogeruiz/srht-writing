@@ -116,6 +116,13 @@ module.exports = {
                 }
               },
             },
+            ul: {
+              li: {
+                '&::marker': {
+                  color: 'rgb(var(--ctp-rosewater))',
+                },
+              },
+            },
           },
         },
       }),
