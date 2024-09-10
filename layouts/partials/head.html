@@ -62,4 +62,10 @@
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eff1f5">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1e1e2e">
+
+  {{ if site.IsServer -}}
+  {{ print "<!-- Debug info only available when running a local server -->" | safeHTML }}
+  {{ partial "debug/meta-tags.html" .Page }}
+  {{ print "<!-- End debug info -->" | safeHTML -}}
+  {{- end }}
 </head>

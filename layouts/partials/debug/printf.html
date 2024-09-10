@@ -1,0 +1,9 @@
+{{ if site.IsServer }}
+
+<div class="p-4 bg-overlay0 text-red">
+  <span class="text-xl">Printing using "%#v"</span>
+  <br>
+  <code>{{ debug.Dump . }}</code>
+</div>
+
+{{ end }}

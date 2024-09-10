@@ -1,0 +1,46 @@
+{{ define "partials/debug/meta-tags.html" -}}
+<meta name="hugo-bundle-type" content="{{ .BundleType }}" />
+<meta name="hugo-categories" content="{{ .Params.categories }}" />
+<meta name="hugo-fuzzy-word-count" content="{{ .FuzzyWordCount }}" />
+<meta name="hugo-is-home" content="{{ .IsHome }}" />
+<meta name="hugo-is-node" content="{{ .IsNode }}" />
+<meta name="hugo-is-page" content="{{ .IsPage }}" />
+<meta name="hugo-keywords" content="{{ .Keywords }}" />
+<meta name="hugo-kind" content="{{ .Kind }}" />
+<meta name="hugo-lastmod" content="{{ .Lastmod }}" />
+{{ with .PrevInSection -}}
+<meta name="hugo-prev-in-section" content="{{ .RelPermalink }}" />
+{{ end -}}
+{{ with .NextInSection -}}
+<meta name="hugo-next-in-section" content="{{ .RelPermalink }}" />
+{{ end -}}
+
+{{ with .File -}}
+<meta name="hugo-file-path" content="{{ .Path }}" />
+{{ end -}}
+
+{{ range .Aliases -}}
+<meta name="hugo-alias" content="{{ . }}" />
+{{ end }}
+
+<meta name="hugo-section" content="{{ .Section }}" />
+<meta name="hugo-type" content="{{ .Type }}" />
+
+{{ range .Params.tags -}}
+<meta name="hugo-tag" content="{{ . }}" />
+{{ end }}
+
+{{ range .Ancestors -}}
+<meta name="hugo-ancestor" content="{{ .RelPermalink }}" />
+{{ end }}
+
+{{ if .Parent -}}
+<meta name="hugo-parent" content="{{ .Parent.RelPermalink }}" />
+<meta name="hugo-parent-kind" content="{{ .Parent.Kind }}" />
+<meta name="hugo-parent-type" content="{{ .Parent.Type }}" />
+{{- end }}
+
+{{ range .Pages -}}
+<meta name="hugo-child-page-path" content="{{ .RelPermalink }}" />
+{{ end }}
+{{- end }}
