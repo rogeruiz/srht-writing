@@ -33,20 +33,20 @@ Name = "Exercism"
 BaseURL = "https://exercism.org/"
 Handle = "profiles/rogeruiz"
 
-[[params.social]]
-Name = "CodeSignal"
-BaseURL = "https://app.codesignal.com/"
-Handle = "profiles/rogeruiz"
+# [[params.social]]
+# Name = "CodeSignal"
+# BaseURL = "https://app.codesignal.com/"
+# Handle = "profiles/rogeruiz"
 
-[[params.social]]
-Name = "Mastadon"
-BaseURL = "https:/infosec.exchange/"
-Handle = "@rogeruiz"
+# [[params.social]]
+# Name = "Mastadon"
+# BaseURL = "https:/infosec.exchange/"
+# Handle = "@rogeruiz"
 
-[[params.social]]
-Name = "X"
-BaseURL = "https://twitter.com/"
-Handle = "@rogeruiz"
+# [[params.social]]
+# Name = "X"
+# BaseURL = "https://twitter.com/"
+# Handle = "@rogeruiz"
 
 [[params.social]]
 Name = "sourcehut"
