@@ -5,26 +5,34 @@ packages:
   - npm
   - wget
 oauth: pages.sr.ht/PAGES:RW
+secrets:
+  - 5fd6bbf1-8791-4c37-8e1f-2d423d1c6a12
 environment:
-  repo: writing
-  site: write.rog.gr
-  hugo_version: "0.111.3"
+  GH_REPO: srht-writing
+  GH_USER: rogeruiz
+  SH_REPO: writing
+  URL: write.rog.gr
+  HUGO_VERSION: "0.111.3"
 tasks:
-- setup: |
-    wget "https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_${hugo_version}_Linux-64bit.tar.gz"
-    wget "https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_${hugo_version}_checksums.txt"
-    calculated_sha=$(sha256sum "hugo_${hugo_version}_Linux-64bit.tar.gz")
-    expected_sha=$(grep "hugo_${hugo_version}_Linux-64bit.tar.gz" "hugo_${hugo_version}_checksums.txt")
-    printf "calculated: %s\n  expected: %s" "$calculated_sha" "$expected_sha"
-    [ "$calculated_sha" = "$expected_sha" ]
-    sudo tar xzf "hugo_${hugo_version}_Linux-64bit.tar.gz" --directory=/usr/local/bin/
-    hugo env
-- install: |
-    cd ${repo}
-    npm install
-- build: |
-    cd ${repo}
-    npm run build
-    tar -C public -cvz . > ../site.tar.gz
-- upload: |
-    hut pages publish -d ${site} site.tar.gz
+  - setup: |
+      wget "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"
+      wget "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt"
+      calculated_sha=$(sha256sum "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz")
+      expected_sha=$(grep "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" "hugo_${HUGO_VERSION}_checksums.txt")
+      printf "calculated: %s\n  expected: %s" "$calculated_sha" "$expected_sha"
+      [ "$calculated_sha" = "$expected_sha" ]
+      sudo tar xzf "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" --directory=/usr/local/bin/
+      hugo env
+  - install: |
+      cd ${SH_REPO}
+      npm install
+  - build: |
+      cd ${SH_REPO}
+      npm run build
+      tar -C public -cvz . > ../site.tar.gz
+  - upload: |
+      hut pages publish -d ${URL} site.tar.gz
+  - mirror-to-github: |
+      cd ~/"${SH_REPO}"
+      git config --global credential.helper store
+      git push --mirror "https://github.com/${GH_USER}/${GH_REPO}"
